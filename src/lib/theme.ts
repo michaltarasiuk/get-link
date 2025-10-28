@@ -1,5 +1,13 @@
 import dedent from "dedent";
 
+declare global {
+  type Theme = "light" | "dark";
+  interface Window {
+    __theme: Theme;
+    __setPreferredTheme: (theme: Theme) => void;
+  }
+}
+
 export const ThemeScript = dedent`
   (function () {
     function setTheme(theme) {
