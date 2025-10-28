@@ -1,4 +1,4 @@
-import {Music, Sparkles, VolumeOff} from "lucide-react";
+import {ClipboardPaste, Music, Sparkles, VolumeOff} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
@@ -31,7 +31,7 @@ export function Download() {
           </ToggleGroupItem>
         </ToggleGroup>
         <Button variant="outline" size="lg">
-          paste and download
+          <ClipboardPaste /> paste
         </Button>
       </div>
     </div>
