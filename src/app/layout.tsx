@@ -8,7 +8,7 @@ export default function Layout({children}: LayoutProps<"/">) {
     <html lang="en">
       <body
         className={cn(
-          "dark",
+          "dark p-2",
           `${geistSans.variable} ${geistMono.variable} antialiased`,
         )}>
         {children}

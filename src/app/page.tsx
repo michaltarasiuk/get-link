@@ -1,5 +1,10 @@
-import {Button} from "@/components/ui/button";
+import {Download} from "@/components/Download";
+import {cn} from "@/lib/cn";
 
 export default function Page() {
-  return <Button>Click me</Button>;
+  return (
+    <div className={cn("flex min-h-dvh items-center justify-center")}>
+      <Download />
+    </div>
+  );
 }
