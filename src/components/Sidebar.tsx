@@ -9,7 +9,7 @@ import {Button} from "./ui/button";
 export function Sidebar() {
   return (
     <nav className={cn("bg-sidebar px-2 py-1", "sm:px-1 sm:py-2")}>
-      <Button variant="ghost" asChild className={cn("flex size-18 flex-col")}>
+      <Button variant="ghost" className={cn("flex size-18 flex-col")} asChild>
         <Link href={Routes.save}>
           <Download />
           Save
