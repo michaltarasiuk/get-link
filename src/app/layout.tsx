@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import {ProcessingQueue} from "@/components/ProcessingQueue";
 import {Sidebar} from "@/components/Sidebar";
 import {cn} from "@/lib/cn";
 import {geistMono, geistSans} from "@/lib/fonts";
@@ -24,6 +25,7 @@ export default function Layout({children}: LayoutProps<"/">) {
           )}>
           {children}
           <Sidebar />
+          <ProcessingQueue />
         </main>
       </body>
     </html>

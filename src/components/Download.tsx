@@ -1,4 +1,9 @@
-import {ClipboardPaste, Music, Sparkles, VolumeOff} from "lucide-react";
+import {
+  ClipboardPasteIcon,
+  MusicIcon,
+  SparklesIcon,
+  VolumeOffIcon,
+} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
@@ -21,17 +26,17 @@ export function Download() {
           size="lg"
           className={cn("grid w-full grid-cols-3", "sm:w-auto")}>
           <ToggleGroupItem value="auto">
-            <Sparkles className={cn("size-4")} />
+            <SparklesIcon className={cn("size-4")} />
           </ToggleGroupItem>
           <ToggleGroupItem value="audio">
-            <Music className={cn("size-4")} />
+            <MusicIcon className={cn("size-4")} />
           </ToggleGroupItem>
           <ToggleGroupItem value="mute">
-            <VolumeOff className={cn("size-4")} />
+            <VolumeOffIcon className={cn("size-4")} />
           </ToggleGroupItem>
         </ToggleGroup>
         <Button variant="outline" size="lg">
-          <ClipboardPaste /> paste
+          <ClipboardPasteIcon /> paste
         </Button>
       </div>
     </div>

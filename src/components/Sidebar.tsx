@@ -1,6 +1,6 @@
 "use client";
 
-import {Download, Settings} from "lucide-react";
+import {DownloadIcon, SettingsIcon} from "lucide-react";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 
@@ -11,6 +11,9 @@ import {Button} from "./ui/button";
 
 export function Sidebar() {
   const pathname = usePathname();
+  function getButtonVariant(href: string) {
+    return href === pathname ? "secondary" : "ghost";
+  }
   return (
     <nav
       className={cn(
@@ -18,20 +21,20 @@ export function Sidebar() {
         "md:border-sidebar-border md:flex-col md:border-e md:p-1 md:py-2",
       )}>
       <Button
-        variant={Routes.save === pathname ? "secondary" : "ghost"}
+        variant={getButtonVariant(Routes.save)}
         className={cn("flex h-16 w-20 flex-col")}
         asChild>
         <Link href={Routes.save}>
-          <Download />
+          <DownloadIcon />
           save
         </Link>
       </Button>
       <Button
-        variant={Routes.settings === pathname ? "secondary" : "ghost"}
+        variant={getButtonVariant(Routes.settings)}
         className={cn("flex h-16 w-20 flex-col")}
         asChild>
         <Link href={Routes.settings}>
-          <Settings />
+          <SettingsIcon />
           settings
         </Link>
       </Button>
