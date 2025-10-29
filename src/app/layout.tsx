@@ -17,7 +17,11 @@ export default function Layout({children}: LayoutProps<"/">) {
             __html: ThemeScript,
           }}
         />
-        <main className={cn("flex h-dvh flex-col", "sm:flex-row-reverse")}>
+        <main
+          className={cn(
+            "flex h-dvh flex-col [&>div]:flex-1",
+            "md:flex-row-reverse",
+          )}>
           {children}
           <Sidebar />
         </main>
