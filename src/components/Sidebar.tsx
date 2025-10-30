@@ -10,6 +10,10 @@ import {Routes} from "@/lib/routes";
 import {Button} from "./ui/button";
 
 export function Sidebar() {
+  const pathname = usePathname();
+  function getButtonVariant(href: string) {
+    return href === pathname ? "secondary" : "ghost";
+  }
   return (
     <nav
       className={cn(
@@ -21,36 +25,28 @@ export function Sidebar() {
       <ul
         className={cn("flex gap-1 px-2 py-1.5", "md:flex-col md:p-1 md:py-2")}>
         <li>
-          <SidebarLink href={Routes.save}>
-            <DownloadIcon />
-            save
-          </SidebarLink>
+          <Button
+            variant={getButtonVariant(Routes.save)}
+            className={cn("flex h-16 w-20 flex-col")}
+            asChild>
+            <Link href={Routes.save}>
+              <DownloadIcon />
+              save
+            </Link>
+          </Button>
         </li>
         <li>
-          <SidebarLink href={Routes.settings}>
-            <SettingsIcon />
-            settings
-          </SidebarLink>
+          <Button
+            variant={getButtonVariant(Routes.settings)}
+            className={cn("flex h-16 w-20 flex-col")}
+            asChild>
+            <Link href={Routes.settings}>
+              <SettingsIcon />
+              settings
+            </Link>
+          </Button>
         </li>
       </ul>
     </nav>
-  );
-}
-
-function SidebarLink({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) {
-  const pathname = usePathname();
-  return (
-    <Button
-      variant={href === pathname ? "secondary" : "ghost"}
-      className={cn("flex h-16 w-20 flex-col")}
-      asChild>
-      <Link href={href}>{children}</Link>
-    </Button>
   );
 }
