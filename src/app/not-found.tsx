@@ -8,7 +8,7 @@ import {cn} from "@/lib/cn";
 
 export default function NotFound() {
   return (
-    <div className={cn("flex items-center justify-center")}>
+    <div className={cn("flex size-full items-center justify-center")}>
       <Empty>
         <EmptyHeader>
           <EmptyTitle>404 - Not Found</EmptyTitle>
