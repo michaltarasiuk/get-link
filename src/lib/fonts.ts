@@ -1,11 +1,12 @@
-import {Geist, Geist_Mono} from "next/font/google";
+import {IBM_Plex_Mono, IBM_Plex_Sans} from "next/font/google";
 
-export const geistSans = Geist({
-  variable: "--font-geist-sans",
+export const ibmPlexSansFont = IBM_Plex_Sans({
+  variable: "--font-ibm-plex-sans",
   subsets: ["latin"],
 });
 
-export const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+export const ibmPlexMonoFont = IBM_Plex_Mono({
+  variable: "--font-ibm-plex-mono",
   subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
 });
