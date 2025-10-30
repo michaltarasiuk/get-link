@@ -10,7 +10,7 @@ import {Input} from "@/components/ui/input";
 import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
 import {cn} from "@/lib/cn";
 
-export function Download() {
+export function Save() {
   return (
     <div className={cn("w-full max-w-2xl space-y-1.5")}>
       <Input placeholder="paste the link here" className={cn("h-10")} />
