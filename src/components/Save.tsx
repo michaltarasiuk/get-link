@@ -35,7 +35,7 @@ export function Save() {
             <VolumeOffIcon className={cn("size-4")} />
           </ToggleGroupItem>
         </ToggleGroup>
-        <Button variant="outline" size="lg">
+        <Button size="lg">
           <ClipboardPasteIcon /> paste
         </Button>
       </div>
