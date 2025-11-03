@@ -83,8 +83,8 @@ const iconContainerVariants = cva(
       color: {
         blue: null,
         purple: null,
-        red: null,
-        yellow: null,
+        magenta: null,
+        orange: null,
         green: null,
         gray: null,
       },
@@ -97,32 +97,32 @@ const iconContainerVariants = cva(
       {
         color: "blue",
         active: true,
-        className: "bg-blue-500 border-blue-500",
+        className: "bg-blue border-blue",
       },
       {
         color: "purple",
         active: true,
-        className: "bg-purple-500 border-purple-500",
+        className: "bg-purple border-purple",
       },
       {
-        color: "red",
+        color: "magenta",
         active: true,
-        className: "bg-red-500 border-red-500",
+        className: "bg-magenta border-magenta",
       },
       {
-        color: "yellow",
+        color: "orange",
         active: true,
-        className: "bg-yellow-500 border-yellow-500",
+        className: "bg-orange border-orange",
       },
       {
         color: "green",
         active: true,
-        className: "bg-green-500 border-green-500",
+        className: "bg-green border-green",
       },
       {
         color: "gray",
         active: true,
-        className: "bg-gray-500 border-gray-500",
+        className: "bg-gray border-gray",
       },
     ],
   },
@@ -131,12 +131,12 @@ const iconContainerVariants = cva(
 const iconVariants = cva("size-4", {
   variants: {
     color: {
-      blue: "text-blue-500",
-      purple: "text-purple-500",
-      red: "text-red-500",
-      yellow: "text-yellow-500",
-      green: "text-green-500",
-      gray: "text-gray-500",
+      blue: "text-blue",
+      purple: "text-purple",
+      magenta: "text-magenta",
+      orange: "text-orange",
+      green: "text-green",
+      gray: "text-gray",
     },
     active: {
       true: "text-white",

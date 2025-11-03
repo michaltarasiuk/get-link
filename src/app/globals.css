@@ -4,6 +4,16 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-*: initial;
+
+  --color-purple: oklch(0.5 0.19 285);
+  --color-blue: oklch(0.6 0.17 245);
+  --color-magenta: oklch(0.6 0.21 15);
+  --color-orange: oklch(0.75 0.13 60);
+  --color-green: oklch(0.7 0.19 140);
+  --color-gray: oklch(0.55 0.02 285);
+  --color-white: oklch(1 0 0);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-ibm-plex-sans);

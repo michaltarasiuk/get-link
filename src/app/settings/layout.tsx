@@ -59,14 +59,14 @@ function SettingsSubNavigation() {
       <SubNavigationSection>
         <SubNavigationTab
           href={Routes.settings.video}
-          color="red"
+          color="magenta"
           icon={FilmIcon}>
           video
         </SubNavigationTab>
         <SubNavigationSeparator />
         <SubNavigationTab
           href={Routes.settings.audio}
-          color="yellow"
+          color="orange"
           icon={MusicIcon}>
           audio
         </SubNavigationTab>
