@@ -4,9 +4,7 @@ import {Routes} from "@/lib/routes";
 
 export default function VideoPage() {
   return (
-    <PageLayout
-      title="accessibility"
-      header={<BackLink href={Routes.settings.root} />}>
+    <PageLayout title="video" header={<BackLink href={Routes.settings.root} />}>
       {null}
     </PageLayout>
   );
