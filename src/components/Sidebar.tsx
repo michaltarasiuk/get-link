@@ -12,7 +12,7 @@ import {Button} from "./ui/button";
 export function Sidebar() {
   const pathname = usePathname();
   function getButtonVariant(href: string) {
-    return href === pathname ? "secondary" : "ghost";
+    return pathname.startsWith(href) ? "secondary" : "ghost";
   }
   return (
     <nav
@@ -20,10 +20,10 @@ export function Sidebar() {
         "bg-sidebar relative",
         "before:bg-sidebar before:block before:h-4",
         "after:bg-background after:absolute after:top-0 after:h-4 after:w-full after:rounded-b-4xl",
-        "md:border-sidebar-border md:border-e md:before:hidden md:after:hidden",
+        "sm:border-sidebar-border sm:border-e sm:before:hidden sm:after:hidden",
       )}>
       <ul
-        className={cn("flex gap-1 px-2 py-1.5", "md:flex-col md:p-1 md:py-2")}>
+        className={cn("flex gap-1 px-2 py-1.5", "sm:flex-col sm:p-1 sm:py-2")}>
         <li>
           <Button
             variant={getButtonVariant(Routes.save)}
@@ -37,10 +37,10 @@ export function Sidebar() {
         </li>
         <li>
           <Button
-            variant={getButtonVariant(Routes.settings)}
+            variant={getButtonVariant(Routes.settings.root)}
             className={cn("flex h-16 w-20 flex-col")}
             asChild>
-            <Link href={Routes.settings}>
+            <Link href={Routes.settings.root}>
               <SettingsIcon />
               settings
             </Link>

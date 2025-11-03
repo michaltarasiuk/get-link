@@ -12,11 +12,10 @@ export function ProcessingQueue() {
         <Button
           variant="outline"
           size="icon"
-          className={cn("fixed end-2 top-2 size-10 rounded-full shadow-lg")}>
+          className={cn("fixed end-2 top-1 size-10 rounded-full shadow-lg")}>
           <div
             className={cn(
-              "bg-muted relative size-7 rounded-full",
-              "flex items-center justify-center",
+              "bg-muted relative flex size-7 items-center justify-center rounded-full",
             )}>
             <ArrowDownIcon className={cn("size-5")} />
           </div>

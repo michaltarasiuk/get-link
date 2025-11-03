@@ -5,14 +5,15 @@ import {
   VolumeOffIcon,
 } from "lucide-react";
 
-import {Button} from "@/components/ui/button";
-import {Input} from "@/components/ui/input";
-import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
 import {cn} from "@/lib/cn";
+
+import {Button} from "./ui/button";
+import {Input} from "./ui/input";
+import {ToggleGroup, ToggleGroupItem} from "./ui/toggle-group";
 
 export function Save() {
   return (
-    <div className={cn("w-full max-w-2xl space-y-1.5")}>
+    <div className={cn("w-full max-w-2xl space-y-1.5 px-2")}>
       <Input placeholder="paste the link here" className={cn("h-10")} />
       <div
         className={cn(
@@ -36,7 +37,8 @@ export function Save() {
           </ToggleGroupItem>
         </ToggleGroup>
         <Button size="lg">
-          <ClipboardPasteIcon /> paste
+          <ClipboardPasteIcon />
+          paste
         </Button>
       </div>
     </div>

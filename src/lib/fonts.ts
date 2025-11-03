@@ -8,5 +8,5 @@ export const ibmPlexSansFont = IBM_Plex_Sans({
 export const ibmPlexMonoFont = IBM_Plex_Mono({
   variable: "--font-ibm-plex-mono",
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
 });
