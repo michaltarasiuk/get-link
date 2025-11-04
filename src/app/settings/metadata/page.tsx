@@ -1,13 +1,10 @@
-import {BackLink} from "@/components/BackLink";
 import {PageLayout} from "@/components/PageLayout";
 import {Section} from "@/components/Section";
 import {Routes} from "@/lib/routes";
 
 export default function MetadataPage() {
   return (
-    <PageLayout
-      title="metadata"
-      header={<BackLink href={Routes.settings.root} />}>
+    <PageLayout title="metadata" backTo={Routes.settings}>
       <Section id="filename-style" title="filename style">
         {null}
       </Section>

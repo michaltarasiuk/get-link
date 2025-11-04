@@ -13,7 +13,7 @@ import {ToggleGroup, ToggleGroupItem} from "./ui/toggle-group";
 
 export function Save() {
   return (
-    <div className={cn("w-full max-w-2xl space-y-1.5 px-2")}>
+    <div className={cn("w-full max-w-2xl space-y-1.5 px-3")}>
       <Input placeholder="paste the link here" className={cn("h-10")} />
       <div
         className={cn(

@@ -1,13 +1,10 @@
-import {BackLink} from "@/components/BackLink";
 import {PageLayout} from "@/components/PageLayout";
 import {Section} from "@/components/Section";
 import {Routes} from "@/lib/routes";
 
 export default function AppearancePage() {
   return (
-    <PageLayout
-      title="appearance"
-      header={<BackLink href={Routes.settings.root} />}>
+    <PageLayout title="appearance" backTo={Routes.settings}>
       <Section id="theme" title="theme">
         {null}
       </Section>

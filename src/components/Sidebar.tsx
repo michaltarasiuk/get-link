@@ -19,14 +19,14 @@ export function Sidebar() {
         "md:border-sidebar-border md:border-e md:before:hidden md:after:hidden",
       )}>
       <ul
-        className={cn("flex gap-1 px-2 py-1.5", "md:flex-col md:p-1 md:py-2")}>
+        className={cn("flex gap-1 px-3 py-1.5", "md:flex-col md:px-1 md:py-2")}>
         <li>
           <SidebarLink href={Routes.save} icon={DownloadIcon}>
             save
           </SidebarLink>
         </li>
         <li>
-          <SidebarLink href={Routes.settings.root} icon={SettingsIcon}>
+          <SidebarLink href={Routes.settings} icon={SettingsIcon}>
             settings
           </SidebarLink>
         </li>
@@ -40,17 +40,15 @@ interface SidebarLinkProps extends LinkProps {
   children: React.ReactNode;
 }
 
-function SidebarLink({icon: Icon, children, ...props}: SidebarLinkProps) {
+function SidebarLink({href, icon: Icon, children, ...props}: SidebarLinkProps) {
   const pathname = usePathname();
-  function isActive() {
-    return typeof props.href === "string" && pathname.startsWith(props.href);
-  }
+  const active = typeof href === "string" && pathname.startsWith(href);
   return (
     <Button
-      variant={isActive() ? "secondary" : "ghost"}
+      variant={active ? "secondary" : "ghost"}
       className={cn("flex h-16 w-20 flex-col")}
       asChild>
-      <Link {...props}>
+      <Link href={href} {...props}>
         <Icon />
         {children}
       </Link>

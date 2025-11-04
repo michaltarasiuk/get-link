@@ -1,11 +1,10 @@
-import {BackLink} from "@/components/BackLink";
 import {PageLayout} from "@/components/PageLayout";
 import {Section} from "@/components/Section";
 import {Routes} from "@/lib/routes";
 
 export default function VideoPage() {
   return (
-    <PageLayout title="video" header={<BackLink href={Routes.settings.root} />}>
+    <PageLayout title="video" backTo={Routes.settings}>
       <Section id="video-quality" title="video quality">
         {null}
       </Section>

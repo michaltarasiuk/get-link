@@ -29,7 +29,7 @@ export default function SettingsLayout({children}: LayoutProps<"/settings">) {
     <div className={cn("flex flex-col-reverse", "md:flex-row")}>
       <aside
         className={cn("md:block md:shrink-0 md:basis-75 md:p-3", {
-          hidden: pathname !== Routes.settings.root,
+          hidden: pathname !== Routes.settings,
         })}>
         <SettingsSubNavigation />
       </aside>
@@ -43,14 +43,14 @@ function SettingsSubNavigation() {
     <SubNavigation>
       <SubNavigationSection>
         <SubNavigationTab
-          href={Routes.settings.appearance}
+          href={Routes.settingsAppearance}
           color="blue"
           icon={SunIcon}>
           appearance
         </SubNavigationTab>
         <SubNavigationSeparator />
         <SubNavigationTab
-          href={Routes.settings.accessibility}
+          href={Routes.settingsAccessibility}
           color="purple"
           icon={UserIcon}>
           accessibility
@@ -58,21 +58,21 @@ function SettingsSubNavigation() {
       </SubNavigationSection>
       <SubNavigationSection>
         <SubNavigationTab
-          href={Routes.settings.video}
+          href={Routes.settingsVideo}
           color="magenta"
           icon={FilmIcon}>
           video
         </SubNavigationTab>
         <SubNavigationSeparator />
         <SubNavigationTab
-          href={Routes.settings.audio}
+          href={Routes.settingsAudio}
           color="orange"
           icon={MusicIcon}>
           audio
         </SubNavigationTab>
         <SubNavigationSeparator />
         <SubNavigationTab
-          href={Routes.settings.metadata}
+          href={Routes.settingsMetadata}
           color="green"
           icon={FileIcon}>
           metadata
@@ -80,14 +80,14 @@ function SettingsSubNavigation() {
       </SubNavigationSection>
       <SubNavigationSection>
         <SubNavigationTab
-          href={Routes.settings.local}
+          href={Routes.settingsLocal}
           color="blue"
           icon={CpuIcon}>
           local processing
         </SubNavigationTab>
         <SubNavigationSeparator />
         <SubNavigationTab
-          href={Routes.settings.instances}
+          href={Routes.settingsInstances}
           color="purple"
           icon={GlobeIcon}>
           instances
@@ -95,21 +95,21 @@ function SettingsSubNavigation() {
       </SubNavigationSection>
       <SubNavigationSection>
         <SubNavigationTab
-          href={Routes.settings.privacy}
+          href={Routes.settingsPrivacy}
           color="gray"
           icon={LockIcon}>
           privacy
         </SubNavigationTab>
         <SubNavigationSeparator />
         <SubNavigationTab
-          href={Routes.settings.advanced}
+          href={Routes.settingsAdvanced}
           color="gray"
           icon={SlidersVerticalIcon}>
           advanced
         </SubNavigationTab>
         <SubNavigationSeparator />
         <SubNavigationTab
-          href={Routes.settings.debug}
+          href={Routes.settingsDebug}
           color="gray"
           icon={BugIcon}>
           info for nerds
