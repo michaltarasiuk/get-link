@@ -3,8 +3,8 @@ import {cn} from "@/lib/cn";
 
 export default function SavePage() {
   return (
-    <div className={cn("flex size-full items-center justify-center")}>
+    <main className={cn("flex size-full items-center justify-center")}>
       <Save />
-    </div>
+    </main>
   );
 }

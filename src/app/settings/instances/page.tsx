@@ -1,5 +1,6 @@
 import {BackLink} from "@/components/BackLink";
 import {PageLayout} from "@/components/PageLayout";
+import {Section} from "@/components/Section";
 import {Routes} from "@/lib/routes";
 
 export default function InstancesPage() {
@@ -7,7 +8,12 @@ export default function InstancesPage() {
     <PageLayout
       title="instances"
       header={<BackLink href={Routes.settings.root} />}>
-      {null}
+      <Section id="community-instances" title="community instances">
+        {null}
+      </Section>
+      <Section id="instance-access-key" title="instance access key">
+        {null}
+      </Section>
     </PageLayout>
   );
 }

@@ -12,7 +12,7 @@ export function ProcessingQueue() {
         <Button
           variant="outline"
           size="icon"
-          className={cn("fixed end-2 top-1 size-10 rounded-full shadow-lg")}>
+          className={cn("fixed end-3 top-1 size-10 rounded-full shadow-lg")}>
           <div
             className={cn(
               "bg-muted relative flex size-7 items-center justify-center rounded-full",

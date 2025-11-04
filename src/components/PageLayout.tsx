@@ -29,7 +29,7 @@ function Header({title, children}: HeaderProps) {
         "sm:hidden",
       )}>
       {isDefined(children) && (
-        <div className={cn("absolute start-2")}>{children}</div>
+        <div className={cn("absolute start-0")}>{children}</div>
       )}
       <h1 className={cn("text-lg font-semibold tracking-wide")}>{title}</h1>
     </header>

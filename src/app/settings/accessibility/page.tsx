@@ -1,5 +1,6 @@
 import {BackLink} from "@/components/BackLink";
 import {PageLayout} from "@/components/PageLayout";
+import {Section} from "@/components/Section";
 import {Routes} from "@/lib/routes";
 
 export default function AccessibilityPage() {
@@ -7,7 +8,15 @@ export default function AccessibilityPage() {
     <PageLayout
       title="accessibility"
       header={<BackLink href={Routes.settings.root} />}>
-      {null}
+      <Section id="visual" title="visual">
+        {null}
+      </Section>
+      <Section id="behavior" title="behavior">
+        {null}
+      </Section>
+      <Section id="haptics" title="haptics">
+        {null}
+      </Section>
     </PageLayout>
   );
 }

@@ -26,15 +26,15 @@ import {Routes} from "@/lib/routes";
 export default function SettingsLayout({children}: LayoutProps<"/settings">) {
   const pathname = usePathname();
   return (
-    <>
-      {children}
-      <div
-        className={cn("sm:block sm:max-w-64", {
+    <div className={cn("flex flex-col-reverse", "sm:flex-row")}>
+      <aside
+        className={cn("sm:block sm:shrink-0 sm:basis-75 sm:p-3", {
           hidden: pathname !== Routes.settings.root,
         })}>
         <SettingsSubNavigation />
-      </div>
-    </>
+      </aside>
+      <main className={cn("sm:basis-xl sm:p-3")}>{children}</main>
+    </div>
   );
 }
 

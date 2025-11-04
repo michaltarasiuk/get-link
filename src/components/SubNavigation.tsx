@@ -14,7 +14,7 @@ interface SubNavigationProps {
 }
 
 export function SubNavigation({children}: SubNavigationProps) {
-  return <nav className={cn("space-y-3 p-2", "sm:p-6.5")}>{children}</nav>;
+  return <nav className={cn("space-y-3 p-3")}>{children}</nav>;
 }
 
 interface SubNavigationSectionProps {
@@ -47,12 +47,13 @@ export function SubNavigationTab({
   icon: Icon,
   children,
 }: SubNavigationTabProps) {
-  const active = href === usePathname();
+  const pathname = usePathname();
+  const active = href === pathname;
   return (
     <Link
       href={href}
       className={cn(
-        "flex items-center gap-2 p-2 font-medium transition-colors",
+        "flex items-center gap-2.5 px-2.5 py-1.5 font-medium transition-colors",
         "sm:hover:bg-muted sm:rounded-lg sm:p-1.5",
         {
           "sm:bg-muted": active,

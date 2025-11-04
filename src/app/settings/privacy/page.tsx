@@ -1,5 +1,6 @@
 import {BackLink} from "@/components/BackLink";
 import {PageLayout} from "@/components/PageLayout";
+import {Section} from "@/components/Section";
 import {Routes} from "@/lib/routes";
 
 export default function PrivacyPage() {
@@ -7,7 +8,9 @@ export default function PrivacyPage() {
     <PageLayout
       title="privacy"
       header={<BackLink href={Routes.settings.root} />}>
-      {null}
+      <Section id="tunneling" title="tunneling">
+        {null}
+      </Section>
     </PageLayout>
   );
 }

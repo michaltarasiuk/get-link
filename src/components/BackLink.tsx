@@ -7,7 +7,7 @@ import {Button} from "./ui/button";
 
 export function BackLink(props: LinkProps) {
   return (
-    <Button variant="ghost" size="icon-sm" asChild>
+    <Button variant="ghost" size="icon-sm" className={cn("ms-1.5")} asChild>
       <Link {...props}>
         <ArrowLeftIcon className={cn("size-5")} />
       </Link>

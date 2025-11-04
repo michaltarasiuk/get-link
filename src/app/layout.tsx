@@ -20,11 +20,11 @@ export default function Layout({children}: LayoutProps<"/">) {
             __html: ThemeScript,
           }}
         />
-        <main className={cn("flex h-dvh flex-col", "sm:flex-row-reverse")}>
+        <div className={cn("flex h-dvh flex-col", "sm:flex-row-reverse")}>
           <div className={cn("flex-1")}>{children}</div>
           <Sidebar />
           <ProcessingQueue />
-        </main>
+        </div>
       </body>
     </html>
   );
