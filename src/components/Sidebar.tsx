@@ -1,6 +1,6 @@
 "use client";
 
-import {DownloadIcon, SettingsIcon} from "lucide-react";
+import {DownloadIcon, type LucideIcon, SettingsIcon} from "lucide-react";
 import Link, {type LinkProps} from "next/link";
 import {usePathname} from "next/navigation";
 
@@ -21,12 +21,12 @@ export function Sidebar() {
       <ul
         className={cn("flex gap-1 px-2 py-1.5", "sm:flex-col sm:p-1 sm:py-2")}>
         <li>
-          <SidebarLink href={Routes.save} icon={<DownloadIcon />}>
+          <SidebarLink href={Routes.save} icon={DownloadIcon}>
             save
           </SidebarLink>
         </li>
         <li>
-          <SidebarLink href={Routes.settings.root} icon={<SettingsIcon />}>
+          <SidebarLink href={Routes.settings.root} icon={SettingsIcon}>
             settings
           </SidebarLink>
         </li>
@@ -36,11 +36,11 @@ export function Sidebar() {
 }
 
 interface SidebarLinkProps extends LinkProps {
-  icon: React.ReactNode;
+  icon: LucideIcon;
   children: React.ReactNode;
 }
 
-function SidebarLink({icon, children, ...props}: SidebarLinkProps) {
+function SidebarLink({icon: Icon, children, ...props}: SidebarLinkProps) {
   const pathname = usePathname();
   function isActive() {
     return typeof props.href === "string" && pathname.startsWith(props.href);
@@ -51,7 +51,7 @@ function SidebarLink({icon, children, ...props}: SidebarLinkProps) {
       className={cn("flex h-16 w-20 flex-col")}
       asChild>
       <Link {...props}>
-        {icon}
+        <Icon />
         {children}
       </Link>
     </Button>

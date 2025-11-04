@@ -9,11 +9,19 @@ import {cn} from "@/lib/cn";
 
 import {Separator} from "./ui/separator";
 
-export function SubNavigation({children}: {children: React.ReactNode}) {
+interface SubNavigationProps {
+  children: React.ReactNode;
+}
+
+export function SubNavigation({children}: SubNavigationProps) {
   return <nav className={cn("space-y-3 p-2", "sm:p-6.5")}>{children}</nav>;
 }
 
-export function SubNavigationSection({children}: {children: React.ReactNode}) {
+interface SubNavigationSectionProps {
+  children: React.ReactNode;
+}
+
+export function SubNavigationSection({children}: SubNavigationSectionProps) {
   return (
     <div
       className={cn(
@@ -23,6 +31,14 @@ export function SubNavigationSection({children}: {children: React.ReactNode}) {
       {children}
     </div>
   );
+}
+
+interface SubNavigationTabProps
+  extends LinkProps,
+    VariantProps<typeof iconContainerVariants>,
+    VariantProps<typeof iconVariants> {
+  icon: LucideIcon;
+  children: React.ReactNode;
 }
 
 export function SubNavigationTab({
@@ -66,14 +82,6 @@ export function SubNavigationTab({
 
 export function SubNavigationSeparator() {
   return <Separator className={cn("sm:hidden")} />;
-}
-
-interface SubNavigationTabProps
-  extends LinkProps,
-    VariantProps<typeof iconContainerVariants>,
-    VariantProps<typeof iconVariants> {
-  icon: LucideIcon;
-  children: React.ReactNode;
 }
 
 const iconContainerVariants = cva(
