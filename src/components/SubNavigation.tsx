@@ -9,19 +9,11 @@ import {cn} from "@/lib/cn";
 
 import {Separator} from "./ui/separator";
 
-interface SubNavigationProps {
-  children: React.ReactNode;
-}
-
-export function SubNavigation({children}: SubNavigationProps) {
+export function SubNavigation({children}: {children: React.ReactNode}) {
   return <nav className={cn("space-y-3 p-3")}>{children}</nav>;
 }
 
-interface SubNavigationSectionProps {
-  children: React.ReactNode;
-}
-
-export function SubNavigationSection({children}: SubNavigationSectionProps) {
+export function SubNavigationSection({children}: {children: React.ReactNode}) {
   return (
     <div
       className={cn(

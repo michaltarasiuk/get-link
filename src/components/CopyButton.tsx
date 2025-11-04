@@ -1,13 +1,12 @@
-"use client";
-
 import {CheckIcon, LinkIcon} from "lucide-react";
 import {useEffect, useRef, useState} from "react";
 
 import {cn} from "@/lib/cn";
+import {setClipboard} from "@/lib/set-clipboard";
 
 import {Button} from "./ui/button";
 
-export function CopyButton() {
+export function CopyButton({getTextToCopy}: {getTextToCopy: () => string}) {
   const [copied, setCopied] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout>(undefined);
   useEffect(() => {
@@ -15,7 +14,9 @@ export function CopyButton() {
       clearTimeout(timeoutRef.current);
     };
   }, []);
-  function handleClick() {
+  async function handleCopy() {
+    const text = getTextToCopy();
+    await setClipboard(text);
     setCopied(true);
     clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
@@ -23,7 +24,7 @@ export function CopyButton() {
     }, 2_000);
   }
   return (
-    <Button variant="ghost" size="icon-sm" onClick={handleClick}>
+    <Button variant="ghost" size="icon-sm" onClick={handleCopy}>
       <LinkIcon
         className={cn(
           "transition-transform ease-in-out",

@@ -1,3 +1,6 @@
+"use client";
+
+import {addHashToUrl} from "@/lib/add-hash-to-url";
 import {cn} from "@/lib/cn";
 
 import {CopyButton} from "./CopyButton";
@@ -10,11 +13,11 @@ interface SectionProps {
 
 export function Section({id, title, children}: SectionProps) {
   return (
-    <section id={id} className={cn("space-y-2.5 p-3")}>
-      <div className={cn("flex items-center gap-1.5")}>
+    <section id={id} className={cn("p-3")}>
+      <header className={cn("mb-2.5 flex items-center gap-1.5")}>
         <h2 className={cn("font-semibold")}>{title}</h2>
-        <CopyButton />
-      </div>
+        <CopyButton getTextToCopy={() => addHashToUrl(id)} />
+      </header>
       {children}
     </section>
   );
