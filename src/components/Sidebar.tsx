@@ -1,7 +1,7 @@
 "use client";
 
 import {DownloadIcon, SettingsIcon} from "lucide-react";
-import Link from "next/link";
+import Link, {type LinkProps} from "next/link";
 import {usePathname} from "next/navigation";
 
 import {cn} from "@/lib/cn";
@@ -10,10 +10,6 @@ import {Routes} from "@/lib/routes";
 import {Button} from "./ui/button";
 
 export function Sidebar() {
-  const pathname = usePathname();
-  function getButtonVariant(href: string) {
-    return pathname.startsWith(href) ? "secondary" : "ghost";
-  }
   return (
     <nav
       className={cn(
@@ -25,28 +21,39 @@ export function Sidebar() {
       <ul
         className={cn("flex gap-1 px-2 py-1.5", "sm:flex-col sm:p-1 sm:py-2")}>
         <li>
-          <Button
-            variant={getButtonVariant(Routes.save)}
-            className={cn("flex h-16 w-20 flex-col")}
-            asChild>
-            <Link href={Routes.save}>
-              <DownloadIcon />
-              save
-            </Link>
-          </Button>
+          <SidebarLink href={Routes.save} icon={<DownloadIcon />}>
+            save
+          </SidebarLink>
         </li>
         <li>
-          <Button
-            variant={getButtonVariant(Routes.settings.root)}
-            className={cn("flex h-16 w-20 flex-col")}
-            asChild>
-            <Link href={Routes.settings.root}>
-              <SettingsIcon />
-              settings
-            </Link>
-          </Button>
+          <SidebarLink href={Routes.settings.root} icon={<SettingsIcon />}>
+            settings
+          </SidebarLink>
         </li>
       </ul>
     </nav>
+  );
+}
+
+interface SidebarLinkProps extends LinkProps {
+  icon: React.ReactNode;
+  children: React.ReactNode;
+}
+
+function SidebarLink({icon, children, ...props}: SidebarLinkProps) {
+  const pathname = usePathname();
+  function isActive() {
+    return typeof props.href === "string" && pathname.startsWith(props.href);
+  }
+  return (
+    <Button
+      variant={isActive() ? "secondary" : "ghost"}
+      className={cn("flex h-16 w-20 flex-col")}
+      asChild>
+      <Link {...props}>
+        {icon}
+        {children}
+      </Link>
+    </Button>
   );
 }
