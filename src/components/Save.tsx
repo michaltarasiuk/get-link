@@ -18,14 +18,14 @@ export function Save() {
       <div
         className={cn(
           "flex flex-col justify-between gap-y-1.5",
-          "sm:flex-row",
+          "md:flex-row",
         )}>
         <ToggleGroup
           type="single"
           defaultValue="auto"
           variant="outline"
           size="lg"
-          className={cn("grid w-full grid-cols-3", "sm:w-auto")}>
+          className={cn("grid w-full grid-cols-3", "md:w-auto")}>
           <ToggleGroupItem value="auto">
             <SparklesIcon className={cn("size-4")} />
           </ToggleGroupItem>

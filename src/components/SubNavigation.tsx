@@ -26,7 +26,7 @@ export function SubNavigationSection({children}: SubNavigationSectionProps) {
     <div
       className={cn(
         "bg-muted border-border rounded-lg border",
-        "sm:border-0 sm:bg-transparent",
+        "md:border-0 md:bg-transparent",
       )}>
       {children}
     </div>
@@ -54,9 +54,9 @@ export function SubNavigationTab({
       href={href}
       className={cn(
         "flex items-center gap-2.5 px-2.5 py-1.5 font-medium transition-colors",
-        "sm:hover:bg-muted sm:rounded-lg sm:p-1.5",
+        "md:hover:bg-muted md:rounded-lg md:p-1.5",
         {
-          "sm:bg-muted": active,
+          "md:bg-muted": active,
         },
       )}>
       <div
@@ -76,13 +76,13 @@ export function SubNavigationTab({
         />
       </div>
       {children}
-      <ChevronRightIcon className={cn("ms-auto size-4", "sm:hidden")} />
+      <ChevronRightIcon className={cn("ms-auto size-4", "md:hidden")} />
     </Link>
   );
 }
 
 export function SubNavigationSeparator() {
-  return <Separator className={cn("sm:hidden")} />;
+  return <Separator className={cn("md:hidden")} />;
 }
 
 const iconContainerVariants = cva(

@@ -9,7 +9,7 @@ interface PageLayoutProps {
 
 export function PageLayout({title, children, header}: PageLayoutProps) {
   return (
-    <div className={cn("pt-12", "sm:pt-0")}>
+    <div className={cn("pt-12", "md:pt-0")}>
       <Header title={title}>{header}</Header>
       {children}
     </div>
@@ -26,7 +26,7 @@ function Header({title, children}: HeaderProps) {
     <header
       className={cn(
         "bg-background fixed top-0 flex h-12 w-full items-center justify-center",
-        "sm:hidden",
+        "md:hidden",
       )}>
       {isDefined(children) && (
         <div className={cn("absolute start-0")}>{children}</div>

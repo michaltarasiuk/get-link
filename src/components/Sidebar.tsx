@@ -16,10 +16,10 @@ export function Sidebar() {
         "bg-sidebar relative",
         "before:bg-sidebar before:block before:h-4",
         "after:bg-background after:absolute after:top-0 after:h-4 after:w-full after:rounded-b-4xl",
-        "sm:border-sidebar-border sm:border-e sm:before:hidden sm:after:hidden",
+        "md:border-sidebar-border md:border-e md:before:hidden md:after:hidden",
       )}>
       <ul
-        className={cn("flex gap-1 px-2 py-1.5", "sm:flex-col sm:p-1 sm:py-2")}>
+        className={cn("flex gap-1 px-2 py-1.5", "md:flex-col md:p-1 md:py-2")}>
         <li>
           <SidebarLink href={Routes.save} icon={DownloadIcon}>
             save
