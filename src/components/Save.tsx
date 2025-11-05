@@ -14,7 +14,11 @@ import {ToggleGroup, ToggleGroupItem} from "./ui/toggle-group";
 export function Save() {
   return (
     <div className={cn("w-full max-w-2xl space-y-1.5 px-3")}>
-      <Input placeholder="paste the link here" className={cn("h-10")} />
+      <Input
+        placeholder="paste the link here"
+        className={cn("h-10")}
+        autoFocus
+      />
       <div
         className={cn(
           "flex flex-col justify-between gap-y-1.5",
@@ -36,7 +40,7 @@ export function Save() {
             <VolumeOffIcon className={cn("size-4")} />
           </ToggleGroupItem>
         </ToggleGroup>
-        <Button size="lg">
+        <Button variant="secondary" size="lg">
           <ClipboardPasteIcon />
           paste
         </Button>

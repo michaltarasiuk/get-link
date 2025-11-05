@@ -1,3 +1,5 @@
+"use client";
+
 import {
   FileDownIcon,
   FileUpIcon,
