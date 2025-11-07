@@ -13,7 +13,7 @@ interface SectionProps {
 
 export function Section({id, title, children}: SectionProps) {
   return (
-    <section id={id} className={cn("p-3")}>
+    <section id={id} className={cn("space-y-3 p-3")}>
       <header className={cn("mb-2.5 flex items-center gap-1.5")}>
         <h2 className={cn("font-semibold")}>{title}</h2>
         <CopyButton getTextToCopy={() => addHashToUrl(id)} />

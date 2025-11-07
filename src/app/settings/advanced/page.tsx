@@ -7,9 +7,12 @@ import {
   ShredderIcon,
 } from "lucide-react";
 
+import {FieldLabelContainer} from "@/components/FieldLabelContainer";
 import {PageLayout} from "@/components/PageLayout";
 import {Section} from "@/components/Section";
 import {Button} from "@/components/ui/button";
+import {Field, FieldDescription} from "@/components/ui/field";
+import {Switch} from "@/components/ui/switch";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
 
@@ -20,7 +23,16 @@ export default function AdvancedPage() {
   return (
     <PageLayout title="advanced" backTo={Routes.settings}>
       <Section id="debug" title="debug">
-        {null}
+        <Field>
+          <FieldLabelContainer>
+            enable features for nerds
+            <Switch />
+          </FieldLabelContainer>
+          <FieldDescription>
+            gives you easy access to app info that can be useful for debugging.
+            enabling this does not affect functionality of the app in any way.
+          </FieldDescription>
+        </Field>
       </Section>
       <Section id="settings-data" title="settings data">
         <div className={cn("flex gap-3")}>

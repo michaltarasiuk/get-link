@@ -1,5 +1,8 @@
+import {FieldLabelContainer} from "@/components/FieldLabelContainer";
 import {PageLayout} from "@/components/PageLayout";
 import {Section} from "@/components/Section";
+import {Field, FieldDescription} from "@/components/ui/field";
+import {Switch} from "@/components/ui/switch";
 import {Routes} from "@/lib/routes";
 
 export default function VideoPage() {
@@ -19,10 +22,28 @@ export default function VideoPage() {
       <Section
         id="high-efficiency-video-codec"
         title="high efficiency video codec">
-        {null}
+        <Field>
+          <FieldLabelContainer>
+            allow h265 for videos
+            <Switch />
+          </FieldLabelContainer>
+          <FieldDescription>
+            allows downloading videos from platforms like tiktok and xiaohongshu
+            in higher quality at cost of compatibility.
+          </FieldDescription>
+        </Field>
       </Section>
       <Section id="twitter-x" title="twitter/x">
-        {null}
+        <Field>
+          <FieldLabelContainer>
+            convert looping videos to GIF
+            <Switch />
+          </FieldLabelContainer>
+          <FieldDescription>
+            GIF conversion is inefficient, converted file may be obnoxiously big
+            and low quality.
+          </FieldDescription>
+        </Field>
       </Section>
     </PageLayout>
   );
