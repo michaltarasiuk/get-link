@@ -8,7 +8,7 @@ export function NativeSelect(props: React.ComponentProps<"select">) {
     <div
       data-slot="native-select-wrapper"
       className={cn(
-        "relative w-20 rounded-md p-1",
+        "relative flex w-20 justify-end rounded-md p-1",
         "has-[select:disabled]:opacity-50",
         "has-focus-visible:border-ring has-focus-visible:ring-ring/50 has-focus-visible:ring-[3px]",
       )}>
@@ -27,9 +27,7 @@ export function NativeSelect(props: React.ComponentProps<"select">) {
       <ChevronsUpDown
         data-slot="native-select-icon"
         aria-hidden="true"
-        className={cn(
-          "text-muted-foreground pointer-events-none size-4 justify-self-end opacity-50 select-none",
-        )}
+        className={cn("text-muted-foreground size-4 opacity-50")}
       />
     </div>
   );
