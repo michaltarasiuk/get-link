@@ -28,7 +28,7 @@ function Header<T>({title, backTo}: HeaderProps<T>) {
   return (
     <header
       className={cn(
-        "bg-background fixed top-0 flex h-12 w-full items-center justify-center",
+        "bg-background fixed top-0 z-50 flex h-12 w-full items-center justify-center",
         "md:hidden",
       )}>
       {isDefined(backTo) && (
