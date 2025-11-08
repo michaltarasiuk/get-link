@@ -5,7 +5,6 @@ import Link, {type LinkProps} from "next/link";
 import {usePathname} from "next/navigation";
 
 import {cn} from "@/lib/cn";
-import {Routes} from "@/lib/routes";
 
 import {Button} from "./ui/button";
 
@@ -21,12 +20,12 @@ export function Sidebar() {
       <ul
         className={cn("flex gap-1 px-3 py-1.5", "md:flex-col md:px-1 md:py-2")}>
         <li>
-          <SidebarLink href={Routes.save} icon={DownloadIcon}>
+          <SidebarLink href="/save" icon={DownloadIcon}>
             save
           </SidebarLink>
         </li>
         <li>
-          <SidebarLink href={Routes.settings} icon={SettingsIcon}>
+          <SidebarLink href="/settings" icon={SettingsIcon}>
             settings
           </SidebarLink>
         </li>
@@ -35,12 +34,17 @@ export function Sidebar() {
   );
 }
 
-interface SidebarLinkProps extends LinkProps {
+interface SidebarLinkProps<T> extends LinkProps<T> {
   icon: LucideIcon;
   children: React.ReactNode;
 }
 
-function SidebarLink({href, icon: Icon, children, ...props}: SidebarLinkProps) {
+function SidebarLink<T>({
+  href,
+  icon: Icon,
+  children,
+  ...props
+}: SidebarLinkProps<T>) {
   const pathname = usePathname();
   const active = typeof href === "string" && pathname.startsWith(href);
   return (

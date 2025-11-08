@@ -3,11 +3,10 @@ import {PageLayout} from "@/components/PageLayout";
 import {Section} from "@/components/Section";
 import {Field, FieldDescription} from "@/components/ui/field";
 import {Switch} from "@/components/ui/switch";
-import {Routes} from "@/lib/routes";
 
 export default function VideoPage() {
   return (
-    <PageLayout title="video" backTo={Routes.settings}>
+    <PageLayout title="video" backTo="/settings">
       <Section id="video-quality" title="video quality">
         {null}
       </Section>

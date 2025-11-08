@@ -25,20 +25,20 @@ export function SubNavigationSection({children}: {children: React.ReactNode}) {
   );
 }
 
-interface SubNavigationTabProps
-  extends LinkProps,
+interface SubNavigationTabProps<T>
+  extends Pick<LinkProps<T>, "href">,
     VariantProps<typeof iconContainerVariants>,
     VariantProps<typeof iconVariants> {
   icon: LucideIcon;
   children: React.ReactNode;
 }
 
-export function SubNavigationTab({
+export function SubNavigationTab<T>({
   href,
   color,
   icon: Icon,
   children,
-}: SubNavigationTabProps) {
+}: SubNavigationTabProps<T>) {
   const pathname = usePathname();
   const active = href === pathname;
   return (

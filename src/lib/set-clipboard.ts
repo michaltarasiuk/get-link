@@ -1,8 +1,6 @@
 export async function setClipboard(text: string) {
-  const type = "text/plain";
-  const clipboardItemData = {
-    [type]: text,
-  };
-  const clipboardItem = new ClipboardItem(clipboardItemData);
+  const clipboardItem = new ClipboardItem({
+    "text/plain": text,
+  });
   await navigator.clipboard.write([clipboardItem]);
 }

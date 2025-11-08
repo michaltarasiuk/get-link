@@ -3,11 +3,10 @@ import {PageLayout} from "@/components/PageLayout";
 import {Section} from "@/components/Section";
 import {Field, FieldDescription} from "@/components/ui/field";
 import {Switch} from "@/components/ui/switch";
-import {Routes} from "@/lib/routes";
 
 export default function AccessibilityPage() {
   return (
-    <PageLayout title="accessibility" backTo={Routes.settings}>
+    <PageLayout title="accessibility" backTo="/settings">
       <Section id="visual" title="visual">
         <Field>
           <FieldLabelContainer>

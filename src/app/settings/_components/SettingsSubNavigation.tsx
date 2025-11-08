@@ -17,21 +17,20 @@ import {
   SubNavigationSeparator,
   SubNavigationTab,
 } from "@/components/SubNavigation";
-import {Routes} from "@/lib/routes";
 
 export function SettingsSubNavigation() {
   return (
     <SubNavigation>
       <SubNavigationSection>
         <SubNavigationTab
-          href={Routes.settingsAppearance}
+          href="/settings/appearance"
           color="blue"
           icon={SunIcon}>
           appearance
         </SubNavigationTab>
         <SubNavigationSeparator />
         <SubNavigationTab
-          href={Routes.settingsAccessibility}
+          href="/settings/accessibility"
           color="purple"
           icon={UserIcon}>
           accessibility
@@ -39,60 +38,51 @@ export function SettingsSubNavigation() {
       </SubNavigationSection>
       <SubNavigationSection>
         <SubNavigationTab
-          href={Routes.settingsVideo}
+          href="/settings/video"
           color="magenta"
           icon={FilmIcon}>
           video
         </SubNavigationTab>
         <SubNavigationSeparator />
         <SubNavigationTab
-          href={Routes.settingsAudio}
+          href="/settings/audio"
           color="orange"
           icon={MusicIcon}>
           audio
         </SubNavigationTab>
         <SubNavigationSeparator />
         <SubNavigationTab
-          href={Routes.settingsMetadata}
+          href="/settings/metadata"
           color="green"
           icon={FileIcon}>
           metadata
         </SubNavigationTab>
       </SubNavigationSection>
       <SubNavigationSection>
-        <SubNavigationTab
-          href={Routes.settingsLocal}
-          color="blue"
-          icon={CpuIcon}>
+        <SubNavigationTab href="/settings/local" color="blue" icon={CpuIcon}>
           local processing
         </SubNavigationTab>
         <SubNavigationSeparator />
         <SubNavigationTab
-          href={Routes.settingsInstances}
+          href="/settings/instances"
           color="purple"
           icon={GlobeIcon}>
           instances
         </SubNavigationTab>
       </SubNavigationSection>
       <SubNavigationSection>
-        <SubNavigationTab
-          href={Routes.settingsPrivacy}
-          color="gray"
-          icon={LockIcon}>
+        <SubNavigationTab href="/settings/privacy" color="gray" icon={LockIcon}>
           privacy
         </SubNavigationTab>
         <SubNavigationSeparator />
         <SubNavigationTab
-          href={Routes.settingsAdvanced}
+          href="/settings/advanced"
           color="gray"
           icon={SlidersVerticalIcon}>
           advanced
         </SubNavigationTab>
         <SubNavigationSeparator />
-        <SubNavigationTab
-          href={Routes.settingsDebug}
-          color="gray"
-          icon={BugIcon}>
+        <SubNavigationTab href="/settings/debug" color="gray" icon={BugIcon}>
           info for nerds
         </SubNavigationTab>
       </SubNavigationSection>

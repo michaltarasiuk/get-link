@@ -2,12 +2,12 @@ import {FieldLabelContainer} from "@/components/FieldLabelContainer";
 import {PageLayout} from "@/components/PageLayout";
 import {Section} from "@/components/Section";
 import {Field, FieldDescription} from "@/components/ui/field";
+import {NativeSelect, NativeSelectOption} from "@/components/ui/native-select";
 import {Switch} from "@/components/ui/switch";
-import {Routes} from "@/lib/routes";
 
 export default function AudioPage() {
   return (
-    <PageLayout title="audio" backTo={Routes.settings}>
+    <PageLayout title="audio" backTo="/settings">
       <Section id="audio-format" title="audio format">
         {null}
       </Section>
@@ -15,17 +15,28 @@ export default function AudioPage() {
         {null}
       </Section>
       <Section id="youtube-audio-quality" title="youtube audio quality">
-        {null}
-      </Section>
-      <Section id="youtube-audio-track" title="youtube audio track">
         <Field>
           <FieldLabelContainer>
             prefer better quality
             <Switch />
           </FieldLabelContainer>
           <FieldDescription>
-            cobalt will use a dubbed audio track for selected language if
-            it&apos;s available. if not, original will be used instead.
+            a dubbed audio track for the selected language will be used if
+            available; otherwise, the original will be used.
+          </FieldDescription>
+        </Field>
+      </Section>
+      <Section id="youtube-audio-track" title="youtube audio track">
+        <Field>
+          <FieldLabelContainer>
+            preferred dub language
+            <NativeSelect>
+              <NativeSelectOption>orginal</NativeSelectOption>
+            </NativeSelect>
+          </FieldLabelContainer>
+          <FieldDescription>
+            a dubbed audio track for the selected language will be used if
+            available; otherwise, the original will be used.
           </FieldDescription>
         </Field>
       </Section>
@@ -36,7 +47,7 @@ export default function AudioPage() {
             <Switch />
           </FieldLabelContainer>
           <FieldDescription>
-            cobalt will download the sound from the video without any changes by
+            the sound will be downloaded from the video without any changes by
             the post&apos;s author.
           </FieldDescription>
         </Field>

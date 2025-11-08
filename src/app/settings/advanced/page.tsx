@@ -14,14 +14,13 @@ import {Button} from "@/components/ui/button";
 import {Field, FieldDescription} from "@/components/ui/field";
 import {Switch} from "@/components/ui/switch";
 import {cn} from "@/lib/cn";
-import {Routes} from "@/lib/routes";
 
 import {ClearCacheAlert} from "../_components/ClearCacheAlert";
 import {ResetSettingsDataAlert} from "../_components/ResetSettingsDataAlert";
 
 export default function AdvancedPage() {
   return (
-    <PageLayout title="advanced" backTo={Routes.settings}>
+    <PageLayout title="advanced" backTo="/settings">
       <Section id="debug" title="debug">
         <Field>
           <FieldLabelContainer>

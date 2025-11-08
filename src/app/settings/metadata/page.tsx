@@ -3,11 +3,10 @@ import {PageLayout} from "@/components/PageLayout";
 import {Section} from "@/components/Section";
 import {Field, FieldDescription} from "@/components/ui/field";
 import {Switch} from "@/components/ui/switch";
-import {Routes} from "@/lib/routes";
 
 export default function MetadataPage() {
   return (
-    <PageLayout title="metadata" backTo={Routes.settings}>
+    <PageLayout title="metadata" backTo="/settings">
       <Section id="filename-style" title="filename style">
         {null}
       </Section>

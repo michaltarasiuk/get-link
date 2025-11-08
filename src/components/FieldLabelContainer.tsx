@@ -11,7 +11,7 @@ export function FieldLabelContainer({
       {...props}
       className={cn(
         props.className,
-        "bg-muted flex justify-between rounded-lg p-3",
+        "bg-muted flex h-11 justify-between rounded-lg px-3",
       )}>
       {children}
     </FieldLabel>
