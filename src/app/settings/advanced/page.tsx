@@ -7,7 +7,7 @@ import {
   ShredderIcon,
 } from "lucide-react";
 
-import {FieldLabelContainer} from "@/components/FieldLabelContainer";
+import {FieldLabelContainer} from "@/components/FieldContainer";
 import {PageLayout} from "@/components/PageLayout";
 import {Section} from "@/components/Section";
 import {Button} from "@/components/ui/button";

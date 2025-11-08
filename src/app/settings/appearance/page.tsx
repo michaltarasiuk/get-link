@@ -1,4 +1,4 @@
-import {FieldLabelContainer} from "@/components/FieldLabelContainer";
+import {FieldContainer, FieldLabelContainer} from "@/components/FieldContainer";
 import {PageLayout} from "@/components/PageLayout";
 import {Section} from "@/components/Section";
 import {Field, FieldDescription} from "@/components/ui/field";
@@ -9,7 +9,13 @@ export default function AppearancePage() {
   return (
     <PageLayout title="appearance" backTo="/settings">
       <Section id="theme" title="theme">
-        {null}
+        <Field>
+          <FieldContainer>{null}</FieldContainer>
+          <FieldDescription>
+            auto theme switches between light and dark themes depending on your
+            device&apos;s display mode.
+          </FieldDescription>
+        </Field>
       </Section>
       <Section id="language" title="language">
         <Field>

@@ -1,4 +1,4 @@
-import {FieldLabelContainer} from "@/components/FieldLabelContainer";
+import {FieldContainer, FieldLabelContainer} from "@/components/FieldContainer";
 import {PageLayout} from "@/components/PageLayout";
 import {Section} from "@/components/Section";
 import {Field, FieldDescription} from "@/components/ui/field";
@@ -9,10 +9,26 @@ export default function AudioPage() {
   return (
     <PageLayout title="audio" backTo="/settings">
       <Section id="audio-format" title="audio format">
-        {null}
+        <Field>
+          <FieldContainer>{null}</FieldContainer>
+          <FieldDescription>
+            all formats but &quot;best&quot; are converted from the source
+            format, there will be some quality loss. when &quot;best&quot;
+            format is selected, the audio is kept in its original format
+            whenever possible.
+          </FieldDescription>
+        </Field>
       </Section>
       <Section id="audio-bitrate" title="audio bitrate">
-        {null}
+        <Field>
+          <FieldContainer>{null}</FieldContainer>
+          <FieldDescription>
+            bitrate is applied only when converting audio to a lossy format.
+            cobalt can&apos;t improve the source audio quality, so choosing a
+            bitrate over 128kbps may inflate the file size with no audible
+            difference. perceived quality may vary by format.
+          </FieldDescription>
+        </Field>
       </Section>
       <Section id="youtube-audio-quality" title="youtube audio quality">
         <Field>
