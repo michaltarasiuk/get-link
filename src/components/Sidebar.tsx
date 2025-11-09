@@ -18,7 +18,10 @@ export function Sidebar() {
         "md:border-sidebar-border md:border-e md:before:hidden md:after:hidden",
       )}>
       <ul
-        className={cn("flex gap-1 px-3 py-1.5", "md:flex-col md:px-1 md:py-2")}>
+        className={cn(
+          "sticky top-0 flex gap-1 px-3 py-1.5",
+          "md:flex-col md:px-1 md:py-2",
+        )}>
         <li>
           <SidebarLink href="/save" icon={DownloadIcon}>
             save

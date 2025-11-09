@@ -10,7 +10,7 @@ import {cn} from "@/lib/cn";
 import {Separator} from "./ui/separator";
 
 export function SubNavigation({children}: {children: React.ReactNode}) {
-  return <nav className={cn("space-y-3 p-3")}>{children}</nav>;
+  return <nav className={cn("sticky top-0 space-y-3 p-3")}>{children}</nav>;
 }
 
 export function SubNavigationSection({children}: {children: React.ReactNode}) {
