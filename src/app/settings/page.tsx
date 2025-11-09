@@ -4,12 +4,11 @@ import {useRouter} from "next/navigation";
 import {useEffect} from "react";
 
 import {PageLayout} from "@/components/PageLayout";
-import {getMobileMedia} from "@/lib/get-mobile-media.ts";
 
 export default function SettingsPage() {
   const router = useRouter();
   useEffect(() => {
-    const mobileMedia = getMobileMedia();
+    const mobileMedia = matchMedia("(max-width: 48rem)");
     handleMediaChange(mobileMedia);
     mobileMedia.addEventListener("change", handleMediaChange);
     return () => {
