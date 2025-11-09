@@ -12,8 +12,8 @@ const ToggleGroupContext = createContext<
     spacing?: number;
   }
 >({
-  size: "default",
   variant: "default",
+  size: "default",
   spacing: 0,
 });
 
@@ -24,9 +24,7 @@ export function ToggleGroup({
   spacing = 0,
   ...props
 }: React.ComponentProps<typeof ToggleGroupPrimitive.Root> &
-  VariantProps<typeof toggleVariants> & {
-    spacing?: number;
-  }) {
+  React.ContextType<typeof ToggleGroupContext>) {
   return (
     <ToggleGroupPrimitive.Root
       data-slot="toggle-group"

@@ -14,7 +14,8 @@ export function FieldSet(props: React.ComponentProps<"fieldset">) {
       {...props}
       className={cn(
         "flex flex-col gap-6",
-        "has-[>[data-slot=checkbox-group]]:gap-3 has-[>[data-slot=radio-group]]:gap-3",
+        "has-[>[data-slot=checkbox-group]]:gap-3",
+        "has-[>[data-slot=radio-group]]:gap-3",
         props.className,
       )}
     />
@@ -152,8 +153,8 @@ export function FieldDescription(props: React.ComponentProps<"p">) {
       {...props}
       className={cn(
         "text-muted-foreground text-sm leading-normal font-normal",
-        "[[data-variant=legend]+&]:-mt-1.5",
         "last:mt-0 nth-last-2:-mt-1",
+        "[[data-variant=legend]+&]:-mt-1.5",
         "group-has-data-[orientation=horizontal]/field:text-balance",
         "[&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4",
         props.className,

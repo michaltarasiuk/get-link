@@ -20,7 +20,8 @@ export function NativeSelect(props: React.ComponentProps<"select">) {
           "placeholder:text-muted-foreground",
           "selection:text-primary-foreground",
           "disabled:pointer-events-none disabled:cursor-not-allowed",
-          "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+          "aria-invalid:ring-destructive/20 aria-invalid:border-destructive",
+          "dark:aria-invalid:ring-destructive/40",
           props.className,
         )}
       />
