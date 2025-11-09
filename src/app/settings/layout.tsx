@@ -20,6 +20,6 @@ export default function SettingsLayout({children}: LayoutProps<"/settings">) {
         <SettingsSubNavigation />
       </aside>
       <main className={cn("md:basis-xl md:p-3")}>{children}</main>
-    </div>  
+    </div>
   );
 }
