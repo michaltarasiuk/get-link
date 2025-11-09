@@ -21,7 +21,7 @@ export default function Layout({children}: LayoutProps<"/">) {
           }}
         />
         <div className={cn("flex min-h-dvh flex-col", "md:flex-row-reverse")}>
-          <div className={cn("flex-1")}>{children}</div>
+          <div className={cn("flex flex-1 flex-col")}>{children}</div>
           <Sidebar />
           <ProcessingQueue />
         </div>
