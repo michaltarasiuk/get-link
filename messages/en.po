@@ -244,6 +244,16 @@ msgstr "you can use a custom processing instance if you choose to. even though t
 msgid "jGlX0H"
 msgstr "advanced"
 
+#: src/app/[locale]/(main)/settings/layout.tsx
+#: src/app/[locale]/(main)/settings/privacy/page.tsx
+msgid "IRioK2"
+msgstr "privacy"
+
+#: src/app/[locale]/(main)/settings/layout.tsx
+#: src/app/[locale]/(main)/settings/video/page.tsx
+msgid "4jAirD"
+msgstr "video"
+
 #: src/app/[locale]/(main)/settings/local/page.tsx
 msgid "TyvnM7"
 msgstr "disabled: local processing will not be used. processing instances can enforce local processing, so this option may not have effect. preferred: media that requires extra processing will be downloaded through the processing queue, but the rest of media will be downloaded by your browser's download manager. forced: all media will always be proxied and downloaded through the processing queue."
@@ -324,11 +334,6 @@ msgid "xa3ck5"
 msgstr "always tunnel files"
 
 #: src/app/[locale]/(main)/settings/privacy/page.tsx
-#: src/app/[locale]/(main)/settings/layout.tsx
-msgid "IRioK2"
-msgstr "privacy"
-
-#: src/app/[locale]/(main)/settings/privacy/page.tsx
 msgid "xanIEl"
 msgstr "this will hide your ip address, browser info, and bypass local network restrictions. when enabled, files will also have readable filenames that otherwise would be gibberish."
 
@@ -375,11 +380,6 @@ msgstr "preferred youtube video codec"
 #: src/app/[locale]/(main)/settings/video/page.tsx
 msgid "op/G65"
 msgstr "twitter/x"
-
-#: src/app/[locale]/(main)/settings/video/page.tsx
-#: src/app/[locale]/(main)/settings/layout.tsx
-msgid "4jAirD"
-msgstr "video"
 
 #: src/app/[locale]/(main)/settings/video/page.tsx
 msgid "Jmimjr"

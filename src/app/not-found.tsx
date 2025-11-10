@@ -11,7 +11,7 @@ import {cn} from "@/lib/cn";
 export default async function NotFound() {
   const t = await getExtracted();
   return (
-    <div className={cn("flex size-full items-center justify-center")}>
+    <div className={cn("flex min-h-dvh items-center justify-center")}>
       <Empty>
         <EmptyHeader>
           <EmptyTitle>{t("404 - Not Found")}</EmptyTitle>
