@@ -3,6 +3,7 @@
 import {DownloadIcon, type LucideIcon, SettingsIcon} from "lucide-react";
 import {useExtracted} from "next-intl";
 
+import {useIsMobile} from "@/hooks/use-is-mobile";
 import {Link, usePathname} from "@/i18n/navigation";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
@@ -10,7 +11,11 @@ import {Routes} from "@/lib/routes";
 import {Button} from "./ui/button";
 
 export function Sidebar() {
+  const isMobile = useIsMobile();
   const t = useExtracted();
+  const settingsRoute = isMobile
+    ? Routes.settings.root
+    : Routes.settings.appearance;
   return (
     <nav
       className={cn(
@@ -30,7 +35,7 @@ export function Sidebar() {
           </SidebarLink>
         </li>
         <li>
-          <SidebarLink href={Routes.settings.root} icon={SettingsIcon}>
+          <SidebarLink href={settingsRoute} icon={SettingsIcon}>
             {t("settings")}
           </SidebarLink>
         </li>
@@ -47,7 +52,7 @@ interface SidebarLinkProps {
 
 function SidebarLink({href, icon: Icon, children, ...props}: SidebarLinkProps) {
   const pathname = usePathname();
-  const active = typeof href === "string" && pathname.startsWith(href);
+  const active = pathname.startsWith(href);
   return (
     <Button
       variant={active ? "secondary" : "ghost"}

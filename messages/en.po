@@ -158,6 +158,11 @@ msgid "+igM0I"
 msgstr "all formats but 'best' are converted from the source format, there will be some quality loss. when 'best' format is selected, the audio is kept in its original format whenever possible."
 
 #: src/app/[locale]/(shell)/settings/audio/page.tsx
+#: src/app/[locale]/(shell)/settings/layout.tsx
+msgid "p1oDwV"
+msgstr "audio"
+
+#: src/app/[locale]/(shell)/settings/audio/page.tsx
 msgid "WQCH+b"
 msgstr "audio bitrate"
 
@@ -238,11 +243,6 @@ msgstr "use an instance access key"
 #: src/app/[locale]/(shell)/settings/instances/page.tsx
 msgid "w0iiK5"
 msgstr "you can use a custom processing instance if you choose to. even though there are some security measures in place, we are not responsible for any damages done via a community instance, as we have no control over them."
-
-#: src/app/[locale]/(shell)/settings/layout.tsx
-#: src/app/[locale]/(shell)/settings/audio/page.tsx
-msgid "p1oDwV"
-msgstr "audio"
 
 #: src/app/[locale]/(shell)/settings/local/page.tsx
 msgid "TyvnM7"

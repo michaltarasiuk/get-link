@@ -6,7 +6,7 @@ import {setClipboard} from "@/lib/set-clipboard";
 
 import {Button} from "./ui/button";
 
-export function CopyButton({getTextToCopy}: {getTextToCopy: () => string}) {
+export function CopyButton({getCopyText}: {getCopyText: () => string}) {
   const [copied, setCopied] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout>(undefined);
   useEffect(() => {
@@ -15,7 +15,7 @@ export function CopyButton({getTextToCopy}: {getTextToCopy: () => string}) {
     };
   }, []);
   async function handleCopy() {
-    const text = getTextToCopy();
+    const text = getCopyText();
     await setClipboard(text);
     setCopied(true);
     clearTimeout(timeoutRef.current);

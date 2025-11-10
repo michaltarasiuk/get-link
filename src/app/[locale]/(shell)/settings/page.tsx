@@ -5,13 +5,14 @@ import {useEffect} from "react";
 
 import {PageLayout} from "@/components/PageLayout";
 import {useRouter} from "@/i18n/navigation";
+import {getMobileMedia} from "@/lib/mobile-media";
 import {Routes} from "@/lib/routes";
 
 export default function SettingsPage() {
   const router = useRouter();
   const t = useExtracted();
   useEffect(() => {
-    const mobileMedia = matchMedia("(max-width: 48rem)");
+    const mobileMedia = getMobileMedia();
     handleMediaChange(mobileMedia);
     mobileMedia.addEventListener("change", handleMediaChange);
     return () => {
