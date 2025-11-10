@@ -1,0 +1,410 @@
+msgid ""
+msgstr ""
+"Language: en\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: next-intl\n"
+"X-Crowdin-SourceKey: msgstr\n"
+
+#: src/app/[locale]/(main)/settings/accessibility/page.tsx
+#: src/app/[locale]/(main)/settings/layout.tsx
+msgid "AMFmfD"
+msgstr "accessibility"
+
+#: src/app/[locale]/(main)/settings/accessibility/page.tsx
+msgid "NgMcU7"
+msgstr "animations and transitions will be disabled whenever possible."
+
+#: src/app/[locale]/(main)/settings/accessibility/page.tsx
+msgid "2tG2Wh"
+msgstr "behavior"
+
+#: src/app/[locale]/(main)/settings/accessibility/page.tsx
+msgid "3VYa+b"
+msgstr "don't open the queue automatically"
+
+#: src/app/[locale]/(main)/settings/accessibility/page.tsx
+msgid "jqnhrG"
+msgstr "reduce motion"
+
+#: src/app/[locale]/(main)/settings/accessibility/page.tsx
+msgid "/aSDqG"
+msgstr "reduce visual transparency"
+
+#: src/app/[locale]/(main)/settings/accessibility/page.tsx
+msgid "VARD8p"
+msgstr "the processing queue will not be opened automatically whenever a new item is added to it. progress will still be displayed and you will still be able to open it manually."
+
+#: src/app/[locale]/(main)/settings/accessibility/page.tsx
+msgid "dzcRsv"
+msgstr "transparency of surfaces will be reduced and all blur effects will be disabled. may also improve ui performance on less powerful devices."
+
+#: src/app/[locale]/(main)/settings/accessibility/page.tsx
+msgid "2Am99U"
+msgstr "visual"
+
+#: src/app/[locale]/(main)/settings/advanced/page.tsx
+msgid "SY1dJk"
+msgstr "all files from the processing queue will be removed and on-device features will take longer to load. this action is immediate and irreversible."
+
+#: src/app/[locale]/(main)/settings/advanced/page.tsx
+msgid "MIrUnq"
+msgstr "are you sure you want to reset all settings? this action is immediate and irreversible."
+
+#: src/app/[locale]/(main)/settings/advanced/page.tsx
+msgid "cqZqGK"
+msgstr "cancel"
+
+#: src/app/[locale]/(main)/settings/advanced/page.tsx
+msgid "Ks6VyE"
+msgstr "clear"
+
+#: src/app/[locale]/(main)/settings/advanced/page.tsx
+msgid "tkM8oX"
+msgstr "clear all cache"
+
+#: src/app/[locale]/(main)/settings/advanced/page.tsx
+msgid "VfUusQ"
+msgstr "clear cache"
+
+#: src/app/[locale]/(main)/settings/advanced/page.tsx
+msgid "Il0FuR"
+msgstr "debug"
+
+#: src/app/[locale]/(main)/settings/advanced/page.tsx
+msgid "A8GsJH"
+msgstr "enable features for nerds"
+
+#: src/app/[locale]/(main)/settings/advanced/page.tsx
+msgid "L1dzuE"
+msgstr "export"
+
+#: src/app/[locale]/(main)/settings/advanced/page.tsx
+msgid "HQeenE"
+msgstr "gives you easy access to app info that can be useful for debugging. enabling this does not affect functionality of the app in any way."
+
+#: src/app/[locale]/(main)/settings/advanced/page.tsx
+msgid "o5yNgF"
+msgstr "import"
+
+#: src/app/[locale]/(main)/settings/advanced/page.tsx
+msgid "p5Zgdw"
+msgstr "local storage"
+
+#: src/app/[locale]/(main)/settings/advanced/page.tsx
+msgid "vI2rTZ"
+msgstr "reset"
+
+#: src/app/[locale]/(main)/settings/advanced/page.tsx
+msgid "EfEzy9"
+msgstr "reset all settings?"
+
+#: src/app/[locale]/(main)/settings/advanced/page.tsx
+msgid "SgXr8x"
+msgstr "settings data"
+
+#: src/app/[locale]/(main)/settings/appearance/page.tsx
+#: src/app/[locale]/(main)/settings/layout.tsx
+msgid "LvUke6"
+msgstr "appearance"
+
+#: src/app/[locale]/(main)/settings/appearance/page.tsx
+msgid "1JeN7u"
+msgstr "auto theme switches between light and dark themes depending on your device's display mode."
+
+#: src/app/[locale]/(main)/settings/appearance/page.tsx
+msgid "c1YY2X"
+msgstr "automatic selection"
+
+#: src/app/[locale]/(main)/settings/appearance/page.tsx
+msgid "CIK3Au"
+msgstr "english"
+
+#: src/app/[locale]/(main)/settings/appearance/page.tsx
+msgid "Rbe+bp"
+msgstr "language"
+
+#: src/app/[locale]/(main)/settings/appearance/page.tsx
+msgid "3deMMV"
+msgstr "preferred language"
+
+#: src/app/[locale]/(main)/settings/appearance/page.tsx
+msgid "s/KHAd"
+msgstr "some languages use community-sourced translations, they may be inaccurate or incomplete."
+
+#: src/app/[locale]/(main)/settings/appearance/page.tsx
+msgid "8dphsz"
+msgstr "the app will use your browser's default language if translation is available. if not, english will be used instead."
+
+#: src/app/[locale]/(main)/settings/appearance/page.tsx
+msgid "yxvjWG"
+msgstr "theme"
+
+#: src/app/[locale]/(main)/settings/appearance/page.tsx
+msgid "yhQlzu"
+msgstr "this language will be used when automatic selection is disabled. any text that isn't translated will be displayed in english."
+
+#: src/app/[locale]/(main)/settings/audio/page.tsx
+msgid "6ebmtq"
+msgstr "a dubbed audio track for the selected language will be used if available; otherwise, the original will be used."
+
+#: src/app/[locale]/(main)/settings/audio/page.tsx
+msgid "+igM0I"
+msgstr "all formats but 'best' are converted from the source format, there will be some quality loss. when 'best' format is selected, the audio is kept in its original format whenever possible."
+
+#: src/app/[locale]/(main)/settings/audio/page.tsx
+#: src/app/[locale]/(main)/settings/layout.tsx
+msgid "p1oDwV"
+msgstr "audio"
+
+#: src/app/[locale]/(main)/settings/audio/page.tsx
+msgid "WQCH+b"
+msgstr "audio bitrate"
+
+#: src/app/[locale]/(main)/settings/audio/page.tsx
+msgid "zy+uPI"
+msgstr "audio format"
+
+#: src/app/[locale]/(main)/settings/audio/page.tsx
+msgid "b7Wv8I"
+msgstr "bitrate is applied only when converting audio to a lossy format. cobalt can't improve the source audio quality, so choosing a bitrate over 128kbps may inflate the file size with no audible difference. perceived quality may vary by format."
+
+#: src/app/[locale]/(main)/settings/audio/page.tsx
+msgid "VXtcTG"
+msgstr "download original sound"
+
+#: src/app/[locale]/(main)/settings/audio/page.tsx
+msgid "yF583A"
+msgstr "orginal"
+
+#: src/app/[locale]/(main)/settings/audio/page.tsx
+msgid "dxrhKn"
+msgstr "prefer better quality"
+
+#: src/app/[locale]/(main)/settings/audio/page.tsx
+msgid "lsZha+"
+msgstr "preferred dub language"
+
+#: src/app/[locale]/(main)/settings/audio/page.tsx
+msgid "Xf7mUY"
+msgstr "the sound will be downloaded from the video without any changes by the post's author."
+
+#: src/app/[locale]/(main)/settings/audio/page.tsx
+msgid "vrcFPE"
+msgstr "tiktok"
+
+#: src/app/[locale]/(main)/settings/audio/page.tsx
+msgid "tA1BMt"
+msgstr "youtube audio quality"
+
+#: src/app/[locale]/(main)/settings/audio/page.tsx
+msgid "Um9xiY"
+msgstr "youtube audio track"
+
+#: src/app/[locale]/(main)/settings/debug/page.tsx
+#: src/app/[locale]/(main)/settings/layout.tsx
+msgid "S9JpxO"
+msgstr "info for nerds"
+
+#: src/app/[locale]/(main)/settings/instances/page.tsx
+msgid "gDXcAU"
+msgstr "community instances"
+
+#: src/app/[locale]/(main)/settings/instances/page.tsx
+msgid "mwCzQB"
+msgstr "instance access key"
+
+#: src/app/[locale]/(main)/settings/instances/page.tsx
+#: src/app/[locale]/(main)/settings/layout.tsx
+msgid "m01g9v"
+msgstr "instances"
+
+#: src/app/[locale]/(main)/settings/instances/page.tsx
+msgid "PsqRBy"
+msgstr "please be mindful of what instances you use and make sure they're hosted by people you trust."
+
+#: src/app/[locale]/(main)/settings/instances/page.tsx
+msgid "7lLa6T"
+msgstr "the app will use this key to make requests to the processing instance instead of other authentication methods. make sure the instance supports api keys!"
+
+#: src/app/[locale]/(main)/settings/instances/page.tsx
+msgid "jjXbSj"
+msgstr "use a custom processing server"
+
+#: src/app/[locale]/(main)/settings/instances/page.tsx
+msgid "fk3vTn"
+msgstr "use an instance access key"
+
+#: src/app/[locale]/(main)/settings/instances/page.tsx
+msgid "w0iiK5"
+msgstr "you can use a custom processing instance if you choose to. even though there are some security measures in place, we are not responsible for any damages done via a community instance, as we have no control over them."
+
+#: src/app/[locale]/(main)/settings/layout.tsx
+#: src/app/[locale]/(main)/settings/advanced/page.tsx
+msgid "jGlX0H"
+msgstr "advanced"
+
+#: src/app/[locale]/(main)/settings/local/page.tsx
+msgid "TyvnM7"
+msgstr "disabled: local processing will not be used. processing instances can enforce local processing, so this option may not have effect. preferred: media that requires extra processing will be downloaded through the processing queue, but the rest of media will be downloaded by your browser's download manager. forced: all media will always be proxied and downloaded through the processing queue."
+
+#: src/app/[locale]/(main)/settings/local/page.tsx
+msgid "O94joq"
+msgstr "exclusive on-device features are not affected by this setting, they always run locally."
+
+#: src/app/[locale]/(main)/settings/local/page.tsx
+msgid "WBZ7nZ"
+msgstr "local media processing"
+
+#: src/app/[locale]/(main)/settings/local/page.tsx
+#: src/app/[locale]/(main)/settings/layout.tsx
+msgid "pcbEfZ"
+msgstr "local processing"
+
+#: src/app/[locale]/(main)/settings/local/page.tsx
+msgid "1cAaCJ"
+msgstr "when downloading media, remuxing and transcoding will be done on-device instead of the cloud. you'll see detailed progress in the processing queue."
+
+#: src/app/[locale]/(main)/settings/metadata/page.tsx
+msgid "JGqJiZ"
+msgstr "disable file metadata"
+
+#: src/app/[locale]/(main)/settings/metadata/page.tsx
+msgid "EGKzpP"
+msgstr "file metadata"
+
+#: src/app/[locale]/(main)/settings/metadata/page.tsx
+msgid "9Scz0h"
+msgstr "filename style"
+
+#: src/app/[locale]/(main)/settings/metadata/page.tsx
+msgid "18QRjo"
+msgstr "filename style will only be used for files tunneled by cobalt. some services don't support filename styles other than classic."
+
+#: src/app/[locale]/(main)/settings/metadata/page.tsx
+#: src/app/[locale]/(main)/settings/layout.tsx
+msgid "Cdmjub"
+msgstr "metadata"
+
+#: src/app/[locale]/(main)/settings/metadata/page.tsx
+msgid "q5Op6V"
+msgstr "none"
+
+#: src/app/[locale]/(main)/settings/metadata/page.tsx
+msgid "wH5Gtp"
+msgstr "preferred subtitle language"
+
+#: src/app/[locale]/(main)/settings/metadata/page.tsx
+msgid "aensA6"
+msgstr "preferred way of saving the file or link from cobalt. if preferred method is unavailable or something goes wrong, cobalt will ask you what to do next."
+
+#: src/app/[locale]/(main)/settings/metadata/page.tsx
+msgid "SriSuo"
+msgstr "saving method"
+
+#: src/app/[locale]/(main)/settings/metadata/page.tsx
+msgid "6f8Oaj"
+msgstr "subtitles"
+
+#: src/app/[locale]/(main)/settings/metadata/page.tsx
+msgid "L5KKUA"
+msgstr "subtitles will be added to the downloaded file in the preferred language if they're available. some services don't have a language selection, and if that's the case, the only available subtitle track will be added if you have any language selected."
+
+#: src/app/[locale]/(main)/settings/metadata/page.tsx
+msgid "JsHi4b"
+msgstr "title, artist, and other info will not be added to the file."
+
+#: src/app/[locale]/(main)/settings/page.tsx
+#: src/components/Sidebar.tsx
+msgid "oFJ8He"
+msgstr "settings"
+
+#: src/app/[locale]/(main)/settings/privacy/page.tsx
+msgid "xa3ck5"
+msgstr "always tunnel files"
+
+#: src/app/[locale]/(main)/settings/privacy/page.tsx
+#: src/app/[locale]/(main)/settings/layout.tsx
+msgid "IRioK2"
+msgstr "privacy"
+
+#: src/app/[locale]/(main)/settings/privacy/page.tsx
+msgid "xanIEl"
+msgstr "this will hide your ip address, browser info, and bypass local network restrictions. when enabled, files will also have readable filenames that otherwise would be gibberish."
+
+#: src/app/[locale]/(main)/settings/privacy/page.tsx
+msgid "WBbCPM"
+msgstr "tunneling"
+
+#: src/app/[locale]/(main)/settings/video/page.tsx
+msgid "kso6YL"
+msgstr "allow h265 for videos"
+
+#: src/app/[locale]/(main)/settings/video/page.tsx
+msgid "UXHAjS"
+msgstr "allows downloading videos from platforms like tiktok and xiaohongshu in higher quality at cost of compatibility."
+
+#: src/app/[locale]/(main)/settings/video/page.tsx
+msgid "nEfnfd"
+msgstr "av1 and vp9 aren't widely supported, you might have to use additional software to play/edit them. cobalt picks next best codec if preferred one isn't available."
+
+#: src/app/[locale]/(main)/settings/video/page.tsx
+msgid "8gYq4p"
+msgstr "convert looping videos to GIF"
+
+#: src/app/[locale]/(main)/settings/video/page.tsx
+msgid "O5nfSC"
+msgstr "GIF conversion is inefficient, converted file may be obnoxiously big and low quality."
+
+#: src/app/[locale]/(main)/settings/video/page.tsx
+msgid "O/Jrh7"
+msgstr "h264: best compatibility, average quality. max quality is 1080p. av1: best quality and efficiency. supports 8k & HDR. vp9: same quality as av1, but file is ~2x bigger. supports 4k & HDR."
+
+#: src/app/[locale]/(main)/settings/video/page.tsx
+msgid "s4H+cG"
+msgstr "high efficiency video codec"
+
+#: src/app/[locale]/(main)/settings/video/page.tsx
+msgid "U1wCNG"
+msgstr "if preferred video quality isn't available, next best is picked instead."
+
+#: src/app/[locale]/(main)/settings/video/page.tsx
+msgid "/hZ+31"
+msgstr "preferred youtube video codec"
+
+#: src/app/[locale]/(main)/settings/video/page.tsx
+msgid "op/G65"
+msgstr "twitter/x"
+
+#: src/app/[locale]/(main)/settings/video/page.tsx
+#: src/app/[locale]/(main)/settings/layout.tsx
+msgid "4jAirD"
+msgstr "video"
+
+#: src/app/[locale]/(main)/settings/video/page.tsx
+msgid "Jmimjr"
+msgstr "video quality"
+
+#: src/app/[locale]/(main)/settings/video/page.tsx
+msgid "oAk1gK"
+msgstr "when 'auto' is selected, cobalt will pick the best container automatically depending on selected codec: mp4 for h264; webm for vp9/av1."
+
+#: src/app/[locale]/(main)/settings/video/page.tsx
+msgid "QdZ7iO"
+msgstr "youtube file container"
+
+#: src/app/not-found.tsx
+msgid "q5s7Bm"
+msgstr "404 - Not Found"
+
+#: src/app/not-found.tsx
+msgid "rUBRAG"
+msgstr "The page you're looking for doesn't exist."
+
+#: src/components/Save.tsx
+msgid "YwNXdC"
+msgstr "paste"
+
+#: src/components/Sidebar.tsx
+msgid "EjXcOc"
+msgstr "save"

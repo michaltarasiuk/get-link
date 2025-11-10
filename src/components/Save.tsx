@@ -4,6 +4,7 @@ import {
   SparklesIcon,
   VolumeOffIcon,
 } from "lucide-react";
+import {getExtracted} from "next-intl/server";
 
 import {cn} from "@/lib/cn";
 
@@ -11,7 +12,8 @@ import {Button} from "./ui/button";
 import {Input} from "./ui/input";
 import {ToggleGroup, ToggleGroupItem} from "./ui/toggle-group";
 
-export function Save() {
+export async function Save() {
+  const t = await getExtracted();
   return (
     <div className={cn("w-full max-w-2xl space-y-1.5 px-3")}>
       <Input
@@ -42,7 +44,7 @@ export function Save() {
         </ToggleGroup>
         <Button variant="secondary" size="lg">
           <ClipboardPasteIcon />
-          paste
+          {t("paste")}
         </Button>
       </div>
     </div>

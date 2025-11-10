@@ -2,9 +2,8 @@
 
 import {cva, type VariantProps} from "class-variance-authority";
 import {ChevronRightIcon, type LucideIcon} from "lucide-react";
-import Link, {type LinkProps} from "next/link";
-import {usePathname} from "next/navigation";
 
+import {Link, usePathname} from "@/i18n/navigation";
 import {cn} from "@/lib/cn";
 
 import {Separator} from "./ui/separator";
@@ -25,20 +24,20 @@ export function SubNavigationSection({children}: {children: React.ReactNode}) {
   );
 }
 
-interface SubNavigationTabProps<T>
-  extends Pick<LinkProps<T>, "href">,
-    VariantProps<typeof iconContainerVariants>,
+interface SubNavigationTabProps
+  extends VariantProps<typeof iconContainerVariants>,
     VariantProps<typeof iconVariants> {
+  href: string;
   icon: LucideIcon;
   children: React.ReactNode;
 }
 
-export function SubNavigationTab<T>({
+export function SubNavigationTab({
   href,
   color,
   icon: Icon,
   children,
-}: SubNavigationTabProps<T>) {
+}: SubNavigationTabProps) {
   const pathname = usePathname();
   const active = href === pathname;
   return (

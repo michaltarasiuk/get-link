@@ -1,6 +1,18 @@
 import type {NextConfig} from "next";
+import createNextIntlPlugin from "next-intl/plugin";
 
-const nextConfig: NextConfig = {
-  typedRoutes: true,
-};
-export default nextConfig;
+const nextConfig: NextConfig = {};
+const withNextIntl = createNextIntlPlugin({
+  experimental: {
+    srcPath: "./src",
+    extract: {
+      sourceLocale: "en",
+    },
+    messages: {
+      path: "./messages",
+      format: "po",
+      locales: "infer",
+    },
+  },
+});
+export default withNextIntl(nextConfig);

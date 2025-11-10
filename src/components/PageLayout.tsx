@@ -1,16 +1,16 @@
 import {ArrowLeftIcon} from "lucide-react";
-import Link, {type LinkProps} from "next/link";
 
+import {Link} from "@/i18n/navigation";
 import {cn} from "@/lib/cn";
 import {isDefined} from "@/lib/is-defined";
 
 import {Button} from "./ui/button";
 
-interface PageLayoutProps<T> extends HeaderProps<T> {
+interface PageLayoutProps extends HeaderProps {
   children: React.ReactNode;
 }
 
-export function PageLayout<T>({children, ...props}: PageLayoutProps<T>) {
+export function PageLayout({children, ...props}: PageLayoutProps) {
   return (
     <div className={cn("pt-12", "md:pt-0")}>
       <Header {...props} />
@@ -19,12 +19,12 @@ export function PageLayout<T>({children, ...props}: PageLayoutProps<T>) {
   );
 }
 
-interface HeaderProps<T> {
+interface HeaderProps {
   title: string;
-  backTo?: LinkProps<T>["href"];
+  backTo?: string;
 }
 
-function Header<T>({title, backTo}: HeaderProps<T>) {
+function Header({title, backTo}: HeaderProps) {
   return (
     <header
       className={cn(

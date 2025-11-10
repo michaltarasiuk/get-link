@@ -1,3 +1,5 @@
+import {getExtracted} from "next-intl/server";
+
 import {
   Empty,
   EmptyDescription,
@@ -6,14 +8,15 @@ import {
 } from "@/components/ui/empty";
 import {cn} from "@/lib/cn";
 
-export default function NotFound() {
+export default async function NotFound() {
+  const t = await getExtracted();
   return (
     <div className={cn("flex size-full items-center justify-center")}>
       <Empty>
         <EmptyHeader>
-          <EmptyTitle>404 - Not Found</EmptyTitle>
+          <EmptyTitle>{t("404 - Not Found")}</EmptyTitle>
           <EmptyDescription>
-            The page you&apos;re looking for doesn&apos;t exist.
+            {t("The page you're looking for doesn't exist.")}
           </EmptyDescription>
         </EmptyHeader>
       </Empty>
