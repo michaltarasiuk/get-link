@@ -44,6 +44,11 @@ msgid "2Am99U"
 msgstr "visual"
 
 #: src/app/[locale]/(shell)/settings/advanced/page.tsx
+#: src/app/[locale]/(shell)/settings/layout.tsx
+msgid "jGlX0H"
+msgstr "advanced"
+
+#: src/app/[locale]/(shell)/settings/advanced/page.tsx
 msgid "SY1dJk"
 msgstr "all files from the processing queue will be removed and on-device features will take longer to load. this action is immediate and irreversible."
 
@@ -153,11 +158,6 @@ msgid "+igM0I"
 msgstr "all formats but 'best' are converted from the source format, there will be some quality loss. when 'best' format is selected, the audio is kept in its original format whenever possible."
 
 #: src/app/[locale]/(shell)/settings/audio/page.tsx
-#: src/app/[locale]/(shell)/settings/layout.tsx
-msgid "p1oDwV"
-msgstr "audio"
-
-#: src/app/[locale]/(shell)/settings/audio/page.tsx
 msgid "WQCH+b"
 msgstr "audio bitrate"
 
@@ -240,9 +240,9 @@ msgid "w0iiK5"
 msgstr "you can use a custom processing instance if you choose to. even though there are some security measures in place, we are not responsible for any damages done via a community instance, as we have no control over them."
 
 #: src/app/[locale]/(shell)/settings/layout.tsx
-#: src/app/[locale]/(shell)/settings/advanced/page.tsx
-msgid "jGlX0H"
-msgstr "advanced"
+#: src/app/[locale]/(shell)/settings/audio/page.tsx
+msgid "p1oDwV"
+msgstr "audio"
 
 #: src/app/[locale]/(shell)/settings/local/page.tsx
 msgid "TyvnM7"
