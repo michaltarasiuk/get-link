@@ -1,9 +1,13 @@
 import {getExtracted} from "next-intl/server";
 
-import {FieldLabelContainer} from "@/components/FieldContainer";
 import {PageLayout} from "@/components/PageLayout";
 import {Section} from "@/components/Section";
-import {Field, FieldDescription} from "@/components/ui/field";
+import {
+  Field,
+  FieldBackground,
+  FieldDescription,
+  FieldLabel,
+} from "@/components/ui/field";
 import {Switch} from "@/components/ui/switch";
 import {Routes} from "@/lib/routes";
 
@@ -13,10 +17,12 @@ export default async function InstancesPage() {
     <PageLayout title={t("instances")} backTo={Routes.settings.root}>
       <Section id="community-instances" title={t("community instances")}>
         <Field>
-          <FieldLabelContainer>
-            {t("use a custom processing server")}
-            <Switch />
-          </FieldLabelContainer>
+          <FieldBackground asChild>
+            <FieldLabel>
+              {t("use a custom processing server")}
+              <Switch />
+            </FieldLabel>
+          </FieldBackground>
           <FieldDescription>
             {t(
               "you can use a custom processing instance if you choose to. even though there are some security measures in place, we are not responsible for any damages done via a community instance, as we have no control over them.",
@@ -31,10 +37,12 @@ export default async function InstancesPage() {
       </Section>
       <Section id="instance-access-key" title={t("instance access key")}>
         <Field>
-          <FieldLabelContainer>
-            {t("use an instance access key")}
-            <Switch />
-          </FieldLabelContainer>
+          <FieldBackground asChild>
+            <FieldLabel>
+              {t("use an instance access key")}
+              <Switch />
+            </FieldLabel>
+          </FieldBackground>
           <FieldDescription>
             {t(
               "the app will use this key to make requests to the processing instance instead of other authentication methods. make sure the instance supports api keys!",

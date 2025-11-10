@@ -1,9 +1,8 @@
 import {getExtracted} from "next-intl/server";
 
-import {FieldContainer} from "@/components/FieldContainer";
 import {PageLayout} from "@/components/PageLayout";
 import {Section} from "@/components/Section";
-import {Field, FieldDescription} from "@/components/ui/field";
+import {Field, FieldBackground, FieldDescription} from "@/components/ui/field";
 import {Routes} from "@/lib/routes";
 
 export default async function LocalPage() {
@@ -12,7 +11,7 @@ export default async function LocalPage() {
     <PageLayout title={t("local processing")} backTo={Routes.settings.root}>
       <Section id="local-media-processing" title={t("local media processing")}>
         <Field>
-          <FieldContainer>{null}</FieldContainer>
+          <FieldBackground>{null}</FieldBackground>
           <FieldDescription>
             {t(
               "when downloading media, remuxing and transcoding will be done on-device instead of the cloud. you'll see detailed progress in the processing queue.",

@@ -6,7 +6,6 @@ import {
 } from "lucide-react";
 import {getExtracted} from "next-intl/server";
 
-import {FieldLabelContainer} from "@/components/FieldContainer";
 import {PageLayout} from "@/components/PageLayout";
 import {Section} from "@/components/Section";
 import {
@@ -21,7 +20,12 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import {Button} from "@/components/ui/button";
-import {Field, FieldDescription} from "@/components/ui/field";
+import {
+  Field,
+  FieldBackground,
+  FieldDescription,
+  FieldLabel,
+} from "@/components/ui/field";
 import {Switch} from "@/components/ui/switch";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
@@ -32,10 +36,12 @@ export default async function AdvancedPage() {
     <PageLayout title={t("advanced")} backTo={Routes.settings.root}>
       <Section id="debug" title={t("debug")}>
         <Field>
-          <FieldLabelContainer>
-            {t("enable features for nerds")}
-            <Switch />
-          </FieldLabelContainer>
+          <FieldBackground asChild>
+            <FieldLabel>
+              {t("enable features for nerds")}
+              <Switch />
+            </FieldLabel>
+          </FieldBackground>
           <FieldDescription>
             {t(
               "gives you easy access to app info that can be useful for debugging. enabling this does not affect functionality of the app in any way.",

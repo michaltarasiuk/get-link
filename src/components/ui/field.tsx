@@ -1,5 +1,6 @@
 "use client";
 
+import {Slot} from "@radix-ui/react-slot";
 import {cva, type VariantProps} from "class-variance-authority";
 import {useMemo} from "react";
 
@@ -95,6 +96,22 @@ export function Field({
         fieldVariants({
           orientation,
         }),
+        props.className,
+      )}
+    />
+  );
+}
+
+export function FieldBackground({
+  asChild,
+  ...props
+}: React.ComponentProps<"div"> & {asChild?: boolean}) {
+  const Comp = asChild ? Slot : "div";
+  return (
+    <Comp
+      {...props}
+      className={cn(
+        "bg-muted flex h-10 justify-between rounded-lg px-3",
         props.className,
       )}
     />
