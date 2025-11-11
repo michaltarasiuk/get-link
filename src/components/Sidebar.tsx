@@ -7,6 +7,7 @@ import {useIsMobile} from "@/hooks/use-is-mobile";
 import {Link, usePathname} from "@/i18n/navigation";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
+import {isFirstPathSegmentEqual} from "@/lib/routes";
 
 import {Button} from "./ui/button";
 
@@ -50,15 +51,15 @@ interface SidebarLinkProps {
   children: React.ReactNode;
 }
 
-function SidebarLink({href, icon: Icon, children, ...props}: SidebarLinkProps) {
+function SidebarLink({href, icon: Icon, children}: SidebarLinkProps) {
   const pathname = usePathname();
-  const active = pathname.startsWith(href);
+  const active = isFirstPathSegmentEqual(pathname, href);
   return (
     <Button
       variant={active ? "secondary" : "ghost"}
       className={cn("flex h-16 w-20 flex-col")}
       asChild>
-      <Link href={href} {...props}>
+      <Link href={href}>
         <Icon />
         {children}
       </Link>

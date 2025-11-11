@@ -1,12 +1,12 @@
 import {CheckIcon, LinkIcon} from "lucide-react";
 import {useEffect, useRef, useState} from "react";
 
+import {writeTextToClipboard} from "@/lib/clipboard";
 import {cn} from "@/lib/cn";
-import {setClipboard} from "@/lib/set-clipboard";
 
 import {Button} from "./ui/button";
 
-export function CopyButton({getCopyText}: {getCopyText: () => string}) {
+export function CopyButton({onCopy}: {onCopy: () => string}) {
   const [copied, setCopied] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout>(undefined);
   useEffect(() => {
@@ -15,8 +15,11 @@ export function CopyButton({getCopyText}: {getCopyText: () => string}) {
     };
   }, []);
   async function handleCopy() {
-    const text = getCopyText();
-    await setClipboard(text);
+    const text = onCopy();
+    await writeTextToClipboard(text);
+    handleCopied();
+  }
+  function handleCopied() {
     setCopied(true);
     clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {

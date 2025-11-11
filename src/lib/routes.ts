@@ -14,3 +14,15 @@ export const Routes = {
     debug: "/settings/debug",
   },
 };
+
+export function splitPathname(p: string) {
+  return p.split("/").filter((s) => s !== "");
+}
+
+export function isFirstPathSegmentEqual(a: string, b: string) {
+  return splitPathname(a).at(0) === splitPathname(b).at(0);
+}
+
+export function prependHash(v: string) {
+  return "#" + v;
+}

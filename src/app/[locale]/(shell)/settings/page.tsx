@@ -5,7 +5,7 @@ import {useEffect} from "react";
 
 import {PageLayout} from "@/components/PageLayout";
 import {useRouter} from "@/i18n/navigation";
-import {getMobileMedia} from "@/lib/mobile-media";
+import {getMobileMedia} from "@/lib/media";
 import {Routes} from "@/lib/routes";
 
 export default function SettingsPage() {

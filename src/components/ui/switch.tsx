@@ -16,7 +16,7 @@ export function Switch({
         "data-[state=checked]:bg-primary",
         "data-[state=unchecked]:bg-input",
         "dark:data-[state=unchecked]:bg-input/80",
-        "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
+        "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-3",
         "disabled:cursor-not-allowed disabled:opacity-50",
         className,
       )}

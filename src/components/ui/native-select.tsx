@@ -10,7 +10,7 @@ export function NativeSelect(props: React.ComponentProps<"select">) {
       className={cn(
         "relative flex w-20 justify-end rounded-md p-1",
         "has-[select:disabled]:opacity-50",
-        "has-focus-visible:border-ring has-focus-visible:ring-ring/50 has-focus-visible:ring-[3px]",
+        "has-focus-visible:border-ring has-focus-visible:ring-ring/50 has-focus-visible:ring-3",
       )}>
       <select
         data-slot="native-select"
