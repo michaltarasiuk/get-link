@@ -53,8 +53,9 @@ export function SubNavigationTab({
     <Link
       href={href}
       className={cn(
-        "flex items-center gap-2.5 px-2.5 py-1.5 font-medium transition-colors",
+        "flex items-center gap-2.5 px-2.5 py-1.5 font-medium transition-colors outline-none",
         "md:hover:bg-muted md:rounded-lg md:px-1.5",
+        "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-3",
         {
           "md:bg-muted": active,
         },
