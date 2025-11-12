@@ -1,6 +1,6 @@
 "use client";
 
-import {cva, type VariantProps} from "class-variance-authority";
+import {cva} from "class-variance-authority";
 import {ChevronRightIcon, type LucideIcon} from "lucide-react";
 
 import {Link, usePathname} from "@/i18n/navigation";
@@ -8,8 +8,18 @@ import {cn} from "@/lib/cn";
 
 import {Separator} from "./ui/separator";
 
-export function SubNavigation({children}: {children: React.ReactNode}) {
-  return <nav className={cn("sticky top-0 space-y-3 p-3")}>{children}</nav>;
+interface SubNavigationProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+export function SubNavigation({title, children}: SubNavigationProps) {
+  return (
+    <div className={cn("sticky top-0 space-y-3 p-3")}>
+      <h2 className={cn("hidden text-xl font-medium", "md:block")}>{title}</h2>
+      <nav className={cn("space-y-3")}>{children}</nav>
+    </div>
+  );
 }
 
 export function SubNavigationSection({children}: {children: React.ReactNode}) {
@@ -24,10 +34,9 @@ export function SubNavigationSection({children}: {children: React.ReactNode}) {
   );
 }
 
-interface SubNavigationTabProps
-  extends VariantProps<typeof iconContainerVariants>,
-    VariantProps<typeof iconVariants> {
+interface SubNavigationTabProps {
   href: string;
+  color: "blue" | "purple" | "magenta" | "orange" | "green" | "gray";
   icon: LucideIcon;
   children: React.ReactNode;
 }
@@ -39,7 +48,7 @@ export function SubNavigationTab({
   children,
 }: SubNavigationTabProps) {
   const pathname = usePathname();
-  const active = href === pathname;
+  const active = pathname === href;
   return (
     <Link
       href={href}
@@ -72,7 +81,7 @@ export function SubNavigationTab({
   );
 }
 
-export function SubNavigationSeparator() {
+export function SubNavigationTabSeparator() {
   return <Separator className={cn("md:hidden")} />;
 }
 

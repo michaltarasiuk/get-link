@@ -17,8 +17,8 @@ import {useExtracted} from "next-intl";
 import {
   SubNavigation,
   SubNavigationSection,
-  SubNavigationSeparator,
   SubNavigationTab,
+  SubNavigationTabSeparator,
 } from "@/components/SubNavigation";
 import {usePathname} from "@/i18n/navigation";
 import {cn} from "@/lib/cn";
@@ -30,12 +30,12 @@ export default function SettingsLayout({
   const pathname = usePathname();
   return (
     <div className={cn("flex flex-col-reverse", "md:flex-row")}>
-      <aside
+      <div
         className={cn("md:block md:shrink-0 md:basis-75 md:p-3", {
           hidden: pathname !== Routes.settings.root,
         })}>
         <SettingsSubNavigation />
-      </aside>
+      </div>
       <main className={cn("md:basis-xl md:p-3")}>{children}</main>
     </div>
   );
@@ -44,7 +44,7 @@ export default function SettingsLayout({
 function SettingsSubNavigation() {
   const t = useExtracted();
   return (
-    <SubNavigation>
+    <SubNavigation title={t("settings")}>
       <SubNavigationSection>
         <SubNavigationTab
           href={Routes.settings.appearance}
@@ -52,7 +52,7 @@ function SettingsSubNavigation() {
           icon={SunIcon}>
           {t("appearance")}
         </SubNavigationTab>
-        <SubNavigationSeparator />
+        <SubNavigationTabSeparator />
         <SubNavigationTab
           href={Routes.settings.accessibility}
           color="purple"
@@ -67,14 +67,14 @@ function SettingsSubNavigation() {
           icon={FilmIcon}>
           {t("video")}
         </SubNavigationTab>
-        <SubNavigationSeparator />
+        <SubNavigationTabSeparator />
         <SubNavigationTab
           href={Routes.settings.audio}
           color="orange"
           icon={MusicIcon}>
           {t("audio")}
         </SubNavigationTab>
-        <SubNavigationSeparator />
+        <SubNavigationTabSeparator />
         <SubNavigationTab
           href={Routes.settings.metadata}
           color="green"
@@ -89,7 +89,7 @@ function SettingsSubNavigation() {
           icon={CpuIcon}>
           {t("local processing")}
         </SubNavigationTab>
-        <SubNavigationSeparator />
+        <SubNavigationTabSeparator />
         <SubNavigationTab
           href={Routes.settings.instances}
           color="purple"
@@ -104,14 +104,14 @@ function SettingsSubNavigation() {
           icon={LockIcon}>
           {t("privacy")}
         </SubNavigationTab>
-        <SubNavigationSeparator />
+        <SubNavigationTabSeparator />
         <SubNavigationTab
           href={Routes.settings.advanced}
           color="gray"
           icon={SlidersVerticalIcon}>
           {t("advanced")}
         </SubNavigationTab>
-        <SubNavigationSeparator />
+        <SubNavigationTabSeparator />
         <SubNavigationTab
           href={Routes.settings.debug}
           color="gray"
