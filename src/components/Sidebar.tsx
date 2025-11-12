@@ -21,9 +21,7 @@ export function Sidebar() {
     <nav
       className={cn(
         "bg-sidebar relative",
-        "before:bg-sidebar before:block before:h-4",
-        "after:bg-background after:absolute after:top-0 after:h-4 after:w-full after:rounded-b-4xl",
-        "md:border-sidebar-border md:border-e md:before:hidden md:after:hidden",
+        "md:border-sidebar-border md:border-e",
       )}>
       <ul
         className={cn(

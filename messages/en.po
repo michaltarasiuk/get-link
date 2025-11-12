@@ -7,11 +7,6 @@ msgstr ""
 "X-Crowdin-SourceKey: msgstr\n"
 
 #: src/app/[locale]/(shell)/settings/accessibility/page.tsx
-#: src/app/[locale]/(shell)/settings/layout.tsx
-msgid "AMFmfD"
-msgstr "accessibility"
-
-#: src/app/[locale]/(shell)/settings/accessibility/page.tsx
 msgid "NgMcU7"
 msgstr "animations and transitions will be disabled whenever possible."
 
@@ -244,6 +239,16 @@ msgstr "use an instance access key"
 msgid "w0iiK5"
 msgstr "you can use a custom processing instance if you choose to. even though there are some security measures in place, we are not responsible for any damages done via a community instance, as we have no control over them."
 
+#: src/app/[locale]/(shell)/settings/layout.tsx
+#: src/app/[locale]/(shell)/settings/accessibility/page.tsx
+msgid "AMFmfD"
+msgstr "accessibility"
+
+#: src/app/[locale]/(shell)/settings/layout.tsx
+#: src/app/[locale]/(shell)/settings/video/page.tsx
+msgid "4jAirD"
+msgstr "video"
+
 #: src/app/[locale]/(shell)/settings/local/page.tsx
 msgid "TyvnM7"
 msgstr "disabled: local processing will not be used. processing instances can enforce local processing, so this option may not have effect. preferred: media that requires extra processing will be downloaded through the processing queue, but the rest of media will be downloaded by your browser's download manager. forced: all media will always be proxied and downloaded through the processing queue."
@@ -375,11 +380,6 @@ msgstr "preferred youtube video codec"
 #: src/app/[locale]/(shell)/settings/video/page.tsx
 msgid "op/G65"
 msgstr "twitter/x"
-
-#: src/app/[locale]/(shell)/settings/video/page.tsx
-#: src/app/[locale]/(shell)/settings/layout.tsx
-msgid "4jAirD"
-msgstr "video"
 
 #: src/app/[locale]/(shell)/settings/video/page.tsx
 msgid "Jmimjr"
