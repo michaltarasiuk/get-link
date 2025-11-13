@@ -130,13 +130,9 @@ function ClearCacheAlertDialog() {
 
 function TimedAlertDialogAction({action}: {action: string}) {
   const count = useCountDown(2);
-  const t = useExtracted();
   return (
     <AlertDialogAction disabled={count > 0}>
-      {t("{action} {count, select, 0 {} other {({count})}}", {
-        action,
-        count: String(count),
-      })}
+      {action} {count > 0 && `(${count})`}
     </AlertDialogAction>
   );
 }
