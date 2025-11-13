@@ -1,10 +1,12 @@
+"use client";
+
 import {
   FileDownIcon,
   FileUpIcon,
   RefreshCcwDot,
   ShredderIcon,
 } from "lucide-react";
-import {getExtracted} from "next-intl/server";
+import {useExtracted} from "next-intl";
 
 import {PageLayout} from "@/components/PageLayout";
 import {Section} from "@/components/Section";
@@ -27,11 +29,12 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import {Switch} from "@/components/ui/switch";
+import {useCountDown} from "@/hooks/use-count-down";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
 
-export default async function AdvancedPage() {
-  const t = await getExtracted();
+export default function AdvancedPage() {
+  const t = useExtracted();
   return (
     <PageLayout title={t("advanced")} backTo={Routes.settings.root}>
       <Section id="debug" title={t("debug")}>
@@ -69,8 +72,8 @@ export default async function AdvancedPage() {
   );
 }
 
-async function ResetSettingsDataAlertDialog() {
-  const t = await getExtracted();
+function ResetSettingsDataAlertDialog() {
+  const t = useExtracted();
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
@@ -90,15 +93,15 @@ async function ResetSettingsDataAlertDialog() {
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>{t("cancel")}</AlertDialogCancel>
-          <AlertDialogAction>{t("reset")}</AlertDialogAction>
+          <TimedAlertDialogAction action={t("reset")} />
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
   );
 }
 
-async function ClearCacheAlertDialog() {
-  const t = await getExtracted();
+function ClearCacheAlertDialog() {
+  const t = useExtracted();
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
@@ -118,9 +121,22 @@ async function ClearCacheAlertDialog() {
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>{t("cancel")}</AlertDialogCancel>
-          <AlertDialogAction>{t("clear")}</AlertDialogAction>
+          <TimedAlertDialogAction action={t("clear")} />
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
+  );
+}
+
+function TimedAlertDialogAction({action}: {action: string}) {
+  const count = useCountDown(2);
+  const t = useExtracted();
+  return (
+    <AlertDialogAction disabled={count > 0}>
+      {t("{action} {count, select, 0 {} other {({count})}}", {
+        action,
+        count: String(count),
+      })}
+    </AlertDialogAction>
   );
 }

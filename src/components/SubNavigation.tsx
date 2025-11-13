@@ -87,7 +87,7 @@ export function SubNavigationTabSeparator() {
 }
 
 const iconContainerVariants = cva(
-  "border-border flex size-8 items-center justify-center rounded-md border",
+  "border-border flex size-8 items-center justify-center rounded-md border bg-sidebar-accent",
   {
     variants: {
       color: {
