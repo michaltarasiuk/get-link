@@ -6,7 +6,7 @@ import {isDefined} from "@/lib/is-defined";
 
 import {Button} from "./ui/button";
 
-interface PageLayout extends React.ComponentProps<typeof Header> {
+interface PageLayout extends HeaderProps {
   children: React.ReactNode;
 }
 
@@ -19,7 +19,12 @@ export function PageLayout({children, ...props}: PageLayout) {
   );
 }
 
-function Header({title, backTo}: {title: string; backTo?: string}) {
+interface HeaderProps {
+  title: string;
+  backTo?: string;
+}
+
+function Header({title, backTo}: HeaderProps) {
   return (
     <header
       className={cn(

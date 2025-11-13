@@ -220,6 +220,13 @@ msgid "S9JpxO"
 msgstr "info for nerds"
 
 #: src/app/[locale]/(shell)/settings/debug/page.tsx
+#: src/app/[locale]/(shell)/settings/page.tsx
+#: src/components/Sidebar.tsx
+#: src/app/[locale]/(shell)/settings/layout.tsx
+msgid "oFJ8He"
+msgstr "settings"
+
+#: src/app/[locale]/(shell)/settings/debug/page.tsx
 msgid "7ifkXX"
 msgstr "states"
 
@@ -259,18 +266,6 @@ msgstr "use an instance access key"
 #: src/app/[locale]/(shell)/settings/instances/page.tsx
 msgid "w0iiK5"
 msgstr "you can use a custom processing instance if you choose to. even though there are some security measures in place, we are not responsible for any damages done via a community instance, as we have no control over them."
-
-#: src/app/[locale]/(shell)/settings/layout.tsx
-#: src/app/[locale]/(shell)/settings/page.tsx
-#: src/components/Sidebar.tsx
-#: src/app/[locale]/(shell)/settings/debug/page.tsx
-msgid "oFJ8He"
-msgstr "settings"
-
-#: src/app/[locale]/(shell)/settings/layout.tsx
-#: src/app/[locale]/(shell)/settings/video/page.tsx
-msgid "4jAirD"
-msgstr "video"
 
 #: src/app/[locale]/(shell)/settings/local/page.tsx
 msgid "TyvnM7"
@@ -398,6 +393,11 @@ msgstr "preferred youtube video codec"
 #: src/app/[locale]/(shell)/settings/video/page.tsx
 msgid "op/G65"
 msgstr "twitter/x"
+
+#: src/app/[locale]/(shell)/settings/video/page.tsx
+#: src/app/[locale]/(shell)/settings/layout.tsx
+msgid "4jAirD"
+msgstr "video"
 
 #: src/app/[locale]/(shell)/settings/video/page.tsx
 msgid "Jmimjr"

@@ -19,7 +19,7 @@ type CopyButtonProps =
 
 export function CopyButton(props: CopyButtonProps) {
   const [copied, setCopied] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout>(undefined);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
   useEffect(() => {
     return () => {
       clearTimeout(timeoutRef.current);

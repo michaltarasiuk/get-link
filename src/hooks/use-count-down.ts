@@ -2,7 +2,7 @@ import {useEffect, useRef, useState} from "react";
 
 export function useCountDown(initialCount: number) {
   const [count, setCount] = useState(initialCount);
-  const intervalRef = useRef<NodeJS.Timeout>(undefined);
+  const intervalRef = useRef<ReturnType<typeof setInterval>>(undefined);
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       setCount((count) => {
