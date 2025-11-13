@@ -1,7 +1,7 @@
 import {getExtracted} from "next-intl/server";
 
 import {PageLayout} from "@/components/PageLayout";
-import {Section} from "@/components/Section";
+import {LinkSection} from "@/components/Section";
 import {
   Field,
   FieldBackground,
@@ -15,7 +15,7 @@ export default async function AccessibilityPage() {
   const t = await getExtracted();
   return (
     <PageLayout title={t("accessibility")} backTo={Routes.settings.root}>
-      <Section id="visual" title={t("visual")}>
+      <LinkSection id="visual" title={t("visual")}>
         <Field>
           <FieldBackground asChild>
             <FieldLabel>
@@ -42,8 +42,8 @@ export default async function AccessibilityPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
-      <Section id="behavior" title={t("behavior")}>
+      </LinkSection>
+      <LinkSection id="behavior" title={t("behavior")}>
         <Field>
           <FieldBackground asChild>
             <FieldLabel>
@@ -57,7 +57,7 @@ export default async function AccessibilityPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
+      </LinkSection>
     </PageLayout>
   );
 }

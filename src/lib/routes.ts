@@ -22,7 +22,3 @@ export function splitPathname(p: string) {
 export function isFirstPathSegmentEqual(a: string, b: string) {
   return splitPathname(a).at(0) === splitPathname(b).at(0);
 }
-
-export function prependHash(v: string) {
-  return "#" + v;
-}

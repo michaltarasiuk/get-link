@@ -44,10 +44,6 @@ msgid "2Am99U"
 msgstr "visual"
 
 #: src/app/[locale]/(shell)/settings/advanced/page.tsx
-msgid "H2X8RX"
-msgstr "{action} {count, select, 0 {} other {({count})}}"
-
-#: src/app/[locale]/(shell)/settings/advanced/page.tsx
 #: src/app/[locale]/(shell)/settings/layout.tsx
 msgid "jGlX0H"
 msgstr "advanced"
@@ -211,9 +207,25 @@ msgid "Um9xiY"
 msgstr "youtube audio track"
 
 #: src/app/[locale]/(shell)/settings/debug/page.tsx
+msgid "9D95ky"
+msgstr "app"
+
+#: src/app/[locale]/(shell)/settings/debug/page.tsx
+msgid "eY2JfQ"
+msgstr "device"
+
+#: src/app/[locale]/(shell)/settings/debug/page.tsx
 #: src/app/[locale]/(shell)/settings/layout.tsx
 msgid "S9JpxO"
 msgstr "info for nerds"
+
+#: src/app/[locale]/(shell)/settings/debug/page.tsx
+msgid "7ifkXX"
+msgstr "states"
+
+#: src/app/[locale]/(shell)/settings/debug/page.tsx
+msgid "0c2bXC"
+msgstr "version"
 
 #: src/app/[locale]/(shell)/settings/instances/page.tsx
 msgid "gDXcAU"
@@ -247,6 +259,13 @@ msgstr "use an instance access key"
 #: src/app/[locale]/(shell)/settings/instances/page.tsx
 msgid "w0iiK5"
 msgstr "you can use a custom processing instance if you choose to. even though there are some security measures in place, we are not responsible for any damages done via a community instance, as we have no control over them."
+
+#: src/app/[locale]/(shell)/settings/layout.tsx
+#: src/app/[locale]/(shell)/settings/page.tsx
+#: src/components/Sidebar.tsx
+#: src/app/[locale]/(shell)/settings/debug/page.tsx
+msgid "oFJ8He"
+msgstr "settings"
 
 #: src/app/[locale]/(shell)/settings/layout.tsx
 #: src/app/[locale]/(shell)/settings/video/page.tsx
@@ -322,12 +341,6 @@ msgstr "subtitles will be added to the downloaded file in the preferred language
 #: src/app/[locale]/(shell)/settings/metadata/page.tsx
 msgid "JsHi4b"
 msgstr "title, artist, and other info will not be added to the file."
-
-#: src/app/[locale]/(shell)/settings/page.tsx
-#: src/app/[locale]/(shell)/settings/layout.tsx
-#: src/components/Sidebar.tsx
-msgid "oFJ8He"
-msgstr "settings"
 
 #: src/app/[locale]/(shell)/settings/privacy/page.tsx
 msgid "xa3ck5"

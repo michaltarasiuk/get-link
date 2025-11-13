@@ -1,7 +1,7 @@
 import {getExtracted} from "next-intl/server";
 
 import {PageLayout} from "@/components/PageLayout";
-import {Section} from "@/components/Section";
+import {LinkSection} from "@/components/Section";
 import {
   Field,
   FieldBackground,
@@ -15,7 +15,7 @@ export default async function InstancesPage() {
   const t = await getExtracted();
   return (
     <PageLayout title={t("instances")} backTo={Routes.settings.root}>
-      <Section id="community-instances" title={t("community instances")}>
+      <LinkSection id="community-instances" title={t("community instances")}>
         <Field>
           <FieldBackground asChild>
             <FieldLabel>
@@ -34,8 +34,8 @@ export default async function InstancesPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
-      <Section id="instance-access-key" title={t("instance access key")}>
+      </LinkSection>
+      <LinkSection id="instance-access-key" title={t("instance access key")}>
         <Field>
           <FieldBackground asChild>
             <FieldLabel>
@@ -49,7 +49,7 @@ export default async function InstancesPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
+      </LinkSection>
     </PageLayout>
   );
 }

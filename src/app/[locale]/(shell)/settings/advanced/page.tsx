@@ -9,7 +9,7 @@ import {
 import {useExtracted} from "next-intl";
 
 import {PageLayout} from "@/components/PageLayout";
-import {Section} from "@/components/Section";
+import {LinkSection} from "@/components/Section";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -37,7 +37,7 @@ export default function AdvancedPage() {
   const t = useExtracted();
   return (
     <PageLayout title={t("advanced")} backTo={Routes.settings.root}>
-      <Section id="debug" title={t("debug")}>
+      <LinkSection id="debug" title={t("debug")}>
         <Field>
           <FieldBackground asChild>
             <FieldLabel>
@@ -51,8 +51,8 @@ export default function AdvancedPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
-      <Section id="settings-data" title={t("settings data")}>
+      </LinkSection>
+      <LinkSection id="settings-data" title={t("settings data")}>
         <div className={cn("flex gap-3")}>
           <Button variant="outline" size="lg">
             <FileDownIcon className={cn("size-5")} />
@@ -64,10 +64,10 @@ export default function AdvancedPage() {
           </Button>
           <ResetSettingsDataAlertDialog />
         </div>
-      </Section>
-      <Section id="local-storage" title={t("local storage")}>
+      </LinkSection>
+      <LinkSection id="local-storage" title={t("local storage")}>
         <ClearCacheAlertDialog />
-      </Section>
+      </LinkSection>
     </PageLayout>
   );
 }

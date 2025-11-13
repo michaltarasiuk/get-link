@@ -1,7 +1,7 @@
 import {getExtracted} from "next-intl/server";
 
 import {PageLayout} from "@/components/PageLayout";
-import {Section} from "@/components/Section";
+import {LinkSection} from "@/components/Section";
 import {
   Field,
   FieldBackground,
@@ -16,7 +16,7 @@ export default async function MetadataPage() {
   const t = await getExtracted();
   return (
     <PageLayout title={t("metadata")} backTo={Routes.settings.root}>
-      <Section id="filename-style" title={t("filename style")}>
+      <LinkSection id="filename-style" title={t("filename style")}>
         <Field>
           <FieldBackground>{null}</FieldBackground>
           <FieldDescription>
@@ -25,8 +25,8 @@ export default async function MetadataPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
-      <Section id="saving-method" title={t("saving method")}>
+      </LinkSection>
+      <LinkSection id="saving-method" title={t("saving method")}>
         <Field>
           <FieldBackground>{null}</FieldBackground>
           <FieldDescription>
@@ -35,8 +35,8 @@ export default async function MetadataPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
-      <Section id="subtitles" title={t("subtitles")}>
+      </LinkSection>
+      <LinkSection id="subtitles" title={t("subtitles")}>
         <Field>
           <FieldBackground asChild>
             <FieldLabel>
@@ -52,8 +52,8 @@ export default async function MetadataPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
-      <Section id="file-metadata" title={t("file metadata")}>
+      </LinkSection>
+      <LinkSection id="file-metadata" title={t("file metadata")}>
         <Field>
           <FieldBackground asChild>
             <FieldLabel>
@@ -65,7 +65,7 @@ export default async function MetadataPage() {
             {t("title, artist, and other info will not be added to the file.")}
           </FieldDescription>
         </Field>
-      </Section>
+      </LinkSection>
     </PageLayout>
   );
 }

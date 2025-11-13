@@ -1,7 +1,7 @@
 import {getExtracted} from "next-intl/server";
 
 import {PageLayout} from "@/components/PageLayout";
-import {Section} from "@/components/Section";
+import {LinkSection} from "@/components/Section";
 import {
   Field,
   FieldBackground,
@@ -16,7 +16,7 @@ export default async function AudioPage() {
   const t = await getExtracted();
   return (
     <PageLayout title={t("audio")} backTo={Routes.settings.root}>
-      <Section id="audio-format" title={t("audio format")}>
+      <LinkSection id="audio-format" title={t("audio format")}>
         <Field>
           <FieldBackground>{null}</FieldBackground>
           <FieldDescription>
@@ -25,8 +25,8 @@ export default async function AudioPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
-      <Section id="audio-bitrate" title={t("audio bitrate")}>
+      </LinkSection>
+      <LinkSection id="audio-bitrate" title={t("audio bitrate")}>
         <Field>
           <FieldBackground>{null}</FieldBackground>
           <FieldDescription>
@@ -35,8 +35,10 @@ export default async function AudioPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
-      <Section id="youtube-audio-quality" title={t("youtube audio quality")}>
+      </LinkSection>
+      <LinkSection
+        id="youtube-audio-quality"
+        title={t("youtube audio quality")}>
         <Field>
           <FieldBackground asChild>
             <FieldLabel>
@@ -50,8 +52,8 @@ export default async function AudioPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
-      <Section id="youtube-audio-track" title={t("youtube audio track")}>
+      </LinkSection>
+      <LinkSection id="youtube-audio-track" title={t("youtube audio track")}>
         <Field>
           <FieldBackground asChild>
             <FieldLabel>
@@ -67,8 +69,8 @@ export default async function AudioPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
-      <Section id="tiktok" title={t("tiktok")}>
+      </LinkSection>
+      <LinkSection id="tiktok" title={t("tiktok")}>
         <Field>
           <FieldBackground asChild>
             <FieldLabel>
@@ -82,7 +84,7 @@ export default async function AudioPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
+      </LinkSection>
     </PageLayout>
   );
 }

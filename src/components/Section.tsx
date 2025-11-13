@@ -2,35 +2,68 @@
 
 import {useHash} from "@/hooks/use-hash";
 import {cn} from "@/lib/cn";
-import {prependHash} from "@/lib/routes";
 
 import {CopyButton} from "./CopyButton";
 
 interface SectionProps {
-  id: string;
   title: string;
+  text: string;
   children: React.ReactNode;
 }
 
-export function Section({id, title, children}: SectionProps) {
+export function Section({title, children, text}: SectionProps) {
+  return (
+    <SectionRoot>
+      <SectionHeader>
+        <SectionHeading>{title}</SectionHeading>
+        <CopyButton type="text" text={text} />
+      </SectionHeader>
+      {children}
+    </SectionRoot>
+  );
+}
+
+interface LinkSectionProps {
+  title: string;
+  id: string;
+  children: React.ReactNode;
+}
+
+export function LinkSection({title, id, children}: LinkSectionProps) {
   const hash = useHash();
   return (
-    <section
+    <SectionRoot
       id={id}
-      className={cn("space-y-3 rounded-lg p-3", {
-        "animate-highlight": hash === prependHash(id),
+      className={cn({
+        "animate-highlight": hash === `#${id}`,
       })}>
-      <header className={cn("mb-2.5 flex items-center gap-1.5")}>
-        <h2 className={cn("font-semibold")}>{title}</h2>
-        <CopyButton
-          onCopy={() => {
-            const url = new URL(String(location));
-            url.hash = prependHash(id);
-            return String(url);
-          }}
-        />
-      </header>
+      <SectionHeader>
+        <SectionHeading>{title}</SectionHeading>
+        <CopyButton type="link" hash={id} />
+      </SectionHeader>
       {children}
-    </section>
+    </SectionRoot>
   );
+}
+
+function SectionRoot(props: React.ComponentProps<"section">) {
+  return (
+    <section
+      {...props}
+      className={cn("space-y-3 rounded-lg p-3", props.className)}
+    />
+  );
+}
+
+function SectionHeader(props: React.ComponentProps<"section">) {
+  return (
+    <header
+      {...props}
+      className={cn("mb-2.5 flex items-center gap-1.5", props.className)}
+    />
+  );
+}
+
+function SectionHeading(props: React.ComponentProps<"h2">) {
+  return <h2 {...props} className={cn("font-semibold", props.className)} />;
 }

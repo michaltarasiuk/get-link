@@ -1,7 +1,7 @@
 import {getExtracted} from "next-intl/server";
 
 import {PageLayout} from "@/components/PageLayout";
-import {Section} from "@/components/Section";
+import {LinkSection} from "@/components/Section";
 import {
   Field,
   FieldBackground,
@@ -16,7 +16,7 @@ export default async function AppearancePage() {
   const t = await getExtracted();
   return (
     <PageLayout title={t("appearance")} backTo={Routes.settings.root}>
-      <Section id="theme" title={t("theme")}>
+      <LinkSection id="theme" title={t("theme")}>
         <Field>
           <FieldBackground>{null}</FieldBackground>
           <FieldDescription>
@@ -25,8 +25,8 @@ export default async function AppearancePage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
-      <Section id="language" title={t("language")}>
+      </LinkSection>
+      <LinkSection id="language" title={t("language")}>
         <Field>
           <FieldBackground asChild>
             <FieldLabel>
@@ -60,7 +60,7 @@ export default async function AppearancePage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
+      </LinkSection>
     </PageLayout>
   );
 }

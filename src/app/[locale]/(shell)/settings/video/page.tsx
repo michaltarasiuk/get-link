@@ -1,7 +1,7 @@
 import {getExtracted} from "next-intl/server";
 
 import {PageLayout} from "@/components/PageLayout";
-import {Section} from "@/components/Section";
+import {LinkSection} from "@/components/Section";
 import {
   Field,
   FieldBackground,
@@ -15,7 +15,7 @@ export default async function VideoPage() {
   const t = await getExtracted();
   return (
     <PageLayout title={t("video")} backTo={Routes.settings.root}>
-      <Section id="video-quality" title={t("video quality")}>
+      <LinkSection id="video-quality" title={t("video quality")}>
         <Field>
           <FieldBackground>{null}</FieldBackground>
           <FieldDescription>
@@ -24,8 +24,8 @@ export default async function VideoPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
-      <Section
+      </LinkSection>
+      <LinkSection
         id="preferred-youtube-video-codec"
         title={t("preferred youtube video codec")}>
         <Field>
@@ -41,8 +41,10 @@ export default async function VideoPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
-      <Section id="youtube-file-container" title={t("youtube file container")}>
+      </LinkSection>
+      <LinkSection
+        id="youtube-file-container"
+        title={t("youtube file container")}>
         <Field>
           <FieldBackground>{null}</FieldBackground>
           <FieldDescription>
@@ -51,8 +53,8 @@ export default async function VideoPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
-      <Section
+      </LinkSection>
+      <LinkSection
         id="high-efficiency-video-codec"
         title={t("high efficiency video codec")}>
         <Field>
@@ -68,8 +70,8 @@ export default async function VideoPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
-      <Section id="twitter-x" title={t("twitter/x")}>
+      </LinkSection>
+      <LinkSection id="twitter-x" title={t("twitter/x")}>
         <Field>
           <FieldBackground asChild>
             <FieldLabel>
@@ -83,7 +85,7 @@ export default async function VideoPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
+      </LinkSection>
     </PageLayout>
   );
 }

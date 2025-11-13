@@ -1,12 +1,23 @@
-import {CheckIcon, LinkIcon} from "lucide-react";
+import {CheckIcon, CopyIcon, LinkIcon} from "lucide-react";
 import {useEffect, useRef, useState} from "react";
 
+import {assertNever} from "@/lib/assert";
 import {writeTextToClipboard} from "@/lib/clipboard";
 import {cn} from "@/lib/cn";
 
 import {Button} from "./ui/button";
 
-export function CopyButton({onCopy}: {onCopy: () => string}) {
+type CopyButtonProps =
+  | {
+      type: "text";
+      text: string;
+    }
+  | {
+      type: "link";
+      hash: string;
+    };
+
+export function CopyButton(props: CopyButtonProps) {
   const [copied, setCopied] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout>(undefined);
   useEffect(() => {
@@ -15,7 +26,16 @@ export function CopyButton({onCopy}: {onCopy: () => string}) {
     };
   }, []);
   async function handleCopy() {
-    const text = onCopy();
+    let text: string;
+    if (props.type === "link") {
+      const url = new URL(String(location));
+      url.hash = `#${props.hash}`;
+      text = String(url);
+    } else if (props.type === "text") {
+      text = props.text;
+    } else {
+      assertNever(props);
+    }
     await writeTextToClipboard(text);
     handleCopied();
   }
@@ -26,9 +46,10 @@ export function CopyButton({onCopy}: {onCopy: () => string}) {
       setCopied(false);
     }, 2_000);
   }
+  const CopyButtonIcon = props.type === "text" ? CopyIcon : LinkIcon;
   return (
     <Button variant="ghost" size="icon-sm" onClick={handleCopy}>
-      <LinkIcon
+      <CopyButtonIcon
         className={cn(
           "transition-transform ease-in-out",
           copied ? "scale-0" : "scale-100",

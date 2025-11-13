@@ -1,7 +1,7 @@
 import {getExtracted} from "next-intl/server";
 
 import {PageLayout} from "@/components/PageLayout";
-import {Section} from "@/components/Section";
+import {LinkSection} from "@/components/Section";
 import {Field, FieldBackground, FieldDescription} from "@/components/ui/field";
 import {Routes} from "@/lib/routes";
 
@@ -9,7 +9,9 @@ export default async function LocalPage() {
   const t = await getExtracted();
   return (
     <PageLayout title={t("local processing")} backTo={Routes.settings.root}>
-      <Section id="local-media-processing" title={t("local media processing")}>
+      <LinkSection
+        id="local-media-processing"
+        title={t("local media processing")}>
         <Field>
           <FieldBackground>{null}</FieldBackground>
           <FieldDescription>
@@ -28,7 +30,7 @@ export default async function LocalPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
+      </LinkSection>
     </PageLayout>
   );
 }

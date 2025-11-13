@@ -1,7 +1,7 @@
 import {getExtracted} from "next-intl/server";
 
 import {PageLayout} from "@/components/PageLayout";
-import {Section} from "@/components/Section";
+import {LinkSection} from "@/components/Section";
 import {
   Field,
   FieldBackground,
@@ -15,7 +15,7 @@ export default async function PrivacyPage() {
   const t = await getExtracted();
   return (
     <PageLayout title={t("privacy")} backTo={Routes.settings.root}>
-      <Section id="tunneling" title={t("tunneling")}>
+      <LinkSection id="tunneling" title={t("tunneling")}>
         <Field>
           <FieldBackground asChild>
             <FieldLabel>
@@ -29,7 +29,7 @@ export default async function PrivacyPage() {
             )}
           </FieldDescription>
         </Field>
-      </Section>
+      </LinkSection>
     </PageLayout>
   );
 }
