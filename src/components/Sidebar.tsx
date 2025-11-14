@@ -19,8 +19,8 @@ export function Sidebar() {
   return (
     <aside
       className={cn(
-        "bg-sidebar space-y-1 px-3 py-2",
-        "md:border-sidebar-border md:border-e md:px-1",
+        "bg-sidebar fixed bottom-0 w-full space-y-1 px-3 py-2",
+        "md:border-sidebar-border md:static md:w-auto md:border-e md:px-1",
       )}>
       <SidebarLogo />
       <SidebarLinks />

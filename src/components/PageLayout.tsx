@@ -12,7 +12,10 @@ interface PageLayout extends React.ComponentProps<typeof Header> {
 
 export function PageLayout({children, ...props}: PageLayout) {
   return (
-    <div className={cn("pt-12", "md:pt-0")}>
+    <div
+      className={cn("pt-12", "md:mb-0 md:pt-0", {
+        "mb-20": isDefined(children),
+      })}>
       <Header {...props} />
       {children}
     </div>
