@@ -19,7 +19,7 @@ export function ProcessingQueue() {
             className={cn(
               "bg-muted relative flex size-7 items-center justify-center rounded-full",
             )}>
-            <ArrowDownIcon className={cn("size-5")} />
+            <ArrowDownIcon aria-hidden className={cn("size-5")} />
           </div>
         </Button>
       </PopoverTrigger>

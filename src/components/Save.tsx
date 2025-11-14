@@ -33,17 +33,17 @@ export async function Save() {
           size="lg"
           className={cn("grid w-full grid-cols-3", "md:w-auto")}>
           <ToggleGroupItem value="auto">
-            <SparklesIcon className={cn("size-4")} />
+            <SparklesIcon aria-hidden className={cn("size-4")} />
           </ToggleGroupItem>
           <ToggleGroupItem value="audio">
-            <MusicIcon className={cn("size-4")} />
+            <MusicIcon aria-hidden className={cn("size-4")} />
           </ToggleGroupItem>
           <ToggleGroupItem value="mute">
-            <VolumeOffIcon className={cn("size-4")} />
+            <VolumeOffIcon aria-hidden className={cn("size-4")} />
           </ToggleGroupItem>
         </ToggleGroup>
         <Button variant="secondary" size="lg">
-          <ClipboardPasteIcon />
+          <ClipboardPasteIcon aria-hidden />
           {t("paste")}
         </Button>
       </div>

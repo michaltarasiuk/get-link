@@ -6,7 +6,7 @@ import {isDefined} from "@/lib/is-defined";
 
 import {Button} from "./ui/button";
 
-interface PageLayout extends HeaderProps {
+interface PageLayout extends React.ComponentProps<typeof Header> {
   children: React.ReactNode;
 }
 
@@ -19,12 +19,7 @@ export function PageLayout({children, ...props}: PageLayout) {
   );
 }
 
-interface HeaderProps {
-  title: string;
-  backTo?: string;
-}
-
-function Header({title, backTo}: HeaderProps) {
+function Header({title, backTo}: {title: string; backTo?: string}) {
   return (
     <header
       className={cn(
@@ -38,7 +33,7 @@ function Header({title, backTo}: HeaderProps) {
           className={cn("absolute start-1.5")}
           asChild>
           <Link href={backTo}>
-            <ArrowLeftIcon className={cn("size-5")} />
+            <ArrowLeftIcon aria-hidden className={cn("size-5")} />
           </Link>
         </Button>
       )}

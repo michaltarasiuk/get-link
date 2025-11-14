@@ -55,11 +55,11 @@ export default function AdvancedPage() {
       <LinkSection id="settings-data" title={t("settings data")}>
         <div className={cn("flex gap-3")}>
           <Button variant="outline" size="lg">
-            <FileDownIcon className={cn("size-5")} />
+            <FileDownIcon aria-hidden className={cn("size-5")} />
             {t("import")}
           </Button>
           <Button variant="outline" size="lg">
-            <FileUpIcon className={cn("size-5")} />
+            <FileUpIcon aria-hidden className={cn("size-5")} />
             {t("export")}
           </Button>
           <ResetSettingsDataAlertDialog />

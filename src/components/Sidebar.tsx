@@ -1,44 +1,56 @@
 "use client";
 
-import {DownloadIcon, type LucideIcon, SettingsIcon} from "lucide-react";
+import {
+  ChevronsRightIcon,
+  DownloadIcon,
+  type LucideIcon,
+  SettingsIcon,
+} from "lucide-react";
 import {useExtracted} from "next-intl";
 
 import {useIsMobile} from "@/hooks/use-is-mobile";
 import {Link, usePathname} from "@/i18n/navigation";
 import {cn} from "@/lib/cn";
-import {Routes} from "@/lib/routes";
-import {isFirstPathSegmentEqual} from "@/lib/routes";
+import {rootSegmentsAreEqual, Routes} from "@/lib/routes";
 
 import {Button} from "./ui/button";
 
 export function Sidebar() {
+  return (
+    <aside
+      className={cn(
+        "bg-sidebar space-y-1 px-3 py-2",
+        "md:border-sidebar-border md:border-e md:px-1",
+      )}>
+      <SidebarLogo />
+      <SidebarLinks />
+    </aside>
+  );
+}
+
+function SidebarLogo() {
+  return (
+    <ChevronsRightIcon
+      aria-hidden
+      className={cn("mx-auto hidden size-10", "md:block")}
+    />
+  );
+}
+
+function SidebarLinks() {
   const isMobile = useIsMobile();
   const t = useExtracted();
   const settingsRoute = isMobile
     ? Routes.settings.root
     : Routes.settings.appearance;
   return (
-    <nav
-      className={cn(
-        "bg-sidebar relative",
-        "md:border-sidebar-border md:border-e",
-      )}>
-      <ul
-        className={cn(
-          "sticky top-0 flex gap-1 px-3 py-1.5",
-          "md:flex-col md:px-1 md:py-2",
-        )}>
-        <li>
-          <SidebarLink href={Routes.save} icon={DownloadIcon}>
-            {t("save")}
-          </SidebarLink>
-        </li>
-        <li>
-          <SidebarLink href={settingsRoute} icon={SettingsIcon}>
-            {t("settings")}
-          </SidebarLink>
-        </li>
-      </ul>
+    <nav className={cn("flex gap-1", "md:flex-col")}>
+      <SidebarLink href={Routes.save} icon={DownloadIcon}>
+        {t("save")}
+      </SidebarLink>
+      <SidebarLink href={settingsRoute} icon={SettingsIcon}>
+        {t("settings")}
+      </SidebarLink>
     </nav>
   );
 }
@@ -51,14 +63,14 @@ interface SidebarLinkProps {
 
 function SidebarLink({href, icon: Icon, children}: SidebarLinkProps) {
   const pathname = usePathname();
-  const active = isFirstPathSegmentEqual(pathname, href);
+  const active = rootSegmentsAreEqual(pathname, href);
   return (
     <Button
       variant={active ? "secondary" : "ghost"}
       className={cn("flex h-16 w-20 flex-col")}
       asChild>
       <Link href={href}>
-        <Icon />
+        <Icon aria-hidden />
         {children}
       </Link>
     </Button>

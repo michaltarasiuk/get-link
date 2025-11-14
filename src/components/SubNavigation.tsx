@@ -6,6 +6,7 @@ import {ChevronRightIcon, type LucideIcon} from "lucide-react";
 import {Link, usePathname} from "@/i18n/navigation";
 import {cn} from "@/lib/cn";
 
+import {Button} from "./ui/button";
 import {Separator} from "./ui/separator";
 
 interface SubNavigationProps {
@@ -15,7 +16,7 @@ interface SubNavigationProps {
 
 export function SubNavigation({title, children}: SubNavigationProps) {
   return (
-    <div className={cn("sticky top-0 space-y-3 p-3")}>
+    <div className={cn("space-y-3 p-3")}>
       <h2 className={cn("hidden text-xl font-medium", "md:block")}>{title}</h2>
       <nav className={cn("space-y-3")}>{children}</nav>
     </div>
@@ -26,7 +27,7 @@ export function SubNavigationSection({children}: {children: React.ReactNode}) {
   return (
     <div
       className={cn(
-        "bg-muted border-border rounded-lg border",
+        "bg-muted border-border flex flex-col rounded-lg border",
         "md:border-0 md:bg-transparent",
       )}>
       {children}
@@ -50,35 +51,33 @@ export function SubNavigationTab({
   const pathname = usePathname();
   const active = pathname === href;
   return (
-    <Link
-      href={href}
-      className={cn(
-        "flex items-center gap-2.5 px-2.5 py-1.5 font-medium transition-colors outline-none",
-        "md:hover:bg-muted md:rounded-lg md:px-1.5",
-        "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-3",
-        {
-          "md:bg-muted": active,
-        },
-      )}>
-      <div
-        className={cn(
-          iconContainerVariants({
-            color,
-            active,
-          }),
-        )}>
-        <Icon
+    <Button
+      variant={active ? "secondary" : "ghost"}
+      size="lg"
+      className={cn("justify-start")}
+      asChild>
+      <Link href={href}>
+        <div
           className={cn(
-            iconVariants({
+            iconContainerVariants({
               color,
               active,
             }),
-          )}
-        />
-      </div>
-      {children}
-      <ChevronRightIcon className={cn("ms-auto size-4", "md:hidden")} />
-    </Link>
+          )}>
+          <Icon
+            aria-hidden
+            className={cn(
+              iconVariants({
+                color,
+                active,
+              }),
+            )}
+          />
+        </div>
+        {children}
+        <ChevronRightIcon className={cn("ms-auto size-4", "md:hidden")} />
+      </Link>
+    </Button>
   );
 }
 

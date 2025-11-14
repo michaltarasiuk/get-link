@@ -50,12 +50,14 @@ export function CopyButton(props: CopyButtonProps) {
   return (
     <Button variant="ghost" size="icon-sm" onClick={handleCopy}>
       <CopyButtonIcon
+        aria-hidden
         className={cn(
           "transition-transform ease-in-out",
           copied ? "scale-0" : "scale-100",
         )}
       />
       <CheckIcon
+        aria-hidden
         className={cn(
           "absolute transition-transform ease-in-out",
           copied ? "scale-100" : "scale-0",
