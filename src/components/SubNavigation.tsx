@@ -52,7 +52,7 @@ export function SubNavigationTab({
   const active = pathname === href;
   return (
     <Button
-      variant={active ? "secondary" : "ghost"}
+      variant={active ? undefined : "ghost"}
       size="lg"
       className={cn("justify-start")}
       asChild>
