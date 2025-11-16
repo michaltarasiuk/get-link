@@ -1,17 +1,12 @@
 "use client";
 
-import {
-  ChevronsRightIcon,
-  DownloadIcon,
-  type LucideIcon,
-  SettingsIcon,
-} from "lucide-react";
+import {ChevronsRightIcon, DownloadIcon, SettingsIcon} from "lucide-react";
 import {useExtracted} from "next-intl";
 
 import {useIsMobile} from "@/hooks/use-is-mobile";
 import {Link, usePathname} from "@/i18n/navigation";
 import {cn} from "@/lib/cn";
-import {rootSegmentsAreEqual, Routes} from "@/lib/routes";
+import {haveSameRootPath, Routes} from "@/lib/routes";
 
 import {Button} from "./ui/button";
 
@@ -45,34 +40,33 @@ function SidebarLinks() {
     : Routes.settings.appearance;
   return (
     <nav className={cn("flex gap-1", "md:flex-col")}>
-      <SidebarLink href={Routes.save} icon={DownloadIcon}>
+      <SidebarLink href={Routes.save}>
+        <DownloadIcon aria-hidden />
         {t("save")}
       </SidebarLink>
-      <SidebarLink href={settingsRoute} icon={SettingsIcon}>
+      <SidebarLink href={settingsRoute}>
+        <SettingsIcon aria-hidden />
         {t("settings")}
       </SidebarLink>
     </nav>
   );
 }
 
-interface SidebarLinkProps {
+function SidebarLink({
+  href,
+  children,
+}: {
   href: string;
-  icon: LucideIcon;
   children: React.ReactNode;
-}
-
-function SidebarLink({href, icon: Icon, children}: SidebarLinkProps) {
+}) {
   const pathname = usePathname();
-  const active = rootSegmentsAreEqual(pathname, href);
+  const active = haveSameRootPath(pathname, href);
   return (
     <Button
       variant={active ? "secondary" : "ghost"}
       className={cn("flex h-16 w-20 flex-col")}
       asChild>
-      <Link href={href}>
-        <Icon aria-hidden />
-        {children}
-      </Link>
+      <Link href={href}>{children}</Link>
     </Button>
   );
 }

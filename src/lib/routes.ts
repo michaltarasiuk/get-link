@@ -15,10 +15,10 @@ export const Routes = {
   },
 };
 
-export function splitPathname(p: string) {
-  return p.split("/").filter((s) => s !== "");
+export function splitPathname(pathname: string) {
+  return pathname.split("/").filter((segment) => segment !== "");
 }
 
-export function rootSegmentsAreEqual(a: string, b: string) {
+export function haveSameRootPath(a: string, b: string) {
   return splitPathname(a).at(0) === splitPathname(b).at(0);
 }
