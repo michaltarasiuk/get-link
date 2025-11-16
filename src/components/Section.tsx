@@ -7,11 +7,14 @@ import {CopyButton} from "./CopyButton";
 
 interface SectionProps {
   title: string;
-  text: string;
   children: React.ReactNode;
 }
 
-export function Section({title, children, text}: SectionProps) {
+export function Section({
+  title,
+  children,
+  text,
+}: SectionProps & {text: string}) {
   return (
     <SectionRoot>
       <SectionHeader>
@@ -23,13 +26,11 @@ export function Section({title, children, text}: SectionProps) {
   );
 }
 
-interface LinkSectionProps {
-  title: string;
-  id: string;
-  children: React.ReactNode;
-}
-
-export function LinkSection({title, id, children}: LinkSectionProps) {
+export function LinkSection({
+  title,
+  id,
+  children,
+}: SectionProps & {id: string}) {
   const hash = useHash();
   return (
     <SectionRoot
