@@ -12,7 +12,12 @@ import {NativeSelect, NativeSelectOption} from "@/components/ui/native-select";
 import {Switch} from "@/components/ui/switch";
 import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
 import {cn} from "@/lib/cn";
-import {FilenameStyles, SavingMethods} from "@/lib/metadata";
+import {
+  FilenameStyles,
+  PreferredFilenameStyle,
+  PreferredSavingMode,
+  SavingMethods,
+} from "@/lib/metadata";
 import {Routes} from "@/lib/routes";
 
 export default async function MetadataPage() {
@@ -24,6 +29,7 @@ export default async function MetadataPage() {
           <FieldBackground>
             <ToggleGroup
               type="single"
+              defaultValue={PreferredFilenameStyle}
               spacing={2}
               className={cn("grid w-full grid-cols-4")}>
               {FilenameStyles.map((s) => (
@@ -45,6 +51,7 @@ export default async function MetadataPage() {
           <FieldBackground>
             <ToggleGroup
               type="single"
+              defaultValue={PreferredSavingMode}
               spacing={2}
               className={cn("grid w-full grid-cols-4")}>
               {SavingMethods.map((m) => (

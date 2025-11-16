@@ -23,6 +23,7 @@ export default async function AppearancePage() {
           <FieldBackground>
             <ToggleGroup
               type="single"
+              defaultValue="auto"
               spacing={2}
               className={cn("grid w-full grid-cols-3")}>
               <ToggleGroupItem value="auto">{t("auto")}</ToggleGroupItem>

@@ -5,7 +5,10 @@ import {LinkSection} from "@/components/Section";
 import {Field, FieldBackground, FieldDescription} from "@/components/ui/field";
 import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
 import {cn} from "@/lib/cn";
-import {LocalProcessingModes} from "@/lib/local-media-processing";
+import {
+  LocalProcessingModes,
+  PreferredLocalProcessingMode,
+} from "@/lib/local-media-processing";
 import {Routes} from "@/lib/routes";
 
 export default async function LocalPage() {
@@ -19,6 +22,7 @@ export default async function LocalPage() {
           <FieldBackground>
             <ToggleGroup
               type="single"
+              defaultValue={PreferredLocalProcessingMode}
               spacing={2}
               className={cn("grid w-full grid-cols-3")}>
               {LocalProcessingModes.map((m) => (

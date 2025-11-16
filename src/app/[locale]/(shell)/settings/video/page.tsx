@@ -12,7 +12,14 @@ import {Switch} from "@/components/ui/switch";
 import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
-import {VideoCodecs, VideoContainers, VideoQualities} from "@/lib/video";
+import {
+  PreferredVideoCodec,
+  PreferredVideoContainer,
+  PreferredVideoQuality,
+  VideoCodecs,
+  VideoContainers,
+  VideoQualities,
+} from "@/lib/video";
 
 export default async function VideoPage() {
   const t = await getExtracted();
@@ -21,7 +28,10 @@ export default async function VideoPage() {
       <LinkSection id="video-quality" title={t("video quality")}>
         <Field>
           <FieldBackground>
-            <ToggleGroup type="single" spacing={2}>
+            <ToggleGroup
+              type="single"
+              defaultValue={PreferredVideoQuality}
+              spacing={2}>
               {VideoQualities.map((q) => (
                 <ToggleGroupItem key={q} value={q}>
                   {q}
@@ -43,6 +53,7 @@ export default async function VideoPage() {
           <FieldBackground>
             <ToggleGroup
               type="single"
+              defaultValue={PreferredVideoCodec}
               spacing={2}
               className={cn("grid w-full grid-cols-3")}>
               {VideoCodecs.map((c) => (
@@ -71,6 +82,7 @@ export default async function VideoPage() {
           <FieldBackground>
             <ToggleGroup
               type="single"
+              defaultValue={PreferredVideoContainer}
               spacing={2}
               className={cn("grid w-full grid-cols-4")}>
               {VideoContainers.map((c) => (

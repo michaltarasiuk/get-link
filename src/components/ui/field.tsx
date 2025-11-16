@@ -111,7 +111,7 @@ export function FieldBackground({
     <Comp
       {...props}
       className={cn(
-        "bg-muted flex h-10 justify-between overflow-x-scroll rounded-lg px-3",
+        "bg-muted flex min-h-9 justify-between overflow-x-scroll rounded-lg p-1",
         props.className,
       )}
     />

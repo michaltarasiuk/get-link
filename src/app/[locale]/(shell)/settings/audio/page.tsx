@@ -11,7 +11,12 @@ import {
 import {NativeSelect, NativeSelectOption} from "@/components/ui/native-select";
 import {Switch} from "@/components/ui/switch";
 import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
-import {AudioBitrates, AudioFormats} from "@/lib/audio";
+import {
+  AudioBitrates,
+  AudioFormats,
+  PreferredAudioBitrate,
+  PreferredAudioFormat,
+} from "@/lib/audio";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
 
@@ -24,6 +29,7 @@ export default async function AudioPage() {
           <FieldBackground>
             <ToggleGroup
               type="single"
+              defaultValue={PreferredAudioFormat}
               spacing={2}
               className={cn("grid w-full grid-cols-5")}>
               {AudioFormats.map((f) => (
@@ -43,7 +49,10 @@ export default async function AudioPage() {
       <LinkSection id="audio-bitrate" title={t("audio bitrate")}>
         <Field>
           <FieldBackground>
-            <ToggleGroup type="single" spacing={2}>
+            <ToggleGroup
+              type="single"
+              defaultValue={PreferredAudioBitrate}
+              spacing={2}>
               {AudioBitrates.map((b) => (
                 <ToggleGroupItem key={b} value={b}>
                   {b}
