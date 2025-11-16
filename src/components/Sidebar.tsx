@@ -6,7 +6,8 @@ import {useExtracted} from "next-intl";
 import {useIsMobile} from "@/hooks/use-is-mobile";
 import {Link, usePathname} from "@/i18n/navigation";
 import {cn} from "@/lib/cn";
-import {haveSameRootPath, Routes} from "@/lib/routes";
+import {hasEqualFirstSegment} from "@/lib/pathname";
+import {Routes} from "@/lib/routes";
 
 import {Button} from "./ui/button";
 
@@ -60,7 +61,7 @@ function SidebarLink({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const active = haveSameRootPath(pathname, href);
+  const active = hasEqualFirstSegment(pathname, href);
   return (
     <Button
       variant={active ? "secondary" : "ghost"}
