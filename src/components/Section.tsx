@@ -51,7 +51,11 @@ function SectionRoot(props: React.ComponentProps<"section">) {
   return (
     <section
       {...props}
-      className={cn("space-y-3 rounded-lg p-3", props.className)}
+      className={cn(
+        "scroll-mt-12 space-y-3 rounded-lg p-3",
+        "md:scroll-mt-0",
+        props.className,
+      )}
     />
   );
 }
