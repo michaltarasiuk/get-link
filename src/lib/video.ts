@@ -1,3 +1,5 @@
+type VideoQuality = (typeof VideoQualities)[number];
+
 export const VideoQualities = [
   "8k+",
   "4k",
@@ -8,11 +10,15 @@ export const VideoQualities = [
   "360p",
   "240p",
   "144p",
-];
-export const PreferredVideoQuality = VideoQualities[3];
+] as const;
+export const PreferredVideoQuality: VideoQuality = "1080p";
 
-export const VideoCodecs = ["h264 + aac", "av1 + opus", "vp9 + opus"];
-export const PreferredVideoCodec = VideoCodecs[0];
+type VideoCodec = (typeof VideoCodecs)[number];
 
-export const VideoContainers = ["auto", "mp4", "webm", "mkv"];
-export const PreferredVideoContainer = VideoContainers[0];
+export const VideoCodecs = ["h264 + aac", "av1 + opus", "vp9 + opus"] as const;
+export const PreferredVideoCodec: VideoCodec = "h264 + aac";
+
+type VideoContainer = (typeof VideoContainers)[number];
+
+export const VideoContainers = ["auto", "mp4", "webm", "mkv"] as const;
+export const PreferredVideoContainer: VideoContainer = "auto";

@@ -1,5 +1,9 @@
-export const FilenameStyles = ["classic", "basic", "pretty", "nerdy"];
-export const PreferredFilenameStyle = FilenameStyles[1];
+type FilenameStyle = (typeof FilenameStyles)[number];
 
-export const SavingMethods = ["ask", "download", "share", "copy"];
-export const PreferredSavingMode = SavingMethods[1];
+export const FilenameStyles = ["classic", "basic", "pretty", "nerdy"] as const;
+export const PreferredFilenameStyle: FilenameStyle = "basic";
+
+type SavingMethod = (typeof SavingMethods)[number];
+
+export const SavingMethods = ["ask", "download", "share", "copy"] as const;
+export const PreferredSavingMode: SavingMethod = "download";

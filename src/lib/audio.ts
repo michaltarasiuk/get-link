@@ -1,5 +1,9 @@
-export const AudioFormats = ["best", "mp3", "ogg", "wav", "opus"];
-export const PreferredAudioFormat = AudioFormats[1];
+type AudioFormat = (typeof AudioFormats)[number];
+
+export const AudioFormats = ["best", "mp3", "ogg", "wav", "opus"] as const;
+export const PreferredAudioFormat: AudioFormat = "mp3";
+
+type AudioBitrate = (typeof AudioBitrates)[number];
 
 export const AudioBitrates = [
   "320kb/s",
@@ -8,5 +12,5 @@ export const AudioBitrates = [
   "96kb/s",
   "64kb/s",
   "8kb/s",
-];
-export const PreferredAudioBitrate = AudioBitrates[2];
+] as const;
+export const PreferredAudioBitrate: AudioBitrate = "128kb/s";
