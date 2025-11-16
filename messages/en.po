@@ -7,11 +7,6 @@ msgstr ""
 "X-Crowdin-SourceKey: msgstr\n"
 
 #: src/app/[locale]/(shell)/settings/accessibility/page.tsx
-#: src/app/[locale]/(shell)/settings/layout.tsx
-msgid "AMFmfD"
-msgstr "accessibility"
-
-#: src/app/[locale]/(shell)/settings/accessibility/page.tsx
 msgid "NgMcU7"
 msgstr "animations and transitions will be disabled whenever possible."
 
@@ -42,11 +37,6 @@ msgstr "transparency of surfaces will be reduced and all blur effects will be di
 #: src/app/[locale]/(shell)/settings/accessibility/page.tsx
 msgid "2Am99U"
 msgstr "visual"
-
-#: src/app/[locale]/(shell)/settings/advanced/page.tsx
-#: src/app/[locale]/(shell)/settings/layout.tsx
-msgid "jGlX0H"
-msgstr "advanced"
 
 #: src/app/[locale]/(shell)/settings/advanced/page.tsx
 msgid "SY1dJk"
@@ -107,11 +97,6 @@ msgstr "reset all settings?"
 #: src/app/[locale]/(shell)/settings/advanced/page.tsx
 msgid "SgXr8x"
 msgstr "settings data"
-
-#: src/app/[locale]/(shell)/settings/appearance/page.tsx
-#: src/app/[locale]/(shell)/settings/layout.tsx
-msgid "LvUke6"
-msgstr "appearance"
 
 #: src/app/[locale]/(shell)/settings/appearance/page.tsx
 msgid "X9qXoT"
@@ -275,14 +260,39 @@ msgid "w0iiK5"
 msgstr "you can use a custom processing instance if you choose to. even though there are some security measures in place, we are not responsible for any damages done via a community instance, as we have no control over them."
 
 #: src/app/[locale]/(shell)/settings/layout.tsx
+#: src/app/[locale]/(shell)/settings/accessibility/page.tsx
+msgid "AMFmfD"
+msgstr "accessibility"
+
+#: src/app/[locale]/(shell)/settings/layout.tsx
+#: src/app/[locale]/(shell)/settings/advanced/page.tsx
+msgid "jGlX0H"
+msgstr "advanced"
+
+#: src/app/[locale]/(shell)/settings/layout.tsx
+#: src/app/[locale]/(shell)/settings/appearance/page.tsx
+msgid "LvUke6"
+msgstr "appearance"
+
+#: src/app/[locale]/(shell)/settings/layout.tsx
 #: src/app/[locale]/(shell)/settings/instances/page.tsx
 msgid "m01g9v"
 msgstr "instances"
 
 #: src/app/[locale]/(shell)/settings/layout.tsx
+#: src/app/[locale]/(shell)/settings/local/page.tsx
+msgid "pcbEfZ"
+msgstr "local processing"
+
+#: src/app/[locale]/(shell)/settings/layout.tsx
 #: src/app/[locale]/(shell)/settings/metadata/page.tsx
 msgid "Cdmjub"
 msgstr "metadata"
+
+#: src/app/[locale]/(shell)/settings/layout.tsx
+#: src/app/[locale]/(shell)/settings/privacy/page.tsx
+msgid "IRioK2"
+msgstr "privacy"
 
 #: src/app/[locale]/(shell)/settings/layout.tsx
 #: src/app/[locale]/(shell)/settings/video/page.tsx
@@ -300,11 +310,6 @@ msgstr "exclusive on-device features are not affected by this setting, they alwa
 #: src/app/[locale]/(shell)/settings/local/page.tsx
 msgid "WBZ7nZ"
 msgstr "local media processing"
-
-#: src/app/[locale]/(shell)/settings/local/page.tsx
-#: src/app/[locale]/(shell)/settings/layout.tsx
-msgid "pcbEfZ"
-msgstr "local processing"
 
 #: src/app/[locale]/(shell)/settings/local/page.tsx
 msgid "1cAaCJ"
@@ -357,11 +362,6 @@ msgstr "title, artist, and other info will not be added to the file."
 #: src/app/[locale]/(shell)/settings/privacy/page.tsx
 msgid "xa3ck5"
 msgstr "always tunnel files"
-
-#: src/app/[locale]/(shell)/settings/privacy/page.tsx
-#: src/app/[locale]/(shell)/settings/layout.tsx
-msgid "IRioK2"
-msgstr "privacy"
 
 #: src/app/[locale]/(shell)/settings/privacy/page.tsx
 msgid "xanIEl"

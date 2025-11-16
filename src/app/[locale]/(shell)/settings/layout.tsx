@@ -36,9 +36,7 @@ export default function SettingsLayout({
         })}>
         <SettingsSubNavigation />
       </div>
-      <main className={cn("md:max-w-xl md:shrink md:basis-xl md:p-3")}>
-        {children}
-      </main>
+      <main className={cn("md:max-w-xl md:p-3")}>{children}</main>
     </div>
   );
 }
