@@ -114,6 +114,10 @@ msgid "LvUke6"
 msgstr "appearance"
 
 #: src/app/[locale]/(shell)/settings/appearance/page.tsx
+msgid "X9qXoT"
+msgstr "auto"
+
+#: src/app/[locale]/(shell)/settings/appearance/page.tsx
 msgid "1JeN7u"
 msgstr "auto theme switches between light and dark themes depending on your device's display mode."
 
@@ -122,12 +126,20 @@ msgid "c1YY2X"
 msgstr "automatic selection"
 
 #: src/app/[locale]/(shell)/settings/appearance/page.tsx
+msgid "EuRLkc"
+msgstr "dark"
+
+#: src/app/[locale]/(shell)/settings/appearance/page.tsx
 msgid "CIK3Au"
 msgstr "english"
 
 #: src/app/[locale]/(shell)/settings/appearance/page.tsx
 msgid "Rbe+bp"
 msgstr "language"
+
+#: src/app/[locale]/(shell)/settings/appearance/page.tsx
+msgid "YE+9zT"
+msgstr "light"
 
 #: src/app/[locale]/(shell)/settings/appearance/page.tsx
 msgid "3deMMV"
@@ -221,8 +233,8 @@ msgstr "info for nerds"
 
 #: src/app/[locale]/(shell)/settings/debug/page.tsx
 #: src/app/[locale]/(shell)/settings/page.tsx
-#: src/components/Sidebar.tsx
 #: src/app/[locale]/(shell)/settings/layout.tsx
+#: src/components/Sidebar.tsx
 msgid "oFJ8He"
 msgstr "settings"
 
@@ -267,6 +279,16 @@ msgstr "use an instance access key"
 msgid "w0iiK5"
 msgstr "you can use a custom processing instance if you choose to. even though there are some security measures in place, we are not responsible for any damages done via a community instance, as we have no control over them."
 
+#: src/app/[locale]/(shell)/settings/layout.tsx
+#: src/app/[locale]/(shell)/settings/metadata/page.tsx
+msgid "Cdmjub"
+msgstr "metadata"
+
+#: src/app/[locale]/(shell)/settings/layout.tsx
+#: src/app/[locale]/(shell)/settings/video/page.tsx
+msgid "4jAirD"
+msgstr "video"
+
 #: src/app/[locale]/(shell)/settings/local/page.tsx
 msgid "TyvnM7"
 msgstr "disabled: local processing will not be used. processing instances can enforce local processing, so this option may not have effect. preferred: media that requires extra processing will be downloaded through the processing queue, but the rest of media will be downloaded by your browser's download manager. forced: all media will always be proxied and downloaded through the processing queue."
@@ -303,11 +325,6 @@ msgstr "filename style"
 #: src/app/[locale]/(shell)/settings/metadata/page.tsx
 msgid "18QRjo"
 msgstr "filename style will only be used for files tunneled by cobalt. some services don't support filename styles other than classic."
-
-#: src/app/[locale]/(shell)/settings/metadata/page.tsx
-#: src/app/[locale]/(shell)/settings/layout.tsx
-msgid "Cdmjub"
-msgstr "metadata"
 
 #: src/app/[locale]/(shell)/settings/metadata/page.tsx
 msgid "q5Op6V"
@@ -393,11 +410,6 @@ msgstr "preferred youtube video codec"
 #: src/app/[locale]/(shell)/settings/video/page.tsx
 msgid "op/G65"
 msgstr "twitter/x"
-
-#: src/app/[locale]/(shell)/settings/video/page.tsx
-#: src/app/[locale]/(shell)/settings/layout.tsx
-msgid "4jAirD"
-msgstr "video"
 
 #: src/app/[locale]/(shell)/settings/video/page.tsx
 msgid "Jmimjr"

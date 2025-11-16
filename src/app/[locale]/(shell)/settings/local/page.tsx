@@ -3,6 +3,9 @@ import {getExtracted} from "next-intl/server";
 import {PageLayout} from "@/components/PageLayout";
 import {LinkSection} from "@/components/Section";
 import {Field, FieldBackground, FieldDescription} from "@/components/ui/field";
+import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
+import {cn} from "@/lib/cn";
+import {LocalProcessingModes} from "@/lib/local-media-processing";
 import {Routes} from "@/lib/routes";
 
 export default async function LocalPage() {
@@ -13,7 +16,18 @@ export default async function LocalPage() {
         id="local-media-processing"
         title={t("local media processing")}>
         <Field>
-          <FieldBackground>{null}</FieldBackground>
+          <FieldBackground>
+            <ToggleGroup
+              type="single"
+              spacing={2}
+              className={cn("grid w-full grid-cols-3")}>
+              {LocalProcessingModes.map((m) => (
+                <ToggleGroupItem key={m} value={m}>
+                  {m}
+                </ToggleGroupItem>
+              ))}
+            </ToggleGroup>
+          </FieldBackground>
           <FieldDescription>
             {t(
               "when downloading media, remuxing and transcoding will be done on-device instead of the cloud. you'll see detailed progress in the processing queue.",

@@ -9,7 +9,10 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import {Switch} from "@/components/ui/switch";
+import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
+import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
+import {VideoCodecs, VideoContainers, VideoQualities} from "@/lib/video";
 
 export default async function VideoPage() {
   const t = await getExtracted();
@@ -17,7 +20,15 @@ export default async function VideoPage() {
     <PageLayout title={t("video")} backTo={Routes.settings.root}>
       <LinkSection id="video-quality" title={t("video quality")}>
         <Field>
-          <FieldBackground>{null}</FieldBackground>
+          <FieldBackground>
+            <ToggleGroup type="single" spacing={2}>
+              {VideoQualities.map((q) => (
+                <ToggleGroupItem key={q} value={q}>
+                  {q}
+                </ToggleGroupItem>
+              ))}
+            </ToggleGroup>
+          </FieldBackground>
           <FieldDescription>
             {t(
               "if preferred video quality isn't available, next best is picked instead.",
@@ -29,7 +40,18 @@ export default async function VideoPage() {
         id="preferred-youtube-video-codec"
         title={t("preferred youtube video codec")}>
         <Field>
-          <FieldBackground>{null}</FieldBackground>
+          <FieldBackground>
+            <ToggleGroup
+              type="single"
+              spacing={2}
+              className={cn("grid w-full grid-cols-3")}>
+              {VideoCodecs.map((c) => (
+                <ToggleGroupItem key={c} value={c}>
+                  {c}
+                </ToggleGroupItem>
+              ))}
+            </ToggleGroup>
+          </FieldBackground>
           <FieldDescription>
             {t(
               "h264: best compatibility, average quality. max quality is 1080p. av1: best quality and efficiency. supports 8k & HDR. vp9: same quality as av1, but file is ~2x bigger. supports 4k & HDR.",
@@ -46,7 +68,18 @@ export default async function VideoPage() {
         id="youtube-file-container"
         title={t("youtube file container")}>
         <Field>
-          <FieldBackground>{null}</FieldBackground>
+          <FieldBackground>
+            <ToggleGroup
+              type="single"
+              spacing={2}
+              className={cn("grid w-full grid-cols-4")}>
+              {VideoContainers.map((c) => (
+                <ToggleGroupItem key={c} value={c}>
+                  {c}
+                </ToggleGroupItem>
+              ))}
+            </ToggleGroup>
+          </FieldBackground>
           <FieldDescription>
             {t(
               "when 'auto' is selected, cobalt will pick the best container automatically depending on selected codec: mp4 for h264; webm for vp9/av1.",

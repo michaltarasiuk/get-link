@@ -10,6 +10,9 @@ import {
 } from "@/components/ui/field";
 import {NativeSelect, NativeSelectOption} from "@/components/ui/native-select";
 import {Switch} from "@/components/ui/switch";
+import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
+import {AudioBitrates, AudioFormats} from "@/lib/audio";
+import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
 
 export default async function AudioPage() {
@@ -18,7 +21,18 @@ export default async function AudioPage() {
     <PageLayout title={t("audio")} backTo={Routes.settings.root}>
       <LinkSection id="audio-format" title={t("audio format")}>
         <Field>
-          <FieldBackground>{null}</FieldBackground>
+          <FieldBackground>
+            <ToggleGroup
+              type="single"
+              spacing={2}
+              className={cn("grid w-full grid-cols-5")}>
+              {AudioFormats.map((f) => (
+                <ToggleGroupItem key={f} value={f}>
+                  {f}
+                </ToggleGroupItem>
+              ))}
+            </ToggleGroup>
+          </FieldBackground>
           <FieldDescription>
             {t(
               "all formats but 'best' are converted from the source format, there will be some quality loss. when 'best' format is selected, the audio is kept in its original format whenever possible.",
@@ -28,7 +42,15 @@ export default async function AudioPage() {
       </LinkSection>
       <LinkSection id="audio-bitrate" title={t("audio bitrate")}>
         <Field>
-          <FieldBackground>{null}</FieldBackground>
+          <FieldBackground>
+            <ToggleGroup type="single" spacing={2}>
+              {AudioBitrates.map((b) => (
+                <ToggleGroupItem key={b} value={b}>
+                  {b}
+                </ToggleGroupItem>
+              ))}
+            </ToggleGroup>
+          </FieldBackground>
           <FieldDescription>
             {t(
               "bitrate is applied only when converting audio to a lossy format. cobalt can't improve the source audio quality, so choosing a bitrate over 128kbps may inflate the file size with no audible difference. perceived quality may vary by format.",

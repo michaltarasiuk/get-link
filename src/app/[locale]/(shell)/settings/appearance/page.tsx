@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/field";
 import {NativeSelect, NativeSelectOption} from "@/components/ui/native-select";
 import {Switch} from "@/components/ui/switch";
+import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
+import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
 
 export default async function AppearancePage() {
@@ -18,7 +20,16 @@ export default async function AppearancePage() {
     <PageLayout title={t("appearance")} backTo={Routes.settings.root}>
       <LinkSection id="theme" title={t("theme")}>
         <Field>
-          <FieldBackground>{null}</FieldBackground>
+          <FieldBackground>
+            <ToggleGroup
+              type="single"
+              spacing={2}
+              className={cn("grid w-full grid-cols-3")}>
+              <ToggleGroupItem value="auto">{t("auto")}</ToggleGroupItem>
+              <ToggleGroupItem value="light">{t("light")}</ToggleGroupItem>
+              <ToggleGroupItem value="dark">{t("dark")}</ToggleGroupItem>
+            </ToggleGroup>
+          </FieldBackground>
           <FieldDescription>
             {t(
               "auto theme switches between light and dark themes depending on your device's display mode.",

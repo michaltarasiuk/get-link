@@ -10,6 +10,9 @@ import {
 } from "@/components/ui/field";
 import {NativeSelect, NativeSelectOption} from "@/components/ui/native-select";
 import {Switch} from "@/components/ui/switch";
+import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
+import {cn} from "@/lib/cn";
+import {FilenameStyles, SavingMethods} from "@/lib/metadata";
 import {Routes} from "@/lib/routes";
 
 export default async function MetadataPage() {
@@ -18,7 +21,18 @@ export default async function MetadataPage() {
     <PageLayout title={t("metadata")} backTo={Routes.settings.root}>
       <LinkSection id="filename-style" title={t("filename style")}>
         <Field>
-          <FieldBackground>{null}</FieldBackground>
+          <FieldBackground>
+            <ToggleGroup
+              type="single"
+              spacing={2}
+              className={cn("grid w-full grid-cols-4")}>
+              {FilenameStyles.map((s) => (
+                <ToggleGroupItem key={s} value={s}>
+                  {s}
+                </ToggleGroupItem>
+              ))}
+            </ToggleGroup>
+          </FieldBackground>
           <FieldDescription>
             {t(
               "filename style will only be used for files tunneled by cobalt. some services don't support filename styles other than classic.",
@@ -28,7 +42,18 @@ export default async function MetadataPage() {
       </LinkSection>
       <LinkSection id="saving-method" title={t("saving method")}>
         <Field>
-          <FieldBackground>{null}</FieldBackground>
+          <FieldBackground>
+            <ToggleGroup
+              type="single"
+              spacing={2}
+              className={cn("grid w-full grid-cols-4")}>
+              {SavingMethods.map((m) => (
+                <ToggleGroupItem key={m} value={m}>
+                  {m}
+                </ToggleGroupItem>
+              ))}
+            </ToggleGroup>
+          </FieldBackground>
           <FieldDescription>
             {t(
               "preferred way of saving the file or link from cobalt. if preferred method is unavailable or something goes wrong, cobalt will ask you what to do next.",
