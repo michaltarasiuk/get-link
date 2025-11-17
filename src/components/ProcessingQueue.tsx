@@ -1,15 +1,18 @@
 import {ArrowDownIcon} from "lucide-react";
+import {getExtracted} from "next-intl/server";
 
 import {cn} from "@/lib/cn";
 
 import {Button} from "./ui/button";
 import {Popover, PopoverContent, PopoverTrigger} from "./ui/popover";
 
-export function ProcessingQueue() {
+export async function ProcessingQueue() {
+  const t = await getExtracted();
   return (
     <Popover>
       <PopoverTrigger asChild>
         <Button
+          aria-label={t("Open processing queue")}
           variant="outline"
           size="icon"
           className={cn(

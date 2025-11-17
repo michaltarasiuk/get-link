@@ -2,6 +2,7 @@
 
 import {cva} from "class-variance-authority";
 import {ChevronRightIcon, type LucideIcon} from "lucide-react";
+import {useId} from "react";
 
 import {Link, usePathname} from "@/i18n/navigation";
 import {cn} from "@/lib/cn";
@@ -15,11 +16,16 @@ interface SubNavigationProps {
 }
 
 export function SubNavigation({title, children}: SubNavigationProps) {
+  const headingId = useId();
   return (
-    <div className={cn("space-y-3 p-3")}>
-      <h2 className={cn("hidden text-xl font-medium", "md:block")}>{title}</h2>
-      <nav className={cn("space-y-3")}>{children}</nav>
-    </div>
+    <nav aria-labelledby={headingId} className={cn("space-y-3 p-3")}>
+      <h2
+        id={headingId}
+        className={cn("hidden text-xl font-medium", "md:block")}>
+        {title}
+      </h2>
+      <div className={cn("space-y-3")}>{children}</div>
+    </nav>
   );
 }
 

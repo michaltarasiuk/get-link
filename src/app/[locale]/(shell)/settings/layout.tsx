@@ -30,13 +30,13 @@ export default function SettingsLayout({
   const pathname = usePathname();
   return (
     <div className={cn("flex flex-col-reverse", "md:flex-row")}>
-      <div
+      <aside
         className={cn("md:block md:shrink-0 md:basis-75 md:p-3", {
           hidden: pathname !== Routes.settings.root,
         })}>
         <SettingsSubNavigation />
-      </div>
-      <main className={cn("md:max-w-xl md:p-3")}>{children}</main>
+      </aside>
+      <div className={cn("md:max-w-xl md:p-3")}>{children}</div>
     </div>
   );
 }
