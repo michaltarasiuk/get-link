@@ -33,7 +33,6 @@ function SidebarLogo() {
 }
 
 function SidebarLinks() {
-  const pathname = usePathname();
   const isMobile = useIsMobile();
   const t = useExtracted();
   const settingsRoute = isMobile
@@ -41,11 +40,11 @@ function SidebarLinks() {
     : Routes.settings.appearance;
   return (
     <nav className={cn("flex gap-1", "md:flex-col")}>
-      <SidebarLink href={Routes.save} active={isSaveRoute(pathname)}>
+      <SidebarLink href={Routes.save} isActive={isSaveRoute}>
         <DownloadIcon aria-hidden />
         {t("save")}
       </SidebarLink>
-      <SidebarLink href={settingsRoute} active={isSettingsRoute(pathname)}>
+      <SidebarLink href={settingsRoute} isActive={isSettingsRoute}>
         <SettingsIcon aria-hidden />
         {t("settings")}
       </SidebarLink>
@@ -55,11 +54,13 @@ function SidebarLinks() {
 
 interface SidebarLinkProps {
   href: string;
-  active: boolean;
+  isActive: (pathname: string) => boolean;
   children: React.ReactNode;
 }
 
-function SidebarLink({href, active, children}: SidebarLinkProps) {
+function SidebarLink({href, isActive, children}: SidebarLinkProps) {
+  const pathname = usePathname();
+  const active = isActive(pathname);
   return (
     <Button
       variant={active ? "secondary" : "ghost"}
