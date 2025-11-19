@@ -43,7 +43,7 @@ export function SubNavigationSection({children}: {children: React.ReactNode}) {
 
 interface SubNavigationTabProps {
   href: string;
-  color: Color;
+  color: "blue" | "purple" | "magenta" | "orange" | "green" | "gray";
   icon: LucideIcon;
   children: React.ReactNode;
 }
@@ -91,8 +91,6 @@ export function SubNavigationTabSeparator() {
   return <Separator className={cn("md:hidden")} />;
 }
 
-type Color = "blue" | "purple" | "magenta" | "orange" | "green" | "gray";
-
 const iconContainerVariants = cva(
   "border-border flex size-8 items-center justify-center rounded-md border bg-sidebar-accent",
   {
@@ -104,7 +102,7 @@ const iconContainerVariants = cva(
         orange: null,
         green: null,
         gray: null,
-      } satisfies Record<Color, unknown>,
+      },
       active: {
         true: null,
         false: null,
@@ -154,7 +152,7 @@ const iconVariants = cva("size-4", {
       orange: "text-orange",
       green: "text-green",
       gray: "text-gray",
-    } satisfies Record<Color, unknown>,
+    },
     active: {
       true: "text-white",
       false: null,

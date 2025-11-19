@@ -14,3 +14,11 @@ export const Routes = {
     debug: "/settings/debug",
   },
 };
+
+export function isSaveRoute(p: string) {
+  return p === Routes.save;
+}
+
+export function isSettingsRoute(p: string) {
+  return p.startsWith(Routes.settings.root);
+}

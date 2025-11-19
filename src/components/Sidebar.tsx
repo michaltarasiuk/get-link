@@ -6,8 +6,7 @@ import {useExtracted} from "next-intl";
 import {useIsMobile} from "@/hooks/use-is-mobile";
 import {Link, usePathname} from "@/i18n/navigation";
 import {cn} from "@/lib/cn";
-import {hasEqualFirstSegment} from "@/lib/pathname";
-import {Routes} from "@/lib/routes";
+import {isSaveRoute, isSettingsRoute, Routes} from "@/lib/routes";
 
 import {Button} from "./ui/button";
 
@@ -34,6 +33,7 @@ function SidebarLogo() {
 }
 
 function SidebarLinks() {
+  const pathname = usePathname();
   const isMobile = useIsMobile();
   const t = useExtracted();
   const settingsRoute = isMobile
@@ -41,11 +41,11 @@ function SidebarLinks() {
     : Routes.settings.appearance;
   return (
     <nav className={cn("flex gap-1", "md:flex-col")}>
-      <SidebarLink href={Routes.save}>
+      <SidebarLink href={Routes.save} active={isSaveRoute(pathname)}>
         <DownloadIcon aria-hidden />
         {t("save")}
       </SidebarLink>
-      <SidebarLink href={settingsRoute}>
+      <SidebarLink href={settingsRoute} active={isSettingsRoute(pathname)}>
         <SettingsIcon aria-hidden />
         {t("settings")}
       </SidebarLink>
@@ -53,15 +53,13 @@ function SidebarLinks() {
   );
 }
 
-function SidebarLink({
-  href,
-  children,
-}: {
+interface SidebarLinkProps {
   href: string;
+  active: boolean;
   children: React.ReactNode;
-}) {
-  const pathname = usePathname();
-  const active = hasEqualFirstSegment(pathname, href);
+}
+
+function SidebarLink({href, active, children}: SidebarLinkProps) {
   return (
     <Button
       variant={active ? "secondary" : "ghost"}

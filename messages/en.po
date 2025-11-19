@@ -44,11 +44,6 @@ msgid "2Am99U"
 msgstr "visual"
 
 #: src/app/[locale]/(shell)/settings/advanced/page.tsx
-#: src/app/[locale]/(shell)/settings/layout.tsx
-msgid "jGlX0H"
-msgstr "advanced"
-
-#: src/app/[locale]/(shell)/settings/advanced/page.tsx
 msgid "SY1dJk"
 msgstr "all files from the processing queue will be removed and on-device features will take longer to load. this action is immediate and irreversible."
 
@@ -280,9 +275,9 @@ msgid "w0iiK5"
 msgstr "you can use a custom processing instance if you choose to. even though there are some security measures in place, we are not responsible for any damages done via a community instance, as we have no control over them."
 
 #: src/app/[locale]/(shell)/settings/layout.tsx
-#: src/app/[locale]/(shell)/settings/video/page.tsx
-msgid "4jAirD"
-msgstr "video"
+#: src/app/[locale]/(shell)/settings/advanced/page.tsx
+msgid "jGlX0H"
+msgstr "advanced"
 
 #: src/app/[locale]/(shell)/settings/local/page.tsx
 msgid "TyvnM7"
@@ -410,6 +405,11 @@ msgstr "preferred youtube video codec"
 #: src/app/[locale]/(shell)/settings/video/page.tsx
 msgid "op/G65"
 msgstr "twitter/x"
+
+#: src/app/[locale]/(shell)/settings/video/page.tsx
+#: src/app/[locale]/(shell)/settings/layout.tsx
+msgid "4jAirD"
+msgstr "video"
 
 #: src/app/[locale]/(shell)/settings/video/page.tsx
 msgid "Jmimjr"
