@@ -1,4 +1,6 @@
-import {getExtracted} from "next-intl/server";
+"use client";
+
+import {useExtracted} from "next-intl";
 
 import {PageLayout} from "@/components/PageLayout";
 import {LinkSection} from "@/components/Section";
@@ -20,8 +22,8 @@ import {
 } from "@/lib/metadata";
 import {Routes} from "@/lib/routes";
 
-export default async function MetadataPage() {
-  const t = await getExtracted();
+export default function MetadataPage() {
+  const t = useExtracted();
   return (
     <PageLayout title={t("metadata")} backTo={Routes.settings.root}>
       <LinkSection id="filename-style" title={t("filename style")}>

@@ -1,11 +1,13 @@
-import {getExtracted} from "next-intl/server";
+"use client";
+
+import {useExtracted} from "next-intl";
 
 import {PageLayout} from "@/components/PageLayout";
 import {Section} from "@/components/Section";
 import {Routes} from "@/lib/routes";
 
-export default async function DebugPage() {
-  const t = await getExtracted();
+export default function DebugPage() {
+  const t = useExtracted();
   return (
     <PageLayout title={t("info for nerds")} backTo={Routes.settings.root}>
       <Section title={t("device")} text="">

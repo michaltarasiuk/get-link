@@ -1,4 +1,6 @@
-import {getExtracted} from "next-intl/server";
+"use client";
+
+import {useExtracted} from "next-intl";
 
 import {PageLayout} from "@/components/PageLayout";
 import {LinkSection} from "@/components/Section";
@@ -21,8 +23,8 @@ import {
   VideoQualities,
 } from "@/lib/video";
 
-export default async function VideoPage() {
-  const t = await getExtracted();
+export default function VideoPage() {
+  const t = useExtracted();
   return (
     <PageLayout title={t("video")} backTo={Routes.settings.root}>
       <LinkSection id="video-quality" title={t("video quality")}>

@@ -1,4 +1,6 @@
-import {getExtracted} from "next-intl/server";
+"use client";
+
+import {useExtracted} from "next-intl";
 
 import {PageLayout} from "@/components/PageLayout";
 import {LinkSection} from "@/components/Section";
@@ -14,8 +16,8 @@ import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
 
-export default async function AppearancePage() {
-  const t = await getExtracted();
+export default function AppearancePage() {
+  const t = useExtracted();
   return (
     <PageLayout title={t("appearance")} backTo={Routes.settings.root}>
       <LinkSection id="theme" title={t("theme")}>

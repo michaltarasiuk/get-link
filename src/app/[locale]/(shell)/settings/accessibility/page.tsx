@@ -1,4 +1,6 @@
-import {getExtracted} from "next-intl/server";
+"use client";
+
+import {useExtracted} from "next-intl";
 
 import {PageLayout} from "@/components/PageLayout";
 import {LinkSection} from "@/components/Section";
@@ -11,8 +13,8 @@ import {
 import {Switch} from "@/components/ui/switch";
 import {Routes} from "@/lib/routes";
 
-export default async function AccessibilityPage() {
-  const t = await getExtracted();
+export default function AccessibilityPage() {
+  const t = useExtracted();
   return (
     <PageLayout title={t("accessibility")} backTo={Routes.settings.root}>
       <LinkSection id="visual" title={t("visual")}>

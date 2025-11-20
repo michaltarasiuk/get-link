@@ -96,6 +96,7 @@ msgid "vI2rTZ"
 msgstr "reset"
 
 #: src/app/[locale]/(shell)/settings/advanced/page.tsx
+#: src/components/NoScriptAlertDialog.tsx
 msgid "EfEzy9"
 msgstr "reset all settings?"
 
@@ -279,6 +280,11 @@ msgstr "you can use a custom processing instance if you choose to. even though t
 msgid "jGlX0H"
 msgstr "advanced"
 
+#: src/app/[locale]/(shell)/settings/layout.tsx
+#: src/app/[locale]/(shell)/settings/video/page.tsx
+msgid "4jAirD"
+msgstr "video"
+
 #: src/app/[locale]/(shell)/settings/local/page.tsx
 msgid "TyvnM7"
 msgstr "disabled: local processing will not be used. processing instances can enforce local processing, so this option may not have effect. preferred: media that requires extra processing will be downloaded through the processing queue, but the rest of media will be downloaded by your browser's download manager. forced: all media will always be proxied and downloaded through the processing queue."
@@ -407,11 +413,6 @@ msgid "op/G65"
 msgstr "twitter/x"
 
 #: src/app/[locale]/(shell)/settings/video/page.tsx
-#: src/app/[locale]/(shell)/settings/layout.tsx
-msgid "4jAirD"
-msgstr "video"
-
-#: src/app/[locale]/(shell)/settings/video/page.tsx
 msgid "Jmimjr"
 msgstr "video quality"
 
@@ -430,6 +431,14 @@ msgstr "404 - Not Found"
 #: src/app/not-found.tsx
 msgid "rUBRAG"
 msgstr "The page you're looking for doesn't exist."
+
+#: src/components/NoScriptAlertDialog.tsx
+msgid "qd2Nk8"
+msgstr "got it"
+
+#: src/components/NoScriptAlertDialog.tsx
+msgid "QpOue0"
+msgstr "this application uses javascript for api requests and ui interactions, but it's not available in your browser. you can still navigate around, but most functionality won't work."
 
 #: src/components/ProcessingQueue.tsx
 msgid "yk9dCc"

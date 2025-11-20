@@ -1,4 +1,6 @@
-import {getExtracted} from "next-intl/server";
+"use client";
+
+import {useExtracted} from "next-intl";
 
 import {PageLayout} from "@/components/PageLayout";
 import {LinkSection} from "@/components/Section";
@@ -11,8 +13,8 @@ import {
 } from "@/lib/local-media-processing";
 import {Routes} from "@/lib/routes";
 
-export default async function LocalPage() {
-  const t = await getExtracted();
+export default function LocalPage() {
+  const t = useExtracted();
   return (
     <PageLayout title={t("local processing")} backTo={Routes.settings.root}>
       <LinkSection

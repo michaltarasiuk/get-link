@@ -111,7 +111,7 @@ export function FieldBackground({
     <Comp
       {...props}
       className={cn(
-        "bg-muted flex min-h-9 justify-between overflow-x-scroll rounded-lg p-1",
+        "bg-muted border-border flex min-h-11 justify-between overflow-x-scroll rounded-lg border p-1",
         props.className,
       )}
     />
@@ -139,8 +139,6 @@ export function FieldLabel(props: React.ComponentProps<typeof Label>) {
       className={cn(
         "group/field-label peer/field-label flex w-fit gap-2 leading-snug",
         "*:data-[slot=field]:p-4",
-        "has-data-[state=checked]:bg-primary/5 has-data-[state=checked]:border-primary",
-        "dark:has-data-[state=checked]:bg-primary/10",
         "has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border",
         "group-data-[disabled=true]/field:opacity-50",
         props.className,
