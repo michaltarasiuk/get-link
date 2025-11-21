@@ -1,5 +1,6 @@
 "use client";
 
+import {useAtom} from "jotai/react";
 import {useExtracted} from "next-intl";
 
 import {PageLayout} from "@/components/PageLayout";
@@ -11,14 +12,11 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import {Switch} from "@/components/ui/switch";
-import {
-  PreferredAutoOpenQueue,
-  PreferredReduceMotion,
-  PreferredReduceVisualTransparency,
-} from "@/lib/accessibility";
 import {Routes} from "@/lib/routes";
+import {accessibilityAtom} from "@/lib/storage";
 
 export default function AccessibilityPage() {
+  const [accessibility, setAccessibility] = useAtom(accessibilityAtom);
   const t = useExtracted();
   return (
     <PageLayout title={t("accessibility")} backTo={Routes.settings.root}>
@@ -27,7 +25,15 @@ export default function AccessibilityPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("reduce motion")}
-              <Switch defaultChecked={PreferredReduceMotion} />
+              <Switch
+                checked={accessibility.reduceMotion}
+                onCheckedChange={(checked) =>
+                  setAccessibility((accessibility) => ({
+                    ...accessibility,
+                    reduceMotion: checked,
+                  }))
+                }
+              />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>
@@ -40,7 +46,15 @@ export default function AccessibilityPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("reduce visual transparency")}
-              <Switch defaultChecked={PreferredReduceVisualTransparency} />
+              <Switch
+                checked={accessibility.reduceVisualTransparency}
+                onCheckedChange={(checked) =>
+                  setAccessibility((accessibility) => ({
+                    ...accessibility,
+                    reduceVisualTransparency: checked,
+                  }))
+                }
+              />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>
@@ -55,7 +69,15 @@ export default function AccessibilityPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("don't open the queue automatically")}
-              <Switch defaultChecked={PreferredAutoOpenQueue} />
+              <Switch
+                checked={accessibility.autoOpenQueue}
+                onCheckedChange={(checked) =>
+                  setAccessibility((accessibility) => ({
+                    ...accessibility,
+                    autoOpenQueue: checked,
+                  }))
+                }
+              />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>

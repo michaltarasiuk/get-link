@@ -5,7 +5,7 @@ import {DefaultLocale, Locales} from "@/i18n/routing";
 
 import {raise} from "./assert";
 
-type Theme = (typeof Themes)[number];
+export type Theme = (typeof Themes)[number];
 
 export const Themes = ["auto", "light", "dark"] as const;
 export const PreferredTheme: Theme = "auto";
@@ -24,7 +24,6 @@ export const Languages = Locales.map((l) => {
 export const PreferredLanguage = DefaultLocale;
 
 declare global {
-  type Theme = "light" | "dark";
   interface Window {
     __theme: Theme;
     __setPreferredTheme: (theme: Theme) => void;

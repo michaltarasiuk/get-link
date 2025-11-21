@@ -1,5 +1,6 @@
 "use client";
 
+import {useAtom} from "jotai/react";
 import {useExtracted} from "next-intl";
 
 import {PageLayout} from "@/components/PageLayout";
@@ -15,19 +16,19 @@ import {Switch} from "@/components/ui/switch";
 import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
 import {assertNever} from "@/lib/assert";
 import {
+  type AudioBitrate,
   AudioBitrates,
+  type AudioFormat,
   AudioFormats,
+  type DubLanguage,
   DubLanguages,
-  PreferredAudioBitrate,
-  PreferredAudioFormat,
-  PreferredBetterQuality,
-  PreferredDownloadOrginalSound,
-  PreferredDubLanguage,
 } from "@/lib/audio";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
+import {audioAtom} from "@/lib/storage";
 
 export default function AudioPage() {
+  const [audio, setAudio] = useAtom(audioAtom);
   const t = useExtracted();
   return (
     <PageLayout title={t("audio")} backTo={Routes.settings.root}>
@@ -36,9 +37,15 @@ export default function AudioPage() {
           <FieldBackground>
             <ToggleGroup
               type="single"
-              defaultValue={PreferredAudioFormat}
+              value={audio.format}
               spacing={2}
-              className={cn("grid w-full grid-cols-5")}>
+              className={cn("grid w-full grid-cols-5")}
+              onValueChange={(value) =>
+                setAudio((audio) => ({
+                  ...audio,
+                  format: value as AudioFormat,
+                }))
+              }>
               {AudioFormats.map((f) => (
                 <ToggleGroupItem key={f} value={f}>
                   {f}
@@ -58,8 +65,14 @@ export default function AudioPage() {
           <FieldBackground>
             <ToggleGroup
               type="single"
-              defaultValue={PreferredAudioBitrate}
-              spacing={2}>
+              value={audio.bitrate}
+              spacing={2}
+              onValueChange={(value) =>
+                setAudio((audio) => ({
+                  ...audio,
+                  bitrate: value as AudioBitrate,
+                }))
+              }>
               {AudioBitrates.map((b) => (
                 <ToggleGroupItem key={b} value={b}>
                   {b}
@@ -81,7 +94,15 @@ export default function AudioPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("prefer better quality")}
-              <Switch defaultChecked={PreferredBetterQuality} />
+              <Switch
+                checked={audio.betterQuality}
+                onCheckedChange={(checked) =>
+                  setAudio((audio) => ({
+                    ...audio,
+                    betterQuality: checked,
+                  }))
+                }
+              />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>
@@ -96,7 +117,14 @@ export default function AudioPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("preferred dub language")}
-              <NativeSelect defaultValue={PreferredDubLanguage}>
+              <NativeSelect
+                value={audio.dubLanguage}
+                onValueChange={(value) =>
+                  setAudio((audio) => ({
+                    ...audio,
+                    dubLanguage: value as DubLanguage,
+                  }))
+                }>
                 {DubLanguages.map((l) => {
                   let label: string;
                   switch (l) {
@@ -127,7 +155,15 @@ export default function AudioPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("download original sound")}
-              <Switch defaultChecked={PreferredDownloadOrginalSound} />
+              <Switch
+                checked={audio.downloadOrginalSound}
+                onCheckedChange={(checked) =>
+                  setAudio((audio) => ({
+                    ...audio,
+                    downloadOrginalSound: checked,
+                  }))
+                }
+              />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>

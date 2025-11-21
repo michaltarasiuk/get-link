@@ -1,5 +1,6 @@
 "use client";
 
+import {useAtom} from "jotai/react";
 import {useExtracted} from "next-intl";
 
 import {PageLayout} from "@/components/PageLayout";
@@ -14,18 +15,18 @@ import {Switch} from "@/components/ui/switch";
 import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
+import {videoAtom} from "@/lib/storage";
 import {
-  PreferredAllowH265ForVideos,
-  PreferredConvertLoopingVideosToGIF,
-  PreferredVideoCodec,
-  PreferredVideoContainer,
-  PreferredVideoQuality,
+  type VideoCodec,
   VideoCodecs,
+  type VideoContainer,
   VideoContainers,
   VideoQualities,
+  type VideoQuality,
 } from "@/lib/video";
 
 export default function VideoPage() {
+  const [video, setVideo] = useAtom(videoAtom);
   const t = useExtracted();
   return (
     <PageLayout title={t("video")} backTo={Routes.settings.root}>
@@ -34,8 +35,14 @@ export default function VideoPage() {
           <FieldBackground>
             <ToggleGroup
               type="single"
-              defaultValue={PreferredVideoQuality}
-              spacing={2}>
+              value={video.quality}
+              spacing={2}
+              onValueChange={(value) =>
+                setVideo((video) => ({
+                  ...video,
+                  quality: value as VideoQuality,
+                }))
+              }>
               {VideoQualities.map((q) => (
                 <ToggleGroupItem key={q} value={q}>
                   {q}
@@ -57,9 +64,15 @@ export default function VideoPage() {
           <FieldBackground>
             <ToggleGroup
               type="single"
-              defaultValue={PreferredVideoCodec}
+              value={video.codec}
               spacing={2}
-              className={cn("grid w-full grid-cols-3")}>
+              className={cn("grid w-full grid-cols-3")}
+              onValueChange={(value) =>
+                setVideo((video) => ({
+                  ...video,
+                  codec: value as VideoCodec,
+                }))
+              }>
               {VideoCodecs.map((c) => (
                 <ToggleGroupItem key={c} value={c}>
                   {c}
@@ -86,9 +99,15 @@ export default function VideoPage() {
           <FieldBackground>
             <ToggleGroup
               type="single"
-              defaultValue={PreferredVideoContainer}
+              value={video.container}
               spacing={2}
-              className={cn("grid w-full grid-cols-4")}>
+              className={cn("grid w-full grid-cols-4")}
+              onValueChange={(value) =>
+                setVideo((video) => ({
+                  ...video,
+                  container: value as VideoContainer,
+                }))
+              }>
               {VideoContainers.map((c) => (
                 <ToggleGroupItem key={c} value={c}>
                   {c}
@@ -110,7 +129,15 @@ export default function VideoPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("allow h265 for videos")}
-              <Switch defaultChecked={PreferredAllowH265ForVideos} />
+              <Switch
+                checked={video.allowH265}
+                onCheckedChange={(checked) =>
+                  setVideo((video) => ({
+                    ...video,
+                    allowH265: checked,
+                  }))
+                }
+              />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>
@@ -125,7 +152,15 @@ export default function VideoPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("convert looping videos to GIF")}
-              <Switch defaultChecked={PreferredConvertLoopingVideosToGIF} />
+              <Switch
+                checked={video.convertLoopingToGIF}
+                onCheckedChange={(checked) =>
+                  setVideo((video) => ({
+                    ...video,
+                    convertLoopingToGIF: checked,
+                  }))
+                }
+              />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>

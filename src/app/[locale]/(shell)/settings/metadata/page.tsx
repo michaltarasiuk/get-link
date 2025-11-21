@@ -1,5 +1,6 @@
 "use client";
 
+import {useAtom} from "jotai/react";
 import {useExtracted} from "next-intl";
 
 import {PageLayout} from "@/components/PageLayout";
@@ -16,17 +17,18 @@ import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
 import {assertNever} from "@/lib/assert";
 import {cn} from "@/lib/cn";
 import {
+  type FilenameStyle,
   FilenameStyles,
-  PreferredDisableFileMetadata,
-  PreferredFilenameStyle,
-  PreferredSavingMode,
-  PreferredSubtitleLanguage,
+  type SavingMethod,
   SavingMethods,
+  type SubtitleLanguage,
   SubtitleLanguages,
 } from "@/lib/metadata";
 import {Routes} from "@/lib/routes";
+import {metadataAtom} from "@/lib/storage";
 
 export default function MetadataPage() {
+  const [metadata, setMetadata] = useAtom(metadataAtom);
   const t = useExtracted();
   return (
     <PageLayout title={t("metadata")} backTo={Routes.settings.root}>
@@ -35,9 +37,15 @@ export default function MetadataPage() {
           <FieldBackground>
             <ToggleGroup
               type="single"
-              defaultValue={PreferredFilenameStyle}
+              value={metadata.filenameStyle}
               spacing={2}
-              className={cn("grid w-full grid-cols-4")}>
+              className={cn("grid w-full grid-cols-4")}
+              onValueChange={(value) =>
+                setMetadata((metadata) => ({
+                  ...metadata,
+                  filenameStyle: value as FilenameStyle,
+                }))
+              }>
               {FilenameStyles.map((s) => (
                 <ToggleGroupItem key={s} value={s}>
                   {s}
@@ -57,9 +65,15 @@ export default function MetadataPage() {
           <FieldBackground>
             <ToggleGroup
               type="single"
-              defaultValue={PreferredSavingMode}
+              value={metadata.savingMethod}
               spacing={2}
-              className={cn("grid w-full grid-cols-4")}>
+              className={cn("grid w-full grid-cols-4")}
+              onValueChange={(value) =>
+                setMetadata((metadata) => ({
+                  ...metadata,
+                  savingMethod: value as SavingMethod,
+                }))
+              }>
               {SavingMethods.map((m) => (
                 <ToggleGroupItem key={m} value={m}>
                   {m}
@@ -79,7 +93,14 @@ export default function MetadataPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("preferred subtitle language")}
-              <NativeSelect defaultValue={PreferredSubtitleLanguage}>
+              <NativeSelect
+                value={metadata.subtitleLanguage}
+                onValueChange={(value) =>
+                  setMetadata((metadata) => ({
+                    ...metadata,
+                    subtitleLanguage: value as SubtitleLanguage,
+                  }))
+                }>
                 {SubtitleLanguages.map((l) => {
                   let label: string;
                   switch (l) {
@@ -108,7 +129,15 @@ export default function MetadataPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("disable file metadata")}
-              <Switch defaultChecked={PreferredDisableFileMetadata} />
+              <Switch
+                checked={metadata.disableFileMetadata}
+                onCheckedChange={(checked) =>
+                  setMetadata((metadata) => ({
+                    ...metadata,
+                    disableFileMetadata: checked,
+                  }))
+                }
+              />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>

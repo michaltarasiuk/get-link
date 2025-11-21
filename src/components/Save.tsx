@@ -42,7 +42,7 @@ export async function Save() {
             <VolumeOffIcon aria-hidden className={cn("size-4")} />
           </ToggleGroupItem>
         </ToggleGroup>
-        <Button variant="secondary" size="lg">
+        <Button size="lg">
           <ClipboardPasteIcon aria-hidden />
           {t("paste")}
         </Button>

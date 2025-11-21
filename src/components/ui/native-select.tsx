@@ -3,7 +3,11 @@ import * as React from "react";
 
 import {cn} from "@/lib/cn";
 
-export function NativeSelect(props: React.ComponentProps<"select">) {
+interface NativeSelectProps extends React.ComponentProps<"select"> {
+  onValueChange?: (value: string) => void;
+}
+
+export function NativeSelect({onValueChange, ...props}: NativeSelectProps) {
   return (
     <div
       data-slot="native-select-wrapper"
@@ -24,6 +28,10 @@ export function NativeSelect(props: React.ComponentProps<"select">) {
           "dark:aria-invalid:ring-destructive/40",
           props.className,
         )}
+        onChange={(e) => {
+          props.onChange?.(e);
+          onValueChange?.(e.target.value);
+        }}
       />
       <ChevronsUpDown
         data-slot="native-select-icon"

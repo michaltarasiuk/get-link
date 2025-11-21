@@ -1,5 +1,6 @@
 "use client";
 
+import {useAtom} from "jotai/react";
 import {
   FileDownIcon,
   FileUpIcon,
@@ -30,11 +31,12 @@ import {
 } from "@/components/ui/field";
 import {Switch} from "@/components/ui/switch";
 import {useCountDown} from "@/hooks/use-count-down";
-import {PreferredEnableFeatureForNerds} from "@/lib/advanced";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
+import {advancedAtom} from "@/lib/storage";
 
 export default function AdvancedPage() {
+  const [advanced, setAdvanced] = useAtom(advancedAtom);
   const t = useExtracted();
   return (
     <PageLayout title={t("advanced")} backTo={Routes.settings.root}>
@@ -43,7 +45,15 @@ export default function AdvancedPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("enable features for nerds")}
-              <Switch defaultChecked={PreferredEnableFeatureForNerds} />
+              <Switch
+                checked={advanced.enableFeatureForNerds}
+                onCheckedChange={(checked) =>
+                  setAdvanced((advanced) => ({
+                    ...advanced,
+                    enableFeatureForNerds: checked,
+                  }))
+                }
+              />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>

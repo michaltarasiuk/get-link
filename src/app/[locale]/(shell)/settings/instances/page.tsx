@@ -1,5 +1,6 @@
 "use client";
 
+import {useAtom} from "jotai/react";
 import {useExtracted} from "next-intl";
 
 import {PageLayout} from "@/components/PageLayout";
@@ -11,13 +12,11 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import {Switch} from "@/components/ui/switch";
-import {
-  PreferredUseCustomProcessingServer,
-  PreferredUseInstanceAccessKey,
-} from "@/lib/instances";
 import {Routes} from "@/lib/routes";
+import {instancesAtom} from "@/lib/storage";
 
 export default function InstancesPage() {
+  const [instances, setInstances] = useAtom(instancesAtom);
   const t = useExtracted();
   return (
     <PageLayout title={t("instances")} backTo={Routes.settings.root}>
@@ -26,7 +25,15 @@ export default function InstancesPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("use a custom processing server")}
-              <Switch defaultChecked={PreferredUseCustomProcessingServer} />
+              <Switch
+                checked={instances.useCustomProcessingServer}
+                onCheckedChange={(checked) =>
+                  setInstances((instances) => ({
+                    ...instances,
+                    useCustomProcessingServer: checked,
+                  }))
+                }
+              />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>
@@ -46,7 +53,15 @@ export default function InstancesPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("use an instance access key")}
-              <Switch defaultChecked={PreferredUseInstanceAccessKey} />
+              <Switch
+                checked={instances.useInstanceAccessKey}
+                onCheckedChange={(checked) =>
+                  setInstances((instances) => ({
+                    ...instances,
+                    useInstanceAccessKey: checked,
+                  }))
+                }
+              />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>

@@ -1,5 +1,6 @@
 "use client";
 
+import {useAtom} from "jotai/react";
 import {useExtracted} from "next-intl";
 
 import {PageLayout} from "@/components/PageLayout";
@@ -8,12 +9,14 @@ import {Field, FieldBackground, FieldDescription} from "@/components/ui/field";
 import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
 import {cn} from "@/lib/cn";
 import {
-  LocalProcessingModes,
-  PreferredLocalProcessingMode,
-} from "@/lib/local-media-processing";
+  type LocalProcessingMediaMode,
+  LocalProcessingMediaModes,
+} from "@/lib/local-processing";
 import {Routes} from "@/lib/routes";
+import {localProcessingAtom} from "@/lib/storage";
 
-export default function LocalPage() {
+export default function LocalProcessingPage() {
+  const [localProcessing, setLocalProcessing] = useAtom(localProcessingAtom);
   const t = useExtracted();
   return (
     <PageLayout title={t("local processing")} backTo={Routes.settings.root}>
@@ -24,10 +27,16 @@ export default function LocalPage() {
           <FieldBackground>
             <ToggleGroup
               type="single"
-              defaultValue={PreferredLocalProcessingMode}
+              value={localProcessing.media}
               spacing={2}
-              className={cn("grid w-full grid-cols-3")}>
-              {LocalProcessingModes.map((m) => (
+              className={cn("grid w-full grid-cols-3")}
+              onValueChange={(value) =>
+                setLocalProcessing((localProcessing) => ({
+                  ...localProcessing,
+                  media: value as LocalProcessingMediaMode,
+                }))
+              }>
+              {LocalProcessingMediaModes.map((m) => (
                 <ToggleGroupItem key={m} value={m}>
                   {m}
                 </ToggleGroupItem>

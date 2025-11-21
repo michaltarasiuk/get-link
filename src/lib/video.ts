@@ -1,4 +1,4 @@
-type VideoQuality = (typeof VideoQualities)[number];
+export type VideoQuality = (typeof VideoQualities)[number];
 
 export const VideoQualities = [
   "8k+",
@@ -13,12 +13,12 @@ export const VideoQualities = [
 ] as const;
 export const PreferredVideoQuality: VideoQuality = "1080p";
 
-type VideoCodec = (typeof VideoCodecs)[number];
+export type VideoCodec = (typeof VideoCodecs)[number];
 
 export const VideoCodecs = ["h264 + aac", "av1 + opus", "vp9 + opus"] as const;
 export const PreferredVideoCodec: VideoCodec = "h264 + aac";
 
-type VideoContainer = (typeof VideoContainers)[number];
+export type VideoContainer = (typeof VideoContainers)[number];
 
 export const VideoContainers = ["auto", "mp4", "webm", "mkv"] as const;
 export const PreferredVideoContainer: VideoContainer = "auto";
