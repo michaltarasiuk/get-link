@@ -1,13 +1,15 @@
+"use client";
+
 import {ArrowDownIcon} from "lucide-react";
-import {getExtracted} from "next-intl/server";
+import {useExtracted} from "next-intl";
 
 import {cn} from "@/lib/cn";
 
 import {Button} from "./ui/button";
 import {Popover, PopoverContent, PopoverTrigger} from "./ui/popover";
 
-export async function ProcessingQueue() {
-  const t = await getExtracted();
+export function ProcessingQueue() {
+  const t = useExtracted();
   return (
     <Popover>
       <PopoverTrigger asChild>
