@@ -15,6 +15,8 @@ import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
 import {
+  PreferredAllowH265ForVideos,
+  PreferredConvertLoopingVideosToGIF,
   PreferredVideoCodec,
   PreferredVideoContainer,
   PreferredVideoQuality,
@@ -108,7 +110,7 @@ export default function VideoPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("allow h265 for videos")}
-              <Switch />
+              <Switch defaultChecked={PreferredAllowH265ForVideos} />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>
@@ -123,7 +125,7 @@ export default function VideoPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("convert looping videos to GIF")}
-              <Switch />
+              <Switch defaultChecked={PreferredConvertLoopingVideosToGIF} />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>

@@ -11,6 +11,7 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import {Switch} from "@/components/ui/switch";
+import {PreferredAlwaysTunnelFiles} from "@/lib/privacy";
 import {Routes} from "@/lib/routes";
 
 export default function PrivacyPage() {
@@ -22,7 +23,7 @@ export default function PrivacyPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("always tunnel files")}
-              <Switch />
+              <Switch defaultChecked={PreferredAlwaysTunnelFiles} />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>

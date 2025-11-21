@@ -13,12 +13,16 @@ import {
 import {NativeSelect, NativeSelectOption} from "@/components/ui/native-select";
 import {Switch} from "@/components/ui/switch";
 import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
+import {assertNever} from "@/lib/assert";
 import {cn} from "@/lib/cn";
 import {
   FilenameStyles,
+  PreferredDisableFileMetadata,
   PreferredFilenameStyle,
   PreferredSavingMode,
+  PreferredSubtitleLanguage,
   SavingMethods,
+  SubtitleLanguages,
 } from "@/lib/metadata";
 import {Routes} from "@/lib/routes";
 
@@ -75,8 +79,20 @@ export default function MetadataPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("preferred subtitle language")}
-              <NativeSelect>
-                <NativeSelectOption>{t("none")}</NativeSelectOption>
+              <NativeSelect defaultValue={PreferredSubtitleLanguage}>
+                {SubtitleLanguages.map((l) => {
+                  let label: string;
+                  switch (l) {
+                    case "none":
+                      label = t("none");
+                      break;
+                    default:
+                      assertNever(l);
+                  }
+                  return (
+                    <NativeSelectOption key={l}>{label}</NativeSelectOption>
+                  );
+                })}
               </NativeSelect>
             </FieldLabel>
           </FieldBackground>
@@ -92,7 +108,7 @@ export default function MetadataPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("disable file metadata")}
-              <Switch />
+              <Switch defaultChecked={PreferredDisableFileMetadata} />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>

@@ -14,3 +14,12 @@ export const AudioBitrates = [
   "8kb/s",
 ] as const;
 export const PreferredAudioBitrate: AudioBitrate = "128kb/s";
+
+export const PreferredBetterQuality = false;
+
+type DubLanguage = (typeof DubLanguages)[number];
+
+export const DubLanguages = ["orginal"] as const;
+export const PreferredDubLanguage: DubLanguage = "orginal";
+
+export const PreferredDownloadOrginalSound = false;

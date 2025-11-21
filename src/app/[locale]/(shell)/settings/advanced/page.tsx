@@ -30,6 +30,7 @@ import {
 } from "@/components/ui/field";
 import {Switch} from "@/components/ui/switch";
 import {useCountDown} from "@/hooks/use-count-down";
+import {PreferredEnableFeatureForNerds} from "@/lib/advanced";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
 
@@ -42,7 +43,7 @@ export default function AdvancedPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("enable features for nerds")}
-              <Switch />
+              <Switch defaultChecked={PreferredEnableFeatureForNerds} />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>

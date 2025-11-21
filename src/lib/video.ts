@@ -22,3 +22,7 @@ type VideoContainer = (typeof VideoContainers)[number];
 
 export const VideoContainers = ["auto", "mp4", "webm", "mkv"] as const;
 export const PreferredVideoContainer: VideoContainer = "auto";
+
+export const PreferredAllowH265ForVideos = false;
+
+export const PreferredConvertLoopingVideosToGIF = false;

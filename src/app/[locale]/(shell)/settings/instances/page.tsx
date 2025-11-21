@@ -11,6 +11,10 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import {Switch} from "@/components/ui/switch";
+import {
+  PreferredUseCustomProcessingServer,
+  PreferredUseInstanceAccessKey,
+} from "@/lib/instances";
 import {Routes} from "@/lib/routes";
 
 export default function InstancesPage() {
@@ -22,7 +26,7 @@ export default function InstancesPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("use a custom processing server")}
-              <Switch />
+              <Switch defaultChecked={PreferredUseCustomProcessingServer} />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>
@@ -42,7 +46,7 @@ export default function InstancesPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("use an instance access key")}
-              <Switch />
+              <Switch defaultChecked={PreferredUseInstanceAccessKey} />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>

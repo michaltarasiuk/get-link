@@ -11,6 +11,11 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import {Switch} from "@/components/ui/switch";
+import {
+  PreferredAutoOpenQueue,
+  PreferredReduceMotion,
+  PreferredReduceVisualTransparency,
+} from "@/lib/accessibility";
 import {Routes} from "@/lib/routes";
 
 export default function AccessibilityPage() {
@@ -22,7 +27,7 @@ export default function AccessibilityPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("reduce motion")}
-              <Switch />
+              <Switch defaultChecked={PreferredReduceMotion} />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>
@@ -35,7 +40,7 @@ export default function AccessibilityPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("reduce visual transparency")}
-              <Switch />
+              <Switch defaultChecked={PreferredReduceVisualTransparency} />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>
@@ -50,7 +55,7 @@ export default function AccessibilityPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("don't open the queue automatically")}
-              <Switch />
+              <Switch defaultChecked={PreferredAutoOpenQueue} />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>

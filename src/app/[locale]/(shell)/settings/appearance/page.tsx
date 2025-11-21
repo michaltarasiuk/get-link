@@ -13,6 +13,13 @@ import {
 import {NativeSelect, NativeSelectOption} from "@/components/ui/native-select";
 import {Switch} from "@/components/ui/switch";
 import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
+import {
+  Languages,
+  PreferredAutomaticLanguageSelection,
+  PreferredTheme,
+  Themes,
+} from "@/lib/appearance";
+import {assertNever} from "@/lib/assert";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
 
@@ -25,12 +32,30 @@ export default function AppearancePage() {
           <FieldBackground>
             <ToggleGroup
               type="single"
-              defaultValue="auto"
+              defaultValue={PreferredTheme}
               spacing={2}
               className={cn("grid w-full grid-cols-3")}>
-              <ToggleGroupItem value="auto">{t("auto")}</ToggleGroupItem>
-              <ToggleGroupItem value="light">{t("light")}</ToggleGroupItem>
-              <ToggleGroupItem value="dark">{t("dark")}</ToggleGroupItem>
+              {Themes.map((theme) => {
+                let label: string;
+                switch (theme) {
+                  case "auto":
+                    label = t("auto");
+                    break;
+                  case "light":
+                    label = t("light");
+                    break;
+                  case "dark":
+                    label = t("dark");
+                    break;
+                  default:
+                    assertNever(theme);
+                }
+                return (
+                  <ToggleGroupItem key={theme} value={theme}>
+                    {label}
+                  </ToggleGroupItem>
+                );
+              })}
             </ToggleGroup>
           </FieldBackground>
           <FieldDescription>
@@ -45,7 +70,7 @@ export default function AppearancePage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("automatic selection")}
-              <Switch />
+              <Switch defaultChecked={PreferredAutomaticLanguageSelection} />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>
@@ -59,7 +84,11 @@ export default function AppearancePage() {
             <FieldLabel>
               {t("preferred language")}
               <NativeSelect>
-                <NativeSelectOption>{t("english")}</NativeSelectOption>
+                {Languages.map((l) => (
+                  <NativeSelectOption key={l.value} value={l.value}>
+                    {l.label}
+                  </NativeSelectOption>
+                ))}
               </NativeSelect>
             </FieldLabel>
           </FieldBackground>

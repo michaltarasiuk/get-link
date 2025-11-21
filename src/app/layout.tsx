@@ -1,8 +1,8 @@
 import "./globals.css";
 
+import {ThemeScript} from "@/lib/appearance";
 import {cn} from "@/lib/cn";
 import {ibmPlexMonoFont, ibmPlexSansFont} from "@/lib/fonts";
-import {ThemeScript} from "@/lib/theme";
 
 export default function Layout({children}: LayoutProps<"/">) {
   return (

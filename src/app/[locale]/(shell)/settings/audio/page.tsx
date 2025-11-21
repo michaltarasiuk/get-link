@@ -13,11 +13,16 @@ import {
 import {NativeSelect, NativeSelectOption} from "@/components/ui/native-select";
 import {Switch} from "@/components/ui/switch";
 import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
+import {assertNever} from "@/lib/assert";
 import {
   AudioBitrates,
   AudioFormats,
+  DubLanguages,
   PreferredAudioBitrate,
   PreferredAudioFormat,
+  PreferredBetterQuality,
+  PreferredDownloadOrginalSound,
+  PreferredDubLanguage,
 } from "@/lib/audio";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
@@ -76,7 +81,7 @@ export default function AudioPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("prefer better quality")}
-              <Switch />
+              <Switch defaultChecked={PreferredBetterQuality} />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>
@@ -91,8 +96,22 @@ export default function AudioPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("preferred dub language")}
-              <NativeSelect>
-                <NativeSelectOption>{t("orginal")}</NativeSelectOption>
+              <NativeSelect defaultValue={PreferredDubLanguage}>
+                {DubLanguages.map((l) => {
+                  let label: string;
+                  switch (l) {
+                    case "orginal":
+                      label = t("orginal");
+                      break;
+                    default:
+                      assertNever(l);
+                  }
+                  return (
+                    <NativeSelectOption key={l} value={l}>
+                      {label}
+                    </NativeSelectOption>
+                  );
+                })}
               </NativeSelect>
             </FieldLabel>
           </FieldBackground>
@@ -108,7 +127,7 @@ export default function AudioPage() {
           <FieldBackground asChild>
             <FieldLabel>
               {t("download original sound")}
-              <Switch />
+              <Switch defaultChecked={PreferredDownloadOrginalSound} />
             </FieldLabel>
           </FieldBackground>
           <FieldDescription>
