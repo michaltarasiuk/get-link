@@ -8,11 +8,15 @@ export default function Layout({children}: LayoutProps<"/">) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={cn("antialiased", [
-          ibmPlexSansFont.className,
-          ibmPlexSansFont.variable,
-          ibmPlexMonoFont.variable,
-        ])}>
+        className={cn(
+          "antialiased",
+          "selection:bg-foreground selection:text-accent",
+          [
+            ibmPlexSansFont.className,
+            ibmPlexSansFont.variable,
+            ibmPlexMonoFont.variable,
+          ],
+        )}>
         <script
           dangerouslySetInnerHTML={{
             __html: ThemeScript,
