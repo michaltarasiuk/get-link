@@ -1,7 +1,7 @@
 import dedent from "dedent";
 
 import {getLanguageDisplayName} from "@/i18n/get-language-display-name";
-import {DefaultLocale, Locales} from "@/i18n/routing";
+import {DefaultLocale, type Locale, Locales} from "@/i18n/routing";
 
 import {raise} from "./assert";
 
@@ -21,7 +21,7 @@ export const Languages = Locales.map((l) => {
     value: l,
   };
 });
-export const PreferredLanguage = DefaultLocale;
+export const PreferredLanguage: Locale = DefaultLocale;
 
 declare global {
   interface Window {

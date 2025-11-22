@@ -33,7 +33,7 @@ import {Switch} from "@/components/ui/switch";
 import {useCountDown} from "@/hooks/use-count-down";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
-import {advancedAtom} from "@/lib/storage";
+import {advancedAtom, useResetSettings} from "@/lib/storage";
 
 export default function AdvancedPage() {
   const [advanced, setAdvanced] = useAtom(advancedAtom);
@@ -84,6 +84,7 @@ export default function AdvancedPage() {
 }
 
 function ResetSettingsDataAlertDialog() {
+  const resetSettings = useResetSettings();
   const t = useExtracted();
   return (
     <AlertDialog>
@@ -104,7 +105,10 @@ function ResetSettingsDataAlertDialog() {
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>{t("cancel")}</AlertDialogCancel>
-          <TimedAlertDialogAction action={t("reset")} />
+          <AlertDialogCountDownAction
+            label={t("reset")}
+            onClick={resetSettings}
+          />
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
@@ -132,18 +136,26 @@ function ClearCacheAlertDialog() {
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>{t("cancel")}</AlertDialogCancel>
-          <TimedAlertDialogAction action={t("clear")} />
+          <AlertDialogCountDownAction label={t("clear")} onClick={() => {}} />
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
   );
 }
 
-function TimedAlertDialogAction({action}: {action: string}) {
+interface AlertDialogCountDownActionProps {
+  label: string;
+  onClick: () => void;
+}
+
+function AlertDialogCountDownAction({
+  label,
+  onClick,
+}: AlertDialogCountDownActionProps) {
   const count = useCountDown(2);
   return (
-    <AlertDialogAction disabled={count > 0}>
-      {action} {count > 0 && `(${count})`}
+    <AlertDialogAction disabled={count > 0} onClick={onClick}>
+      {label} {count > 0 && `(${count})`}
     </AlertDialogAction>
   );
 }

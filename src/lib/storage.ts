@@ -1,91 +1,18 @@
+import {useSetAtom} from "jotai/react";
 import {atomWithStorage} from "jotai/utils";
 import {focusAtom} from "jotai-optics";
 
-import {
-  PreferredAutoOpenQueue,
-  PreferredReduceMotion,
-  PreferredReduceVisualTransparency,
-} from "./accessibility";
-import {PreferredEnableFeatureForNerds} from "./advanced";
-import {
-  PreferredAutomaticLanguageSelection,
-  PreferredLanguage,
-  PreferredTheme,
-} from "./appearance";
-import {
-  PreferredAudioBitrate,
-  PreferredAudioFormat,
-  PreferredBetterQuality,
-  PreferredDownloadOrginalSound,
-  PreferredDubLanguage,
-} from "./audio";
-import {
-  PreferredUseCustomProcessingServer,
-  PreferredUseInstanceAccessKey,
-} from "./instances";
-import {PreferredLocalProcessingMediaMode} from "./local-processing";
-import {
-  PreferredDisableFileMetadata,
-  PreferredFilenameStyle,
-  PreferredSavingMethod,
-  PreferredSubtitleLanguage,
-} from "./metadata";
-import {PreferredAlwaysTunnelFiles} from "./privacy";
-import {
-  PreferredAllowH265ForVideos,
-  PreferredConvertLoopingVideosToGIF,
-  PreferredVideoCodec,
-  PreferredVideoContainer,
-  PreferredVideoQuality,
-} from "./video";
+import {PreferredSettings} from "./settings";
 
-export const settingsAtom = atomWithStorage("settings", {
-  appearance: {
-    theme: PreferredTheme,
-    automaticLanguageSelection: PreferredAutomaticLanguageSelection,
-    preferredLanguage: PreferredLanguage,
-  },
-  accessibility: {
-    reduceMotion: PreferredReduceMotion,
-    reduceVisualTransparency: PreferredReduceVisualTransparency,
-    autoOpenQueue: PreferredAutoOpenQueue,
-  },
-  video: {
-    quality: PreferredVideoQuality,
-    codec: PreferredVideoCodec,
-    container: PreferredVideoContainer,
-    allowH265: PreferredAllowH265ForVideos,
-    convertLoopingToGIF: PreferredConvertLoopingVideosToGIF,
-  },
-  audio: {
-    format: PreferredAudioFormat,
-    bitrate: PreferredAudioBitrate,
-    betterQuality: PreferredBetterQuality,
-    dubLanguage: PreferredDubLanguage,
-    downloadOrginalSound: PreferredDownloadOrginalSound,
-  },
-  metadata: {
-    filenameStyle: PreferredFilenameStyle,
-    savingMethod: PreferredSavingMethod,
-    subtitleLanguage: PreferredSubtitleLanguage,
-    disableFileMetadata: PreferredDisableFileMetadata,
-  },
-  localProcessing: {
-    media: PreferredLocalProcessingMediaMode,
-  },
-  instances: {
-    useCustomProcessingServer: PreferredUseCustomProcessingServer,
-    customProcessingServerUrl: null,
-    useInstanceAccessKey: PreferredUseInstanceAccessKey,
-    instanceAccessKey: null,
-  },
-  privacy: {
-    alwaysTunnelFiles: PreferredAlwaysTunnelFiles,
-  },
-  advanced: {
-    enableFeatureForNerds: PreferredEnableFeatureForNerds,
-  },
-});
+export const settingsAtom = atomWithStorage("settings", PreferredSettings);
+
+export function useResetSettings() {
+  const setSettings = useSetAtom(settingsAtom);
+  function resetSettings() {
+    setSettings(PreferredSettings);
+  }
+  return resetSettings;
+}
 
 export const appearanceAtom = focusAtom(settingsAtom, (optic) =>
   optic.prop("appearance"),
