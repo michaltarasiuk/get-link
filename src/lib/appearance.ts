@@ -32,15 +32,18 @@ declare global {
 
 export const ThemeScript = dedent`
   (function () {
-    function getPrefersDarkSchemeMedia() {
+    function getDarkQuery() {
       return window.matchMedia('(prefers-color-scheme: dark)');
     }
     function getSystemTheme() {
-      return getPrefersDarkSchemeMedia().matches ? 'dark' : 'light';
+      return getDarkQuery().matches ? 'dark' : 'light';
     }
     function setTheme(theme) {
       window.__theme = theme;
-      document.documentElement.classList.toggle('dark', theme === 'dark');
+      document.documentElement.classList.toggle(
+        'dark',
+        (theme === 'auto' ? getSystemTheme() : theme) === 'dark'
+      );
     }
 
     let preferredTheme;
@@ -51,16 +54,14 @@ export const ThemeScript = dedent`
 
     window.__setPreferredTheme = function (theme) {
       preferredTheme = theme;
-      setTheme(theme === 'auto' ? getSystemTheme() : theme);
+      setTheme(theme);
     };
 
-    setTheme(preferredTheme === 'auto' ? getSystemTheme() : preferredTheme);
+    setTheme(preferredTheme);
 
-    const darkQuery = getPrefersDarkSchemeMedia();
+    const darkQuery = getDarkQuery();
     darkQuery.addEventListener('change', function (e) {
-      if (!preferredTheme || preferredTheme === 'auto') {
-        setTheme('auto');
-      }
+      setTheme(window.__theme);
     });
   })();
 `;
