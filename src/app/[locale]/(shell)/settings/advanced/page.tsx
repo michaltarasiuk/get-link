@@ -33,7 +33,12 @@ import {Switch} from "@/components/ui/switch";
 import {useCountDown} from "@/hooks/use-count-down";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
-import {advancedAtom, useResetSettings} from "@/lib/storage";
+import {
+  advancedAtom,
+  exportSettings,
+  importSettings,
+  useResetSettings,
+} from "@/lib/storage";
 
 export default function AdvancedPage() {
   const [advanced, setAdvanced] = useAtom(advancedAtom);
@@ -65,11 +70,11 @@ export default function AdvancedPage() {
       </LinkSection>
       <LinkSection id="settings-data" title={t("settings data")}>
         <div className={cn("flex gap-3")}>
-          <Button variant="outline" size="lg">
+          <Button variant="outline" size="lg" onClick={importSettings}>
             <FileDownIcon aria-hidden className={cn("size-5")} />
             {t("import")}
           </Button>
-          <Button variant="outline" size="lg">
+          <Button variant="outline" size="lg" onClick={exportSettings}>
             <FileUpIcon aria-hidden className={cn("size-5")} />
             {t("export")}
           </Button>

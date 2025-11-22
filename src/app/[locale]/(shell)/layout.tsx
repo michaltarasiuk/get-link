@@ -2,6 +2,7 @@
 
 import dedent from "dedent";
 
+import {JotaiProvider} from "@/components/JotaiProvider";
 import {ProcessingQueue} from "@/components/ProcessingQueue";
 import {Sidebar} from "@/components/Sidebar";
 import {useIsServer} from "@/hooks/use-is-server";
@@ -10,7 +11,7 @@ import {cn} from "@/lib/cn";
 export default function ShellLayout({children}: LayoutProps<"/[locale]">) {
   const isServer = useIsServer();
   return (
-    <>
+    <JotaiProvider>
       <div
         className={cn(
           "shell flex min-h-dvh flex-col-reverse md:flex-row",
@@ -31,6 +32,6 @@ export default function ShellLayout({children}: LayoutProps<"/[locale]">) {
           `}
         </style>
       </noscript>
-    </>
+    </JotaiProvider>
   );
 }
