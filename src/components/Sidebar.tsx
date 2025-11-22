@@ -63,7 +63,7 @@ function SidebarLink({href, isActive, children}: SidebarLinkProps) {
   const active = isActive(pathname);
   return (
     <Button
-      variant={active ? "secondary" : "ghost"}
+      variant={active ? undefined : "ghost"}
       className={cn("flex h-16 w-20 flex-col")}
       asChild>
       <Link href={href}>{children}</Link>

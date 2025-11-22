@@ -34,12 +34,14 @@ export default function AppearancePage() {
               value={apperance.theme}
               spacing={2}
               className={cn("grid w-full grid-cols-3")}
-              onValueChange={(value) =>
+              onValueChange={(value) => {
+                const theme = value as Theme;
+                window.__setPreferredTheme(theme);
                 setApperance((apperance) => ({
                   ...apperance,
-                  theme: value as Theme,
-                }))
-              }>
+                  theme,
+                }));
+              }}>
               {Themes.map((theme) => {
                 let label: string;
                 switch (theme) {
