@@ -26,18 +26,24 @@ export const PreferredLanguage: Locale = DefaultLocale;
 declare global {
   interface Window {
     __theme: Theme;
+    __setTheme: (theme: Theme) => void;
     __setPreferredTheme: (theme: Theme) => void;
   }
 }
 
 export const ThemeScript = dedent`
   (function () {
-    function getSystemTheme() {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    function getPrefersDarkSchemeMedia() {
+      return window.matchMedia('(prefers-color-scheme: dark)');
     }
-    function setTheme(theme) {
-      window.__theme = theme;
-      document.documentElement.classList.toggle('dark', theme === 'dark');
+    function getSystemTheme() {
+      return getPrefersDarkSchemeMedia().matches ? 'dark' : 'light';
+    }
+    
+    window.__setTheme = function(theme) {
+      const resolvedTheme = theme === 'auto' ? getSystemTheme() : theme;
+      window.__theme = resolvedTheme;
+      document.documentElement.classList.toggle('dark', resolvedTheme === 'dark');
     }
 
     let preferredTheme;
@@ -48,7 +54,7 @@ export const ThemeScript = dedent`
 
     window.__setPreferredTheme = function(theme) {
       preferredTheme = theme;
-      setTheme(theme === 'auto' ? getSystemTheme() : theme);
+      window.__setTheme(theme);
       try {
         const settings = JSON.parse(localStorage.getItem('settings')) ?? {};
         settings.appearance ??= {};
@@ -57,12 +63,12 @@ export const ThemeScript = dedent`
       } catch {}
     };
 
-    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setTheme(preferredTheme === 'auto' ? getSystemTheme() : preferredTheme);
+    window.__setTheme(preferredTheme);
 
+    const darkQuery = getPrefersDarkSchemeMedia();
     darkQuery.addEventListener('change', function (e) {
       if (!preferredTheme || preferredTheme === 'auto') {
-        setTheme(e.matches ? 'dark' : 'light');
+        window.__setTheme('auto');
       }
     });
   })();
