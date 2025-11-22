@@ -36,11 +36,11 @@ export default function AppearancePage() {
               className={cn("grid w-full grid-cols-3")}
               onValueChange={(value) => {
                 const theme = value as Theme;
-                window.__setPreferredTheme(theme);
                 setApperance((apperance) => ({
                   ...apperance,
                   theme,
                 }));
+                window.__setPreferredTheme(theme);
               }}>
               {Themes.map((theme) => {
                 let label: string;

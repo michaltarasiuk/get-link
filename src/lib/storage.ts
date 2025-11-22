@@ -10,7 +10,7 @@ export function useResetSettings() {
   const setSettings = useSetAtom(settingsAtom);
   function resetSettings() {
     setSettings(PreferredSettings);
-    window.__setTheme(PreferredSettings.appearance.theme);
+    window.__setPreferredTheme(PreferredSettings.appearance.theme);
   }
   return resetSettings;
 }

@@ -109,11 +109,6 @@ msgid "SgXr8x"
 msgstr "settings data"
 
 #: src/app/[locale]/(shell)/settings/appearance/page.tsx
-#: src/app/[locale]/(shell)/settings/layout.tsx
-msgid "LvUke6"
-msgstr "appearance"
-
-#: src/app/[locale]/(shell)/settings/appearance/page.tsx
 msgid "X9qXoT"
 msgstr "auto"
 
@@ -220,8 +215,8 @@ msgid "S9JpxO"
 msgstr "info for nerds"
 
 #: src/app/[locale]/(shell)/settings/debug/page.tsx
-#: src/app/[locale]/(shell)/settings/page.tsx
 #: src/app/[locale]/(shell)/settings/layout.tsx
+#: src/app/[locale]/(shell)/settings/page.tsx
 #: src/components/Sidebar.tsx
 msgid "oFJ8He"
 msgstr "settings"
@@ -258,6 +253,11 @@ msgstr "use an instance access key"
 #: src/app/[locale]/(shell)/settings/instances/page.tsx
 msgid "w0iiK5"
 msgstr "you can use a custom processing instance if you choose to. even though there are some security measures in place, we are not responsible for any damages done via a community instance, as we have no control over them."
+
+#: src/app/[locale]/(shell)/settings/layout.tsx
+#: src/app/[locale]/(shell)/settings/appearance/page.tsx
+msgid "LvUke6"
+msgstr "appearance"
 
 #: src/app/[locale]/(shell)/settings/layout.tsx
 #: src/app/[locale]/(shell)/settings/metadata/page.tsx
