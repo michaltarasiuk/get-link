@@ -1,5 +1,6 @@
 "use client";
 
+import {useAtomValue} from "jotai/react";
 import {
   BugIcon,
   CpuIcon,
@@ -23,6 +24,7 @@ import {
 import {usePathname} from "@/i18n/navigation";
 import {cn} from "@/lib/cn";
 import {Routes} from "@/lib/routes";
+import {advancedAtom} from "@/lib/storage";
 
 export default function SettingsLayout({
   children,
@@ -36,12 +38,13 @@ export default function SettingsLayout({
         })}>
         <SettingsSubNavigation />
       </aside>
-      <div className={cn("md:max-w-xl md:p-3")}>{children}</div>
+      <div className={cn("md:max-w-xl md:basis-xl md:p-3")}>{children}</div>
     </div>
   );
 }
 
 function SettingsSubNavigation() {
+  const advanced = useAtomValue(advancedAtom);
   const t = useExtracted();
   return (
     <SubNavigation title={t("settings")}>
@@ -111,13 +114,17 @@ function SettingsSubNavigation() {
           icon={SlidersVerticalIcon}>
           {t("advanced")}
         </SubNavigationTab>
-        <SubNavigationTabSeparator />
-        <SubNavigationTab
-          href={Routes.settings.debug}
-          color="gray"
-          icon={BugIcon}>
-          {t("info for nerds")}
-        </SubNavigationTab>
+        {advanced.enableFeatureForNerds && (
+          <>
+            <SubNavigationTabSeparator />
+            <SubNavigationTab
+              href={Routes.settings.debug}
+              color="gray"
+              icon={BugIcon}>
+              {t("info for nerds")}
+            </SubNavigationTab>
+          </>
+        )}
       </SubNavigationSection>
     </SubNavigation>
   );

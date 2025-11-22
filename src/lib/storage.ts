@@ -39,7 +39,7 @@ import {
   PreferredVideoQuality,
 } from "./video";
 
-const settingsAtom = atomWithStorage("settings", {
+export const settingsAtom = atomWithStorage("settings", {
   appearance: {
     theme: PreferredTheme,
     automaticLanguageSelection: PreferredAutomaticLanguageSelection,
