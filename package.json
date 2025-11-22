@@ -2,8 +2,8 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "prettier-check": "prettier --check .",
     "prettier-write": "prettier --write .",
