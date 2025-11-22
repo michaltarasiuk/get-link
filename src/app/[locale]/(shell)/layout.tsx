@@ -12,9 +12,8 @@ export default function ShellLayout({children}: LayoutProps<"/[locale]">) {
   return (
     <>
       <div
-        id="shell"
         className={cn(
-          "flex min-h-dvh flex-col-reverse md:flex-row",
+          "shell flex min-h-dvh flex-col-reverse md:flex-row",
           isServer
             ? "opacity-0"
             : "opacity-100 transition-opacity duration-200 ease-out",
@@ -26,7 +25,7 @@ export default function ShellLayout({children}: LayoutProps<"/[locale]">) {
       <noscript>
         <style>
           {dedent`
-            #shell {
+            .shell {
               opacity: 100;
             }
           `}
